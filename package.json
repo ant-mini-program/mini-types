@@ -1,0 +1,23 @@
+{
+  "name": "@alipay/tinyapp-types",
+  "version": "0.0.1",
+  "description": "支付宝小程序类型声明（WIP）",
+  "scripts": {
+    "test": "node node_modules/types-publisher/bin/tester/test.js --run-from-definitely-typed",
+    "lint": "dtslint types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alipay-inc.com:intl-cd/tinyapp-types.git"
+  },
+  "keywords": [
+    "tinyapp",
+    "types"
+  ],
+  "author": "kevinliu.lj@antfin.com,diandao.zl@antfin.com,yanyan.kyy@antfin.com",
+  "license": "ISC",
+  "devDependencies": {
+    "dtslint": "github:Microsoft/dtslint#production",
+    "types-publisher": "github:Microsoft/types-publisher#production"
+  }
+}
