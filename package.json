@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "支付宝小程序类型声明（WIP）",
   "scripts": {
-    "test": "node node_modules/types-publisher/bin/tester/test.js --run-from-definitely-typed",
-    "lint": "dtslint types"
+    "lint": "dtslint types",
+    "ci": "tnpm run lint"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
   "author": "kevinliu.lj@antfin.com,diandao.zl@antfin.com,yanyan.kyy@antfin.com",
   "license": "ISC",
   "devDependencies": {
-    "dtslint": "github:Microsoft/dtslint#production",
-    "types-publisher": "github:Microsoft/types-publisher#production"
+    "dtslint": "github:Microsoft/dtslint#production"
   }
 }
