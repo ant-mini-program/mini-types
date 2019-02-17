@@ -2,6 +2,7 @@
 /// <reference path="./tabbar.d.ts" />
 /// <reference path="./refresh.d.ts" />
 /// <reference path="./contact.d.ts" />
+/// <reference path="./city.d.ts" />
 
 declare namespace my {
   /**
