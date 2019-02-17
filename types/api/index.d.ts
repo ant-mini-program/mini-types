@@ -3,6 +3,7 @@
 /// <reference path="./refresh.d.ts" />
 /// <reference path="./contact.d.ts" />
 /// <reference path="./city.d.ts" />
+/// <reference path="./date.d.ts" />
 
 declare namespace my {
   /**
