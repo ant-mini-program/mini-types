@@ -1,4 +1,5 @@
 /// <reference path="./navigator.d.ts" />
+/// <reference path="./tabbar.d.ts" />
 
 declare namespace my {
   /**
