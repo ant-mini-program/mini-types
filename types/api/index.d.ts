@@ -1,3 +1,5 @@
+/// <reference path="./navigator.d.ts" />
+
 declare namespace my {
   /**
    * 节点查询 https://docs.alipay.com/mini/api/selector-query
