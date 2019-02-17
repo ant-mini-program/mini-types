@@ -25,8 +25,6 @@ declare namespace my {
   /**
    * 保留当前页面，跳转到应用内的某个指定页面，可以使用 my.navigateBack 返回到原来页面。
    * 注意：页面最大深度为10，即可连续调用 10 次 navigateTo
-   *
-   * @param option
    */
   function navigateTo(option: INavigateToOption): void;
 
@@ -40,7 +38,6 @@ declare namespace my {
   }
   /**
    * 关闭当前页面，跳转到应用内的某个指定页面。
-   * @param option
    */
   function redirectTo(option: IRedirectToOption): void;
 
@@ -52,7 +49,6 @@ declare namespace my {
   }
   /**
    * 关闭当前页面，返回上一级或多级页面。可通过 getCurrentPages 获取当前的页面栈信息，决定需要返回几层。
-   * @param option
    */
   function navigateBack(option: INavigateBackOption): void;
 
@@ -67,8 +63,6 @@ declare namespace my {
   /**
    * 关闭当前所有页面，跳转到应用内的某个指定页面。
    * 基础库 1.4.0+ & 支付宝客户端 10.1.8+ 支持
-   *
-   * @param option
    */
   function reLaunch(option: IRelaunchOption): void;
 
