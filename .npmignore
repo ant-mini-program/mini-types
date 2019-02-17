@@ -1,0 +1,4 @@
+.gitignore
+.editorconfig
+.gitlab-ci.yml
+.npmignore

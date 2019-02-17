@@ -4,7 +4,8 @@
   "description": "支付宝小程序类型声明（WIP）",
   "scripts": {
     "lint": "dtslint types",
-    "ci": "tnpm run lint"
+    "ci": "tnpm run lint",
+    "release": "tnpm run ci && tnpm publish"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
   "license": "ISC",
   "devDependencies": {
     "dtslint": "github:Microsoft/dtslint#production"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npm.alibaba-inc.com"
+  },
+  "types": "./types/index.d.ts"
 }
