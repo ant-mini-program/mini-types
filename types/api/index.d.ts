@@ -6,6 +6,7 @@
 /// <reference path="./date.d.ts" />
 /// <reference path="./animation.d.ts" />
 /// <reference path="./canvas.d.ts" />
+/// <reference path="./map.d.ts" />
 
 declare namespace my {
   /**
