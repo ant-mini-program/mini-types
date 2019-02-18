@@ -4,6 +4,7 @@
 /// <reference path="./contact.d.ts" />
 /// <reference path="./city.d.ts" />
 /// <reference path="./date.d.ts" />
+/// <reference path="./animation.d.ts" />
 
 declare namespace my {
   /**
