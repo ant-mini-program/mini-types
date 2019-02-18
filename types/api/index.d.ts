@@ -8,6 +8,7 @@
 /// <reference path="./canvas.d.ts" />
 /// <reference path="./map.d.ts" />
 /// <reference path="./keyboard.d.ts" />
+/// <reference path="./scroll.d.ts" />
 
 declare namespace my {
   /**
