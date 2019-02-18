@@ -169,5 +169,5 @@ declare namespace my {
    * 创建动画实例 animation。调用实例的方法来描述动画，最后通过动画实例的export方法将动画数据导出并传递给组件的animation属性。
    * 注意: export 方法调用后会清掉之前的动画操作
    */
-  function createAnimation(): void;
+  function createAnimation(option?: ICreateAnimationOption): IAnimation;
 }
