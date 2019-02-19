@@ -66,6 +66,8 @@ declare namespace tinyapp {
      * 同setData，但是相比于setData，在处理长列表的时候，其具有更高的性能
      */
     $spliceData: (operations: { [k: string]: [number, number, ...any[]] }) => void;
+
+    route: string;
   }
 
   /**
