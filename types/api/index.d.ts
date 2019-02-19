@@ -9,6 +9,7 @@
 /// <reference path="./map.d.ts" />
 /// <reference path="./keyboard.d.ts" />
 /// <reference path="./scroll.d.ts" />
+/// <reference path="./query.d.ts" />
 
 declare namespace my {
   /**
