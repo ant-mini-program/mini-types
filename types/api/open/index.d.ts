@@ -9,3 +9,5 @@
 /// <reference path="./navigate.d.ts" />
 /// <reference path="./cheat.d.ts" />
 /// <reference path="./face.d.ts" />
+/// <reference path="./update.d.ts" />
+/// <reference path="./open.d.ts" />
