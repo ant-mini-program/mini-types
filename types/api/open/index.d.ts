@@ -4,3 +4,5 @@
 /// <reference path="./tradePay.d.ts" />
 /// <reference path="./paySignCenter.d.ts" />
 /// <reference path="./card.d.ts" />
+/// <reference path="./zhima.d.ts" />
+/// <reference path="./text.d.ts" />
