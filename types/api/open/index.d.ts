@@ -6,3 +6,4 @@
 /// <reference path="./card.d.ts" />
 /// <reference path="./zhima.d.ts" />
 /// <reference path="./text.d.ts" />
+/// <reference path="./navigate.d.ts" />
