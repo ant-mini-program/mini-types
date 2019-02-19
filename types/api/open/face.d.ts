@@ -17,7 +17,7 @@ declare namespace my {
     fail?(): void;
   }
 
-  interface ap {
-    faceVerify(): void;
+  export namespace ap {
+    function faceVerify(): void;
   }
 }

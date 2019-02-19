@@ -39,7 +39,7 @@ declare namespace my {
     complete?(): void;
   }
 
-  interface ap {
-    preventCheat(option: IPreventCheatOption): void;
+  export namespace ap {
+    function preventCheat(option: IPreventCheatOption): void;
   }
 }
