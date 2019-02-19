@@ -3,3 +3,4 @@
 /// <reference path="./getPhoneNumber.d.ts" />
 /// <reference path="./tradePay.d.ts" />
 /// <reference path="./paySignCenter.d.ts" />
+/// <reference path="./card.d.ts" />
