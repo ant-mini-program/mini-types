@@ -11,3 +11,4 @@
 /// <reference path="./face.d.ts" />
 /// <reference path="./update.d.ts" />
 /// <reference path="./open.d.ts" />
+/// <reference path="./webview.d.ts" />
