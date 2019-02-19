@@ -57,4 +57,28 @@ declare namespace my {
    * 打开当前用户的某张票的详情页
    */
   function openTicketDetail(params: OpenDetailOption): void;
+
+  type AddCardAuthSuccessResult = {
+    success: true;
+    resultStatus: string;
+    result: {
+      app_id: string;
+      auth_code: string;
+      state: string;
+      scope: string;
+      template_id: string;
+      request_id: string;
+      out_string: string;
+    };
+  } | {
+    success: false;
+    code: 'JSAPI_SERVICE_TERMINATED' | 'JSAPI_PARAM_INVALID' | 'JSAPI_SYSTEM_ERROR';
+  };
+  interface IAddCardAuthOption {
+    url: string;
+    success?(res: AddCardAuthSuccessResult): void;
+    fail?(): void;
+    complete?(): void;
+  }
+  function addCardAuth(option: IAddCardAuthOption): void;
 }
