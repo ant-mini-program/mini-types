@@ -10,6 +10,7 @@
 /// <reference path="./keyboard.d.ts" />
 /// <reference path="./scroll.d.ts" />
 /// <reference path="./query.d.ts" />
+/// <reference path="./multiLevelSelect.d.ts" />
 
 declare namespace my {
   /**
