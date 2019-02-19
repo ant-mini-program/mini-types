@@ -7,3 +7,4 @@
 /// <reference path="./zhima.d.ts" />
 /// <reference path="./text.d.ts" />
 /// <reference path="./navigate.d.ts" />
+/// <reference path="./cheat.d.ts" />
