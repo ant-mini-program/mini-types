@@ -40,6 +40,6 @@ declare namespace my {
   }
 
   interface ap {
-    preventCheat(): void;
+    preventCheat(option: IPreventCheatOption): void;
   }
 }
