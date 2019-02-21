@@ -129,38 +129,4 @@ declare namespace my {
     complete: () => void;
   }
   function prompt(options: IPromptOptions): void;
-
-  interface IGetSystemInfoResult {
-    fontSizeSetting: number;
-    system: string;
-    version: string;
-    brand: string;
-    currentBattery: string;
-    windowHeight: number;
-    pixelRatio: number;
-    platform: string;
-    screenHeight: number;
-    statusBarHeight: number;
-    language: string;
-    storage: string;
-    app: string;
-    titleBarHeight: number;
-    model: string;
-    screenWidth: number;
-    windowWidth: number;
-  }
-
-  interface IGetSystemInfoOptions {
-    /**
-     * 接口调用成功的回调
-     */
-    success?(res?: IGetSystemInfoResult): void;
-    fail?(): void;
-    complete?(): void;
-  }
-
-  /**
-   * 获取系统信息。
-   */
-  function getSystemInfo(options: IGetSystemInfoOptions): void;
 }
