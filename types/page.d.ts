@@ -1,4 +1,24 @@
 declare namespace tinyapp {
+  type OnShareAppMessageOption = {
+    from: 'button';
+    target: Record<string, any>;
+    webViewUrl?: string;
+  } | {
+    from: 'menu';
+    webViewUrl?: string;
+  };
+
+  interface IOnShareAppMessageResult {
+    title: string;
+    desc?: string;
+    path: string;
+    content?: string;
+    imageUrl?: string;
+    bgImgUrl?: string;
+    success?(): void;
+    fail?(): void;
+  }
+
   interface IPageOptionMethods {
     /**
      * 生命周期函数--监听页面加载
@@ -44,7 +64,7 @@ declare namespace tinyapp {
     /**
      * 返回自定义分享信息
      */
-    onShareAppMessage?(): void;
+    onShareAppMessage?(option: OnShareAppMessageOption): IOnShareAppMessageResult;
     onOptionMenuClick?(): void;
     onPageScroll?(): void;
   }
