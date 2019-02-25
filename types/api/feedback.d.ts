@@ -79,7 +79,7 @@ declare namespace my {
   }
   function prompt(options: IPromptOptions): void;
 
-  export interface IShowLoadingOptions {
+  interface IShowLoadingOptions {
     /**
      * loading内容
      */
@@ -100,9 +100,9 @@ declare namespace my {
   /**
    * 显示消息提示框
    */
-  export function showLoading(options: string | IShowLoadingOptions): Promise<void>;
+  function showLoading(options: string | IShowLoadingOptions): Promise<void>;
 
-  export interface IHideLoadingOptions {
+  interface IHideLoadingOptions {
     // 页面实例, 每个页面实例有一个loading, 如果不传入该参数可能会导致loading无法取消。
     // 无语的设计@小程序
     // 参考: https://docs.alipay.com/mini/api/ui-feedback#a-name7bgvmdamyhideloading
@@ -111,5 +111,5 @@ declare namespace my {
   /**
    * 显示消息提示框
    */
-  export function hideLoading(options?: IHideLoadingOptions): Promise<void>;
+  function hideLoading(options?: IHideLoadingOptions): Promise<void>;
 }
