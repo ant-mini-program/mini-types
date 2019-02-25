@@ -19,6 +19,18 @@ declare namespace tinyapp {
     fail?(): void;
   }
 
+  type IPageScrollEvent = [
+    {
+      scrollTop: number;
+      scrollHeight: number;
+    },
+    null,
+    null,
+  ] | {
+    scrollTop: number;
+    scrollHeight: number;
+  };
+
   interface IPageOptionsMethods {
     /**
      * 生命周期函数--监听页面加载
@@ -66,7 +78,7 @@ declare namespace tinyapp {
      */
     onShareAppMessage?(options: OnShareAppMessageOptions): IOnShareAppMessageResult;
     onOptionMenuClick?(): void;
-    onPageScroll?(): void;
+    onPageScroll?(event: IPageScrollEvent): void;
   }
 
   type SetDataMethod<D> = (data: Partial<D>, callback?: () => void) => void;
@@ -93,7 +105,7 @@ declare namespace tinyapp {
   /**
    * Page 实现的接口对象
    */
-  type PageOptions<D> = IPageOptionsMethods
+  type PageOptions<D = Record<string, any>> = IPageOptionsMethods
     & {
         /**
          * [read-only]页面的初始数据

@@ -6,7 +6,7 @@ declare namespace tinyapp {
   }
 
   interface IComponentMethods {
-    [name: string]: () => void;
+    [name: string]: (...args: any[]) => void;
   }
 
   interface IComponentInstance<P, D> {
@@ -15,7 +15,11 @@ declare namespace tinyapp {
     setData: SetDataMethod<D>;
   }
 
-  type ComponentOptions<P extends Record<string, any>, D extends any, M extends IComponentMethods> = IComponentLifeCycleMethods
+  type ComponentOptions<
+    P extends Record<string, any> = Record<string, any>,
+    D extends any = any,
+    M extends IComponentMethods = IComponentMethods,
+  > = IComponentLifeCycleMethods
     & {
       mixins?: Array<ComponentOptions<any, any, any>>;
       data?: D;

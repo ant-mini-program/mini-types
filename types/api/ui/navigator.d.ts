@@ -50,7 +50,7 @@ declare namespace my {
   /**
    * 关闭当前页面，返回上一级或多级页面。可通过 getCurrentPages 获取当前的页面栈信息，决定需要返回几层。
    */
-  function navigateBack(options: INavigateBackOptions): void;
+  function navigateBack(options?: INavigateBackOptions): void;
 
   interface IRelaunchOptions extends INavigateBaseCallbackOptions {
     /**

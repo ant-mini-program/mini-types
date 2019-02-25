@@ -14,6 +14,7 @@
 /// <reference path="./menu.d.ts" />
 /// <reference path="./scene.d.ts" />
 /// <reference path="./analytics.d.ts" />
+/// <reference path="./feedback.d.ts" />
 
 declare namespace my {
   /**
@@ -52,83 +53,6 @@ declare namespace my {
   function canIUse(query: string): boolean;
 
   function reportCustomError(error: Error): void;
-
-  interface IShowToastOptions {
-    /**
-     * 提示的内容
-     */
-    content?: string;
-
-    /**
-     * toast 类型，展示相应图标,success, fail, exception, none(默认值)。其中 exception 类型必须传文字信息
-     */
-    type?: 'success' | 'fail' | 'exception' | 'none';
-    /**
-     * 提示的延迟时间，单位毫秒，默认：1500, 最大为10000
-     */
-    duration?: number;
-
-    success?: () => void;
-
-    fail?: () => void;
-
-    complete?: () => void;
-  }
-
-  /**
-   * 显示消息提示框
-   */
-  function showToast(options: IShowToastOptions): void;
-
-  /**
-   * 隐藏消息提示框
-   */
-  function hideToast(): void;
-
-  interface IAlertOptions {
-    title?: string;
-    content?: string;
-    buttonText?: string;
-    success?: () => void;
-    fail?: () => void;
-    complete?: () => void;
-  }
-
-  function alert(options: IAlertOptions): void;
-
-  interface IConfirmSuccessCallbackParam {
-    // 是否点击了确认
-    confirm: boolean;
-    // 是否点击了确认
-    ok?: boolean;
-  }
-  interface IConfirmOptions {
-    title?: string;
-    content?: string;
-    confirmButtonText?: string;
-    cancelButtonText?: string;
-    success?: (result: IConfirmSuccessCallbackParam) => void;
-    fail?: (result: IConfirmSuccessCallbackParam) => void;
-    complete?: (result: IConfirmSuccessCallbackParam) => void;
-  }
-  function confirm(options: IConfirmOptions): void;
-
-  interface IPromptSuccessCallbackParam {
-    ok: boolean;
-    inputValue?: string;
-  }
-  interface IPromptOptions {
-    title?: string;
-    message?: string;
-    placeholder?: string;
-    align?: string;
-    okButtonText?: string;
-    cancelButtonText?: string;
-    success?: (result: IPromptSuccessCallbackParam) => void;
-    fail?: () => void;
-    complete: () => void;
-  }
-  function prompt(options: IPromptOptions): void;
 
   function call(apiName: string, params?: Record<string, any> | ((...args: any[]) => void)): void;
   function call(apiName: string, params?: Record<string, any>, callback?: (...args: any[]) => void): void;

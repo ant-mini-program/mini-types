@@ -25,7 +25,7 @@ declare namespace tinyapp {
     /**
      * 错误监听函数--当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息
      */
-    onError?(): void;
+    onError?(error: any): void;
   }
 
   interface IAppInstance<G> {
@@ -36,7 +36,7 @@ declare namespace tinyapp {
    * App 实现的接口对象
    * 参考: https://docs.alipay.com/mini/framework/app
    */
-  type AppOptions<G> = IAppOptionsMethods
+  type AppOptions<G = any> = IAppOptionsMethods
     & {
         globalData?: G;
         [name: string]: any;
