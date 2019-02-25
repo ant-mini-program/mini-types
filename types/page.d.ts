@@ -1,5 +1,5 @@
 declare namespace tinyapp {
-  type OnShareAppMessageOption = {
+  type OnShareAppMessageOptions = {
     from: 'button';
     target: Record<string, any>;
     webViewUrl?: string;
@@ -64,7 +64,7 @@ declare namespace tinyapp {
     /**
      * 返回自定义分享信息
      */
-    onShareAppMessage?(option: OnShareAppMessageOption): IOnShareAppMessageResult;
+    onShareAppMessage?(options: OnShareAppMessageOptions): IOnShareAppMessageResult;
     onOptionMenuClick?(): void;
     onPageScroll?(): void;
   }

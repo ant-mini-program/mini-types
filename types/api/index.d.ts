@@ -130,7 +130,6 @@ declare namespace my {
   }
   function prompt(options: IPromptOptions): void;
 
-  function call(apiName: string, params?: Record<string, any>): void;
-  function call(apiName: string, callback?: (...args: any[]) => void): void;
+  function call(apiName: string, params?: Record<string, any> | ((...args: any[]) => void)): void;
   function call(apiName: string, params?: Record<string, any>, callback?: (...args: any[]) => void): void;
 }

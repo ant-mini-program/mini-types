@@ -14,7 +14,9 @@ declare namespace my {
     addColorStop(stop: number, color: string): void;
   }
 
+  /* tslint:disable:no-empty-interface */
   interface ICircularGradient extends ILinearGradient {}
+  /* tslint:enable:no-empty-interface */
 
   interface IGetImageDataOptions {
     x: number;
