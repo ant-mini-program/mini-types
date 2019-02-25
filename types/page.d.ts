@@ -19,7 +19,7 @@ declare namespace tinyapp {
     fail?(): void;
   }
 
-  interface IPageOptionMethods {
+  interface IPageOptionsMethods {
     /**
      * 生命周期函数--监听页面加载
      * @param query query 参数为 my.navigateTo 和 my.redirectTo 中传递的 query 对象。
@@ -93,7 +93,7 @@ declare namespace tinyapp {
   /**
    * Page 实现的接口对象
    */
-  type PageOption<D> = IPageOptionMethods
+  type PageOptions<D> = IPageOptionsMethods
     & {
         /**
          * [read-only]页面的初始数据
@@ -108,7 +108,7 @@ declare namespace tinyapp {
  * Page() 函数用来注册一个页面。
  * 接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
  */
-declare function Page(option: tinyapp.PageOption<any>): void;
+declare function Page(options: tinyapp.PageOptions<any>): void;
 
 /**
  * getCurrentPages() 函数用于获取当前页面栈的实例，

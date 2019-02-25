@@ -1,6 +1,6 @@
 {
   "name": "@alipay/tinyapp-types",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "支付宝小程序类型声明（WIP）",
   "scripts": {
     "lint": "dtslint types",
