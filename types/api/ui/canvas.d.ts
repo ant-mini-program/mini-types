@@ -16,7 +16,7 @@ declare namespace my {
 
   interface ICircularGradient extends ILinearGradient {}
 
-  interface IGetImageDataOption {
+  interface IGetImageDataOptions {
     x: number;
     y: number;
     width: number;
@@ -26,7 +26,7 @@ declare namespace my {
     complete?: () => void;
   }
 
-  interface IPutImageDataOption {
+  interface IPutImageDataOptions {
     data: number[];
     x: number;
     y: number;
@@ -37,7 +37,7 @@ declare namespace my {
     complete?: () => void;
   }
 
-  interface ICanvasToTempFilePathOption {
+  interface ICanvasToTempFilePathOptions {
     /**
      * 画布 x 轴起点，默认为 0
      */
@@ -79,7 +79,7 @@ declare namespace my {
     /**
      * 把当前画布的内容导出生成图片，并返回文件路径。
      */
-    toTempFilePath(option: ICanvasToTempFilePathOption): void;
+    toTempFilePath(options: ICanvasToTempFilePathOptions): void;
     /**
      * textAlign 是 Canvas 2D API 描述绘制文本时，文本的对齐方式的属性。
      * 注意，该对齐是基于CanvasRenderingContext2D.fillText 方法的x的值。
@@ -276,11 +276,11 @@ declare namespace my {
     /**
      * 获取 canvas 区域隐含的像素数据。
      */
-    getImageData(option: IGetImageDataOption): void;
+    getImageData(options: IGetImageDataOptions): void;
     /**
      * 将像素数据绘制到画布。
      */
-    putImageData(option: IPutImageDataOption): void;
+    putImageData(options: IPutImageDataOptions): void;
     /**
      * 保存当前的绘图上下文。
      */

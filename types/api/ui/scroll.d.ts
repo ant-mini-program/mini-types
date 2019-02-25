@@ -5,5 +5,5 @@ declare namespace my {
   /**
    * 滚动到页面的目标位置。
    */
-  function pageScrollTo(option: { scrollTop: number; }): void;
+  function pageScrollTo(options: { scrollTop: number; }): void;
 }

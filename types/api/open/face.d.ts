@@ -2,7 +2,7 @@
  * @file 刷脸认证
  */
 declare namespace my {
-  interface IFaceVerifyOption {
+  interface IFaceVerifyOptions {
     bizId: string;
     bizType: string;
     success?(res: {

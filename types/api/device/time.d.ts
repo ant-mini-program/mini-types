@@ -5,7 +5,7 @@ declare namespace my {
   /**
    * 获取当前服务器时间的毫秒数。
    */
-  function getServerTime(option: {
+  function getServerTime(options: {
     success?(res: { time: number; }): void;
     fail?(): void;
     complete?(): void;

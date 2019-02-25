@@ -27,7 +27,7 @@ declare namespace my {
    */
   function openMerchantVoucherList(params: { partnerId: string; }): void;
 
-  type OpenDetailOption = {
+  type OpenDetailOptions = {
     passId: string;
   } | {
     partnerId: string;
@@ -36,12 +36,12 @@ declare namespace my {
   /**
    * 打开当前用户的某张券的详情页（非口碑）
    */
-  function openVoucherDetail(params: OpenDetailOption): void;
+  function openVoucherDetail(params: OpenDetailOptions): void;
 
   /**
    * 打开当前用户的某张券的详情页（口碑）
    */
-  function openKBVoucherDetail(params: OpenDetailOption): void;
+  function openKBVoucherDetail(params: OpenDetailOptions): void;
 
   /**
    * 打开支付宝票列表。
@@ -56,7 +56,7 @@ declare namespace my {
   /**
    * 打开当前用户的某张票的详情页
    */
-  function openTicketDetail(params: OpenDetailOption): void;
+  function openTicketDetail(params: OpenDetailOptions): void;
 
   type AddCardAuthSuccessResult = {
     success: true;
@@ -74,11 +74,11 @@ declare namespace my {
     success: false;
     code: 'JSAPI_SERVICE_TERMINATED' | 'JSAPI_PARAM_INVALID' | 'JSAPI_SYSTEM_ERROR';
   };
-  interface IAddCardAuthOption {
+  interface IAddCardAuthOptions {
     url: string;
     success?(res: AddCardAuthSuccessResult): void;
     fail?(): void;
     complete?(): void;
   }
-  function addCardAuth(option: IAddCardAuthOption): void;
+  function addCardAuth(options: IAddCardAuthOptions): void;
 }

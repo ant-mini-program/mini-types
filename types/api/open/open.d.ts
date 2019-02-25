@@ -3,6 +3,6 @@
  */
 declare namespace my {
   export namespace ap {
-    function navigateToAlipayPage(option: { path: string; success?(res: { success: boolean; }): void; }): void;
+    function navigateToAlipayPage(options: { path: string; success?(res: { success: boolean; }): void; }): void;
   }
 }

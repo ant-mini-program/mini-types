@@ -2,7 +2,7 @@
  * @file 剪贴板
  */
 declare namespace my {
-  interface IClipboardOption {
+  interface IClipboardOptions {
     success?(test: string): void;
     fail?(): void;
     complete?(): void;
@@ -11,10 +11,10 @@ declare namespace my {
   /**
    * 获取剪贴板数据。
    */
-  function getClipboard(option: IClipboardOption): void;
+  function getClipboard(options: IClipboardOptions): void;
 
   /**
    * 设置剪贴板数据。
    */
-  function setClipboard(option: IClipboardOption & { text: string; }): void;
+  function setClipboard(options: IClipboardOptions & { text: string; }): void;
 }

@@ -3,6 +3,6 @@
  */
 declare namespace my {
   export namespace ap {
-    function updateAlipayClient(option: { success?(res: { success: boolean; }): void; }): void;
+    function updateAlipayClient(options: { success?(res: { success: boolean; }): void; }): void;
   }
 }

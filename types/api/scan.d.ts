@@ -2,7 +2,7 @@
  * @file 扫码
  */
 declare namespace my {
-  interface IScanOption {
+  interface IScanOptions {
     type?: 'qr' | 'bar';
     hideAlbum?: boolean;
     success?(res: { code: string; qrCode: string; barCode: string; }): void;
@@ -10,5 +10,5 @@ declare namespace my {
     complete?(): void;
   }
 
-  function scan(option: IScanOption): void;
+  function scan(options: IScanOptions): void;
 }

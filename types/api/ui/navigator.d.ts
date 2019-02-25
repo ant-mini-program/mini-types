@@ -1,5 +1,5 @@
 declare namespace my {
-  interface INavigateBaseCallbackOption {
+  interface INavigateBaseCallbackOptions {
     /**
      * 调用成功的回调函数
      */
@@ -14,7 +14,7 @@ declare namespace my {
     complete?(): void;
   }
 
-  interface INavigateToOption extends INavigateBaseCallbackOption {
+  interface INavigateToOptions extends INavigateBaseCallbackOptions {
     /**
      * 需要跳转的应用内非 tabBar 的目标页面路径 ,路径后可以带参数。
      * 参数规则如下：路径与参数之间使用?分隔，参数键与参数值用=相连，不同参数必须用&分隔；
@@ -26,9 +26,9 @@ declare namespace my {
    * 保留当前页面，跳转到应用内的某个指定页面，可以使用 my.navigateBack 返回到原来页面。
    * 注意：页面最大深度为10，即可连续调用 10 次 navigateTo
    */
-  function navigateTo(option: INavigateToOption): void;
+  function navigateTo(options: INavigateToOptions): void;
 
-  interface IRedirectToOption extends INavigateBaseCallbackOption {
+  interface IRedirectToOptions extends INavigateBaseCallbackOptions {
     /**
      * 需要跳转的应用内非 tabBar 的目标页面路径，路径后可以带参数。
      * 参数规则如下：路径与参数之间使用?分隔，参数键与参数值用=相连，不同参数必须用&分隔；
@@ -39,9 +39,9 @@ declare namespace my {
   /**
    * 关闭当前页面，跳转到应用内的某个指定页面。
    */
-  function redirectTo(option: IRedirectToOption): void;
+  function redirectTo(options: IRedirectToOptions): void;
 
-  interface INavigateBackOption {
+  interface INavigateBackOptions {
     /**
      * 返回的页面数，如果 delta 大于现有打开的页面数，则返回到首页
      */
@@ -50,9 +50,9 @@ declare namespace my {
   /**
    * 关闭当前页面，返回上一级或多级页面。可通过 getCurrentPages 获取当前的页面栈信息，决定需要返回几层。
    */
-  function navigateBack(option: INavigateBackOption): void;
+  function navigateBack(options: INavigateBackOptions): void;
 
-  interface IRelaunchOption extends INavigateBaseCallbackOption {
+  interface IRelaunchOptions extends INavigateBaseCallbackOptions {
     /**
      * 页面路径。如果页面不为 tabbar 页面则路径后可以带参数。
      * 参数规则如下：路径与参数之间使用?分隔，参数键与参数值用=相连，不同参数必须用&分隔；
@@ -64,9 +64,9 @@ declare namespace my {
    * 关闭当前所有页面，跳转到应用内的某个指定页面。
    * 基础库 1.4.0+ & 支付宝客户端 10.1.8+ 支持
    */
-  function reLaunch(option: IRelaunchOption): void;
+  function reLaunch(options: IRelaunchOptions): void;
 
-  interface ISetNavigationBar extends INavigateBaseCallbackOption {
+  interface ISetNavigationBar extends INavigateBaseCallbackOptions {
     /**
      * 导航栏标题
      */

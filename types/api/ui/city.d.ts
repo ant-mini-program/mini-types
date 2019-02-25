@@ -2,7 +2,7 @@
  * @file 选择城市
  */
 declare namespace my {
-  interface IChooseCityOption {
+  interface IChooseCityOptions {
     /**
      * 是否显示当前定位城市，默认 false
      */
@@ -27,5 +27,5 @@ declare namespace my {
    * 打开城市选择列表。
    * 如果用户没有选择任何城市直接点击了返回，将不会触发回调函数。
    */
-  function chooseCity(option: IChooseCityOption): void;
+  function chooseCity(options: IChooseCityOptions): void;
 }

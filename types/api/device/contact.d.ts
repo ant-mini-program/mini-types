@@ -2,7 +2,7 @@
  * @file 添加手机联系人
  */
 declare namespace my {
-  interface IAddPhoneContactOption {
+  interface IAddPhoneContactOptions {
     photoFilePath?: string;
     nickName?: string;
     lastName?: string;
@@ -43,5 +43,5 @@ declare namespace my {
   /**
    * 用户可以选择将该表单以“创建新联系人”或“添加到现有联系人”的方式，写入到手机系统的通讯录。
    */
-  function addPhoneContact(option: IAddPhoneContactOption): void;
+  function addPhoneContact(options: IAddPhoneContactOptions): void;
 }

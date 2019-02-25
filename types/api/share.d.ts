@@ -2,11 +2,11 @@
  * @file 分享
  */
 declare namespace my {
-  interface IHideShareMenuOption {
+  interface IHideShareMenuOptions {
     success?(): void;
     fail?(): void;
     complete?(): void;
   }
 
-  function hideShareMenu(option?: IHideShareMenuOption): void;
+  function hideShareMenu(options?: IHideShareMenuOptions): void;
 }

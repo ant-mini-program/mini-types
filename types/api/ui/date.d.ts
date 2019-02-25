@@ -2,7 +2,7 @@
  * @file 选择日期
  */
 declare namespace my {
-  interface IDatePickerOption {
+  interface IDatePickerOptions {
     /**
      * 返回的日期格式
      */
@@ -26,5 +26,5 @@ declare namespace my {
   /**
    * 打开日期选择列表
    */
-  function datePicker(option: IDatePickerOption): void;
+  function datePicker(options: IDatePickerOptions): void;
 }

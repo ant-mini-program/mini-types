@@ -10,19 +10,19 @@ declare namespace my {
     /**
      * 设置所有手势是否可用，1：可用 ，0：不可用
      */
-    gestureEnable(option: { isGestureEnable: 0 | 1; }): void;
+    gestureEnable(options: { isGestureEnable: 0 | 1; }): void;
     /**
      * 设置比例尺控件是否可见，1：可见 ，0：不可见
      */
-    showsScale(option: { isShowsScale: 0 | 1; }): void;
+    showsScale(options: { isShowsScale: 0 | 1; }): void;
     /**
      * 设置指南针是否可见，1：可见 ，0：不可见
      */
-    showsCompass(option: { isShowsCompass: 0 | 1; }): void;
+    showsCompass(options: { isShowsCompass: 0 | 1; }): void;
     /**
      * 规划步行路线，一条
      */
-    showRoute(option: {
+    showRoute(options: {
       startLat?: number;
       startLng?: number;
       endLat?: number;
@@ -44,7 +44,7 @@ declare namespace my {
     /**
      * 增量更新地图接口
      */
-    updateComponents(option: {
+    updateComponents(options: {
       scale?: number;
       longitude?: number;
       latitude?: number;

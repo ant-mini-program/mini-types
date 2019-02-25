@@ -18,7 +18,7 @@ declare namespace my {
      */
     error: 10 | 11;
   }
-  interface IChoosePhoneContactOption {
+  interface IChoosePhoneContactOptions {
     success?(result: IChoosePhoneContactSuccessResult): void;
     fail?(result: IChoosePhoneContactFailResult): void;
     complete?(result: IChoosePhoneContactSuccessResult | IChoosePhoneContactFailResult): void;
@@ -26,7 +26,7 @@ declare namespace my {
   /**
    * 选择本地系统通信录中某个联系人的电话。
    */
-  function choosePhoneContact(option: IChoosePhoneContactOption): void;
+  function choosePhoneContact(options: IChoosePhoneContactOptions): void;
 
   interface IChooseAlipayContactSuccessResult {
     /**
@@ -61,7 +61,7 @@ declare namespace my {
      */
     error: 10 | 11;
   }
-  interface IChooseAlipayContactOption {
+  interface IChooseAlipayContactOptions {
     /**
      * 单次最多选择联系人个数，默认 1，最大 10
      */
@@ -70,7 +70,7 @@ declare namespace my {
     fail?(result: IChooseAlipayContactFailResult): void;
     complete?(result: IChooseAlipayContactSuccessResult | IChooseAlipayContactFailResult): void;
   }
-  function chooseAlipayContact(option: IChooseAlipayContactOption): void;
+  function chooseAlipayContact(options: IChooseAlipayContactOptions): void;
 
   interface IChooseContactSuccessResult {
     contactsDicArray: Array<{
@@ -96,7 +96,7 @@ declare namespace my {
       displayName: string;
     }>;
   }
-  interface IChooseContactOption {
+  interface IChooseContactOptions {
     /**
      * 选择类型，值为single（单选）或者 multi（多选）
      */
@@ -124,5 +124,5 @@ declare namespace my {
   /**
    * 唤起选人组件，默认只包含支付宝联系人，可以通过修改参数包含手机通讯录联系人或者双向通讯录联系人。
    */
-  function chooseContact(option: IChooseContactOption): void;
+  function chooseContact(options: IChooseContactOptions): void;
 }

@@ -2,7 +2,7 @@
  * @file 数据安全
  */
 declare namespace my {
-  interface IRSAOption {
+  interface IRSAOptions {
     action: 'encrypt' | 'decrypt';
     text: string;
     key: string;
@@ -11,5 +11,5 @@ declare namespace my {
     complete?(): void;
   }
 
-  function rsa(option: IRSAOption): void;
+  function rsa(options: IRSAOptions): void;
 }

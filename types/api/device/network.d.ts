@@ -4,7 +4,7 @@
 declare namespace my {
   type INetworkType = 'UNKNOWN' | 'NOTREACHABLE' | 'WIFI' | '3G' | '2G' | '4G' | 'WWAN';
 
-  interface IGetNetworkTypeOption {
+  interface IGetNetworkTypeOptions {
     success?(res: {
       networkAvailable: boolean;
       networkType: INetworkType;
@@ -13,7 +13,7 @@ declare namespace my {
     complete?(): void;
   }
 
-  function getNetworkType(option: IGetNetworkTypeOption): void;
+  function getNetworkType(options: IGetNetworkTypeOptions): void;
 
   function onNetworkStatusChange(callback: (res: { isConnected: boolean; networkType: INetworkType; }) => void): void;
 

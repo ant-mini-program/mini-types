@@ -18,7 +18,7 @@ declare namespace my {
     extended_info?: string;
   }
 
-  interface IPreventCheatOption {
+  interface IPreventCheatOptions {
     pid: string;
     appId: string;
     biz_context: IPreventCheatBizContext;
@@ -40,6 +40,6 @@ declare namespace my {
   }
 
   export namespace ap {
-    function preventCheat(option: IPreventCheatOption): void;
+    function preventCheat(options: IPreventCheatOptions): void;
   }
 }

@@ -2,7 +2,7 @@
  * @file 网络
  */
 declare namespace my {
-  interface IHttpRequestOption {
+  interface IHttpRequestOptions {
     url: string;
     headers?: Record<string, string>;
     method?: 'GET' | 'POST';
@@ -14,7 +14,7 @@ declare namespace my {
     complete?(res: any): void;
   }
 
-  function httpRequest(option: IHttpRequestOption): void;
+  function httpRequest(options: IHttpRequestOptions): void;
 
   interface IUploadFileResult {
     /**
@@ -33,7 +33,7 @@ declare namespace my {
     header: Record<string, string>;
   }
 
-  interface IUploadFileOption {
+  interface IUploadFileOptions {
     /**
      * 开发者服务器 url
      */
@@ -79,7 +79,7 @@ declare namespace my {
    * 如页面通过 [my.chooseImage](#my.chooseImage) 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。
    * 客户端发起一个 HTTPS POST 请求，其中 `Content-Type` 为 `multipart/form-data` 。
    */
-  function uploadFile(options: IUploadFileOption): void;
+  function uploadFile(options: IUploadFileOptions): void;
 
   interface IDownloadFileResult {
     /**
@@ -88,7 +88,7 @@ declare namespace my {
     tempFilePath: string;
   }
 
-  interface IDownloadFileOption {
+  interface IDownloadFileOptions {
     /**
      * 下载资源的 url
      */
@@ -113,9 +113,9 @@ declare namespace my {
    * 下载文件资源到本地。
    * 客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。
    */
-  function downloadFile(options: IDownloadFileOption): void;
+  function downloadFile(options: IDownloadFileOptions): void;
 
-  interface IConnectSocketOption {
+  interface IConnectSocketOptions {
     /**
      * 开发者服务器接口地址，必须是 wss 协议，且域名必须是后台配置的合法域名
      */
@@ -147,7 +147,7 @@ declare namespace my {
    * 创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket?t=1477656499061) 连接；
    * **一个支付宝小程序同时只能有一个 WebSocket 连接，如果当前已存在一个 WebSocket 连接，会自动关闭该连接，并重新创建一个 WebSocket 连接**。
    */
-  function connectSocket(options: IConnectSocketOption): void;
+  function connectSocket(options: IConnectSocketOptions): void;
 
   /**
    * 监听WebSocket连接打开事件。
@@ -159,7 +159,7 @@ declare namespace my {
    */
   function onSocketError(callback: (res?: any) => void): void;
 
-  interface ISendSocketMessageOption {
+  interface ISendSocketMessageOptions {
     /**
      * 需要发送的内容
      */
@@ -175,7 +175,7 @@ declare namespace my {
   /**
    * 通过 WebSocket 连接发送数据，需要先 [my.connectSocket](#my.connectSocket)，并在 [my.onSocketOpen](#my.onSocketOpen) 回调之后才能发送。
    */
-  function sendSocketMessage(options: ISendSocketMessageOption): void;
+  function sendSocketMessage(options: ISendSocketMessageOptions): void;
 
   interface ISocketMessageResponse {
     /**

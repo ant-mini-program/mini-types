@@ -2,7 +2,7 @@
  * @file 自定义通用菜单
  */
 declare namespace my {
-  function hideShareMenu(option?: {
+  function hideShareMenu(options?: {
     success?(): void;
     fail?(): void;
     complete?(): void;

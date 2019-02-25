@@ -11,7 +11,7 @@ declare namespace my {
     fail?(res: any): void;
     complete?(): void;
   }
-  function navigateToMiniProgram(option: INavigateToMiniProgram): void;
+  function navigateToMiniProgram(options: INavigateToMiniProgram): void;
 
   interface INavigateBackMiniProgram {
     extraData?: Record<string, any>;
@@ -19,5 +19,5 @@ declare namespace my {
     fail?(res: any): void;
     complete?(): void;
   }
-  function navigateBackMiniProgram(option: INavigateBackMiniProgram): void;
+  function navigateBackMiniProgram(options: INavigateBackMiniProgram): void;
 }
