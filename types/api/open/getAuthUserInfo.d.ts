@@ -7,5 +7,5 @@ declare namespace my {
     fail?(): void;
     complete?(): void;
   }
-  function getAuthUserInfo(): void;
+  function getAuthUserInfo(options: IGetAuthUserInfo): void;
 }
