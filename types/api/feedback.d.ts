@@ -100,7 +100,7 @@ declare namespace my {
   /**
    * 显示消息提示框
    */
-  function showLoading(options: string | IShowLoadingOptions): Promise<void>;
+  function showLoading(options?: string | IShowLoadingOptions): Promise<void>;
 
   interface IHideLoadingOptions {
     // 页面实例, 每个页面实例有一个loading, 如果不传入该参数可能会导致loading无法取消。
