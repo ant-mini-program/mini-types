@@ -2,10 +2,10 @@
  * @file 客户端获取会员信息
  */
 declare namespace my {
-  interface IGetAuthUserInfo {
+  interface IGetAuthUserInfoOptions {
     success?(result: { nickName: string; avatar: string; }): void;
     fail?(): void;
     complete?(): void;
   }
-  function getAuthUserInfo(options: IGetAuthUserInfo): void;
+  function getAuthUserInfo(options: IGetAuthUserInfoOptions): void;
 }
