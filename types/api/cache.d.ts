@@ -19,16 +19,20 @@ declare namespace my {
 
   function setStorageSync(options: ISetStorageSyncOptions): void;
 
+  interface IGetStorageResult {
+    data: string | Record<string, any>;
+  }
+
   interface IGetStorageOptions {
     key: string;
-    success?(res: { data: string | Record<string, any>; }): void;
+    success?(res: IGetStorageResult): void;
     fail?(): void;
     complete?(): void;
   }
 
   function getStorage(option: IGetStorageOptions): void;
 
-  function getStorageSync(options: { key: string; }): void;
+  function getStorageSync(options: { key: string; }): IGetStorageResult;
 
   interface IRemoveStorageOptions {
     key: string;
