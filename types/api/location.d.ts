@@ -14,23 +14,30 @@ declare namespace my {
     longitude: number;
   }
 
-  interface IGetLocationResult extends ILocation {
-    /**
-     * 速度，浮点数，单位m/s
-     */
-    speed: number;
-
-    /**
-     * 位置的精确度
-     */
-    accuracy: number;
+  interface IGetLocationResult {
+    cityAdcode?: string;
+    countryCode?: string;
+    province?: string;
+    districtAdcode?: string;
+    pois?: Array<{ name: string; address: string; }>;
+    city?: string;
+    district?: string;
+    streetNumber?: {
+      street: string;
+      number: string;
+    };
+    country?: string;
+    bearing: string;
+    latitude: string;
+    accuracy: string;
+    longitude: string;
+    horizontalAccuracy: string;
   }
 
   interface IGetLocationOptions {
-    /**
-     * 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 `my.openLocation` 的坐标
-     */
-    type?: string;
+    cacheTimeout?: number;
+
+    type?: 0 | 1 | 2 | 3;
 
     /**
      * 接口调用成功的回调函数
