@@ -118,7 +118,7 @@ declare namespace my {
     items: string[];
     cancelButtonText?: string;
     destructiveBtnIndex: number;
-    badges: Array<{
+    badges?: Array<{
       index: number;
       type: 'none' | 'point' | 'num' | 'text' | 'more';
       text?: string;
