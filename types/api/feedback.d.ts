@@ -112,4 +112,21 @@ declare namespace my {
    * 显示消息提示框
    */
   function hideLoading(options?: IHideLoadingOptions): Promise<void>;
+
+  interface IShowActionSheetOptions {
+    title?: string;
+    items: string[];
+    cancelButtonText?: string;
+    destructiveBtnIndex: number;
+    badges: Array<{
+      index: number;
+      type: 'none' | 'point' | 'num' | 'text' | 'more';
+      text?: string;
+    }>;
+    success?(res: { index: number; }): void;
+    fail?(): void;
+    complete?(): void;
+  }
+
+  function showActionSheet(options: IShowActionSheetOptions): void;
 }
