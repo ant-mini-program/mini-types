@@ -41,7 +41,7 @@ declare namespace my {
         type?: number;
         markerId?: string;
       }>,
-    },
+    };
     setting?: {
       gestureEnable?: 0 | 1;
       showScale?: 0 | 1;
@@ -54,7 +54,12 @@ declare namespace my {
     markers?: any[];
     polylines?: any[];
     'include-points'?: any[];
-    'include-padding'?: { left?: 0; right?: 0; top?: 0; bottom?: 0; },
+    'include-padding'?: {
+      left?: 0;
+      right?: 0;
+      top?: 0;
+      bottom?: 0;
+    };
   }
 
   interface IMapContext {
