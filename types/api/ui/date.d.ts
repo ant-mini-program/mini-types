@@ -2,6 +2,12 @@
  * @file 选择日期
  */
 declare namespace my {
+  interface IDatePickerFailResult {
+    error: 11;
+  }
+  interface IDatePickerSuccessResult {
+    date: string;
+  }
   interface IDatePickerOptions {
     /**
      * 返回的日期格式
@@ -19,9 +25,9 @@ declare namespace my {
      * 最大日期时间
      */
     endDate?: string;
-    success?(result: { date: string; }): void;
-    fail?(result: { error: 11; }): void;
-    complete?(result: { error: 11; } | { date: string; }): void;
+    success?(result: IDatePickerSuccessResult): void;
+    fail?(result: IDatePickerFailResult): void;
+    complete?(result: IDatePickerFailResult | IDatePickerSuccessResult): void;
   }
   /**
    * 打开日期选择列表

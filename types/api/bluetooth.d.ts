@@ -2,27 +2,37 @@
  * @file 蓝牙
  */
 declare namespace my {
-  function openBluetoothAdapter(options?: {
+  interface IOpenBluetoothAdapterSuccessResult {
+    isSupportBLE: boolean;
+  }
+  interface IOpenBluetoothAdapterFailResult {
+    error: 12 | 13 | 14 | 15;
+  }
+  interface IOpenBluetoothAdapterOptions {
     autoClose?: boolean;
-    success?(res: { isSupportBLE: boolean; }): void;
-    fail?(res: { error: 12 | 13 | 14 | 15; }): void;
-    complete?(): void;
-  }): void;
+    success?(res: IOpenBluetoothAdapterSuccessResult): void;
+    fail?(res: IOpenBluetoothAdapterFailResult): void;
+    complete?(res: IOpenBluetoothAdapterSuccessResult | IOpenBluetoothAdapterFailResult): void;
+  }
+  function openBluetoothAdapter(options?: IOpenBluetoothAdapterOptions): void;
 
-  function closeBluetoothAdapter(options?: {
+  interface ICloseBluetoothAdapterOptions {
     success?(res: any): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function closeBluetoothAdapter(options?: ICloseBluetoothAdapterOptions): void;
 
-  function getBluetoothAdapterState(options: {
-    success?(res: {
-      discovering: boolean;
-      available: boolean;
-    }): void;
+  interface IGetBluetoothAdapterStateSuccessResult {
+    discovering: boolean;
+    available: boolean;
+  }
+  interface IGetBluetoothAdapterStateOptions {
+    success?(res: IGetBluetoothAdapterStateSuccessResult): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function getBluetoothAdapterState(options: IGetBluetoothAdapterStateOptions): void;
 
   interface IStartBluetoothDevicesDiscoveryOptions {
     services?: string[];
@@ -32,14 +42,14 @@ declare namespace my {
     fail?(res: any): void;
     complete?(res: any): void;
   }
-
   function startBluetoothDevicesDiscovery(options?: IStartBluetoothDevicesDiscoveryOptions): void;
 
-  function stopBluetoothDevicesDiscovery(options?: {
+  interface IStopBluetoothDevicesDiscoveryOptions {
     success?(res: any): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function stopBluetoothDevicesDiscovery(options?: IStopBluetoothDevicesDiscoveryOptions): void;
 
   interface IBluetoothDevice {
     name: string;
@@ -51,36 +61,41 @@ declare namespace my {
     manufacturerData: string;
   }
 
-  function getBluetoothDevices(options: {
-    success?(res: {
-      devices: IBluetoothDevice[];
-    }): void;
+  interface IGetBluetoothDevicesSuccessResult {
+    devices: IBluetoothDevice[];
+  }
+  interface IGetBluetoothDevicesOptions {
+    success?(res: IGetBluetoothDevicesSuccessResult): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function getBluetoothDevices(options: IGetBluetoothDevicesOptions): void;
 
-  function getConnectedBluetoothDevices(options: {
+  interface IGetConnectedBluetoothDevicesOptions {
     services?: string[];
     success?(res: { devices: IBluetoothDevice[]; }): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function getConnectedBluetoothDevices(options: IGetConnectedBluetoothDevicesOptions): void;
 
-  function connectBLEDevice(options: {
+  interface IConnectBLEDeviceOptions {
     deviceId: string;
     success?(res: any): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function connectBLEDevice(options: IConnectBLEDeviceOptions): void;
 
-  function disconnectBLEDevice(options: {
+  interface IDisconnectBLEDeviceOptions {
     deviceId: string;
     success?(res: any): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function disconnectBLEDevice(options: IDisconnectBLEDeviceOptions): void;
 
-  function writeBLECharacteristicValue(options: {
+  interface IWriteBLECharacteristicValueOptions {
     deviceId: string;
     serviceId: string;
     characteristicId: string;
@@ -88,26 +103,27 @@ declare namespace my {
     success?(res: any): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function writeBLECharacteristicValue(options: IWriteBLECharacteristicValueOptions): void;
 
-  function readBLECharacteristicValue(options: {
+  interface IReadBLECharacteristicValueSuccessResult {
+    characteristic: {
+      characteristicId: string;
+      serviceId: string;
+      value: string;
+    };
+  }
+  interface IReadBLECharacteristicValueOptions {
     deviceId: string;
     serviceId: string;
     characteristicId: string;
-    success?(
-      res: {
-        characteristic: {
-          characteristicId: string;
-          serviceId: string;
-          value: string;
-        };
-      },
-    ): void;
+    success?(res: IReadBLECharacteristicValueSuccessResult): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function readBLECharacteristicValue(options: IReadBLECharacteristicValueOptions): void;
 
-  function notifyBLECharacteristicValueChange(options: {
+  interface INotifyBLECharacteristicValueChangeOptions {
     deviceId: string;
     serviceId: string;
     characteristicId: string;
@@ -116,21 +132,22 @@ declare namespace my {
     success?(res: any): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function notifyBLECharacteristicValueChange(options: INotifyBLECharacteristicValueChangeOptions): void;
 
-  function getBLEDeviceServices(options: {
+  interface IGetBLEDeviceServicesSuccessResult {
+    services: Array<{ serviceId: string; isPrimary: boolean; }>;
+  }
+  interface IGetBLEDeviceServicesOptions {
     deviceId: string;
-    success?(res: {
-      services: Array<{ serviceId: string; isPrimary: boolean; }>;
-    }): void;
+    success?(res: IGetBLEDeviceServicesSuccessResult): void;
     fail?(): void;
     complete?(): void;
-  }): void;
+  }
+  function getBLEDeviceServices(options: IGetBLEDeviceServicesOptions): void;
 
-  function getBLEDeviceCharacteristics(options: {
-    deviceId: string;
-    serviceId: string;
-    success?(res: { characteristics: Array<{
+  interface IGetBLEDeviceCharacteristicsSuccessResult {
+    characteristics: Array<{
       characteristicId: string;
       serviceId: string;
       value: string;
@@ -140,37 +157,47 @@ declare namespace my {
         notify: boolean;
         indicate: boolean;
       };
-    }>; }): void;
+    }>;
+  }
+  interface IGetBLEDeviceCharacteristicsOptions {
+    deviceId: string;
+    serviceId: string;
+    success?(res: IGetBLEDeviceCharacteristicsSuccessResult): void;
     fail?(res: any): void;
     complete?(res: any): void;
-  }): void;
+  }
+  function getBLEDeviceCharacteristics(options: IGetBLEDeviceCharacteristicsOptions): void;
 
-  function onBluetoothDeviceFound(callback: (res: {
+  interface IOnBluetoothDeviceFoundEvent {
     devices: IBluetoothDevice[];
-  }) => void): void;
+  }
+  function onBluetoothDeviceFound(callback: (res: IOnBluetoothDeviceFoundEvent) => void): void;
 
   function offBluetoothDeviceFound(): void;
 
-  function onBLECharacteristicValueChange(callback: (res: {
+  interface IOnBLECharacteristicValueChangeEvent {
     deviceId: string;
     serviceId: string;
     characteristicId: string;
     value: string;
-  }) => void): void;
+  }
+  function onBLECharacteristicValueChange(callback: (res: IOnBLECharacteristicValueChangeEvent) => void): void;
 
   function offBLECharacteristicValueChange(): void;
 
-  function onBLEConnectionStateChanged(callback: (res: {
+  interface IOnBLEConnectionStateChangedEvent {
     deviceId: string;
     connected: string;
-  }) => void): void;
+  }
+  function onBLEConnectionStateChanged(callback: (res: IOnBLEConnectionStateChangedEvent) => void): void;
 
   function offBLEConnectionStateChanged(): void;
 
-  function onBluetoothAdapterStateChange(callback: (res: {
+  interface IOnBluetoothAdapterStateChangeEvent {
     available: boolean;
     discovering: boolean;
-  }) => void): void;
+  }
+  function onBluetoothAdapterStateChange(callback: (res: IOnBluetoothAdapterStateChangeEvent) => void): void;
 
   function offBluetoothAdapterStateChange(): void;
 }

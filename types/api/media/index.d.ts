@@ -2,7 +2,7 @@
  * @file 多媒体
  */
 declare namespace my {
-  interface IChooseImageResult {
+  interface IChooseImageSuccessResult {
     /**
      * 本地文件路径列表
      */
@@ -28,7 +28,7 @@ declare namespace my {
     /**
      * 成功则返回图片的本地文件路径列表 tempFilePaths
      */
-    success?: (res?: IChooseImageResult) => void;
+    success?: (res?: IChooseImageSuccessResult) => void;
 
     fail?(): void;
 
@@ -63,7 +63,7 @@ declare namespace my {
    */
   function previewImage(options: IPreviewImageOptions): void;
 
-  interface IGetImageInfoResult {
+  interface IGetImageInfoSuccessResult {
     /**
      * 图片宽度，单位px
      */
@@ -84,7 +84,7 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数，包含图片信息
      */
-    success?: (res?: IGetImageInfoResult) => void;
+    success?: (res?: IGetImageInfoSuccessResult) => void;
 
     fail?(): void;
 

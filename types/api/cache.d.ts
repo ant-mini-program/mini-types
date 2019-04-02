@@ -19,20 +19,23 @@ declare namespace my {
 
   function setStorageSync(options: ISetStorageSyncOptions): void;
 
-  interface IGetStorageResult {
+  interface IGetStorageSuccessResult {
     data: string | Record<string, any>;
   }
 
   interface IGetStorageOptions {
     key: string;
-    success?(res: IGetStorageResult): void;
+    success?(res: IGetStorageSuccessResult): void;
     fail?(): void;
     complete?(): void;
   }
 
   function getStorage(option: IGetStorageOptions): void;
 
-  function getStorageSync(options: { key: string; }): IGetStorageResult;
+  interface IGetStorageSyncOptions {
+    key: string;
+  }
+  function getStorageSync(options: IGetStorageSyncOptions): IGetStorageSuccessResult;
 
   interface IRemoveStorageOptions {
     key: string;
@@ -43,7 +46,10 @@ declare namespace my {
 
   function removeStorage(options: IRemoveStorageOptions): void;
 
-  function removeStorageSync(options: { key: string; }): void;
+  interface IRemoveStorageSyncOptions {
+    key: string;
+  }
+  function removeStorageSync(options: IRemoveStorageSyncOptions): void;
 
   function clearStorage(): void;
 
@@ -54,12 +60,12 @@ declare namespace my {
     currentSize: string;
     limitSize: string;
   }
-
-  function getStorageInfo(options: {
+  interface IGetStorageInfoOptions {
     success?(res: IStorageInfo): void;
     fail?(): void;
     complete?(): void;
-  }): void;
+  }
+  function getStorageInfo(options: IGetStorageInfoOptions): void;
 
   function getStorageInfoSync(): IStorageInfo;
 }

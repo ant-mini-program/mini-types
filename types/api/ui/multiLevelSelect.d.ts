@@ -9,7 +9,7 @@ declare namespace my {
     list: MultiLevelSelectOptionsList;
     success?(result: MultiLevelSelectSuccessResult): void;
     fail?(): void;
-    complete?(): void;
+    complete?(result?: MultiLevelSelectSuccessResult): void;
   }
   /**
    * 级联选择功能主要使用在于多级关联数据选择，比如说省市区的信息选择。

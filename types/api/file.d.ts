@@ -2,7 +2,7 @@
  * @file 文件
  */
 declare namespace my {
-  interface ISaveFileResult {
+  interface ISaveFileSuccessResult {
     /**
      * 文件的保存路径
      */
@@ -18,7 +18,7 @@ declare namespace my {
     /**
      * 返回文件的保存路径，res = {savedFilePath: '文件的保存路径'}
      */
-    success?: (res?: ISaveFileResult) => void;
+    success?: (res?: ISaveFileSuccessResult) => void;
 
     fail?(): void;
 
@@ -47,7 +47,7 @@ declare namespace my {
     size: number;
   }
 
-  interface IGetSavedFileListResult {
+  interface IGetSavedFileListSuccessResult {
     /**
      * 接口调用结果
      */
@@ -63,7 +63,7 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?: (res?: IGetSavedFileListResult) => void;
+    success?: (res?: IGetSavedFileListSuccessResult) => void;
 
     fail?(): void;
 
@@ -75,7 +75,7 @@ declare namespace my {
    */
   function getSavedFileList(options: IGetSavedFileListOptions): void;
 
-  interface IGetSavedFileInfoResult {
+  interface IGetSavedFileInfoSuccessResult {
     /**
      * 接口调用结果
      */
@@ -101,7 +101,7 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?: (res?: IGetSavedFileInfoResult) => void;
+    success?: (res?: IGetSavedFileInfoSuccessResult) => void;
 
     fail?(): void;
 

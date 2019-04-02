@@ -2,6 +2,10 @@
  * @file 选择城市
  */
 declare namespace my {
+  interface IChooseCitySuccessResult {
+    city: string;
+    adCode: string;
+  }
   interface IChooseCityOptions {
     /**
      * 是否显示当前定位城市，默认 false
@@ -19,9 +23,9 @@ declare namespace my {
      * 自定义热门城市列表
      */
     hotCities?: Array<{ city: string; adCode: string; spell: string; }>;
-    success?(result: { city: string; adCode: string; }): void;
+    success?(result: IChooseCitySuccessResult): void;
     fail?(): void;
-    complete?(): void;
+    complete?(res?: IChooseCitySuccessResult): void;
   }
   /**
    * 打开城市选择列表。

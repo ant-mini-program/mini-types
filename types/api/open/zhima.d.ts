@@ -2,9 +2,15 @@
  * @file 芝麻认证
  */
 declare namespace my {
+  interface IStartZMVerifySuccessResult {
+    token: string;
+    passed: string;
+    reason?: string;
+  }
+
   interface IStartZMVerifyOptions {
     bizNo: string;
-    success?(res: { token: string; passed: string; reason?: string; }): void;
+    success?(res: IStartZMVerifySuccessResult): void;
     fail?(res: any): void;
     complete?(): void;
   }

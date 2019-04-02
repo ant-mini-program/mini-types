@@ -14,7 +14,7 @@ declare namespace my {
     longitude: number;
   }
 
-  interface IGetLocationResult {
+  interface IGetLocationSuccessResult {
     cityAdcode?: string;
     countryCode?: string;
     province?: string;
@@ -42,7 +42,7 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?: (res?: IGetLocationResult) => void;
+    success?: (res?: IGetLocationSuccessResult) => void;
 
     fail?(): void;
 

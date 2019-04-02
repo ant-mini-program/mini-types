@@ -7,25 +7,34 @@ declare namespace my {
    */
   function openCardList(): void;
 
+  interface IOpenMerchantCardListOptions {
+    partnerId: string;
+  }
   /**
    * 打开当前用户的某个商户的卡列表
    */
-  function openMerchantCardList(params: { partnerId: string; }): void;
+  function openMerchantCardList(params: IOpenMerchantCardListOptions): void;
 
+  interface IOpenCardDetailOptions {
+    passId: string;
+  }
   /**
    * 打开当前用户的某张卡的详情页
    */
-  function openCardDetail(params: { passId: string; }): void;
+  function openCardDetail(params: IOpenCardDetailOptions): void;
 
   /**
    * 打开支付宝券列表
    */
   function openVoucherList(): void;
 
+  interface IOpenMerchantVoucherListOptions {
+    partnerId: string;
+  }
   /**
    * 打开当前用户的某个商户的券列表
    */
-  function openMerchantVoucherList(params: { partnerId: string; }): void;
+  function openMerchantVoucherList(params: IOpenMerchantVoucherListOptions): void;
 
   type OpenDetailOptions = {
     passId: string;
@@ -78,7 +87,7 @@ declare namespace my {
     url: string;
     success?(res: AddCardAuthSuccessResult): void;
     fail?(): void;
-    complete?(): void;
+    complete?(res?: AddCardAuthSuccessResult): void;
   }
   function addCardAuth(options: IAddCardAuthOptions): void;
 }

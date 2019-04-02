@@ -2,7 +2,7 @@
  * @file 系统信息
  */
 declare namespace my {
-  interface IGetSystemInfoResult {
+  interface IGetSystemInfoSuccessResult {
     /**
      * 用户设置字体大小
      */
@@ -73,7 +73,7 @@ declare namespace my {
     /**
      * 接口调用成功的回调
      */
-    success?(res?: IGetSystemInfoResult): void;
+    success?(res?: IGetSystemInfoSuccessResult): void;
     fail?(): void;
     complete?(): void;
   }
@@ -83,5 +83,5 @@ declare namespace my {
    */
   function getSystemInfo(options: IGetSystemInfoOptions): void;
 
-  function getSystemInfoSync(): IGetSystemInfoResult;
+  function getSystemInfoSync(): IGetSystemInfoSuccessResult;
 }

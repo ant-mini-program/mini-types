@@ -3,12 +3,21 @@
  */
 declare namespace my {
   type TextRiskIdentificationType = 'keyword' | '0' | '1' | '2' | '3';
-  interface ITextRiskIdentification {
+  interface ITextRiskIdentificationSuccessResult {
+    type: TextRiskIdentificationType;
+    hitKeywords?: string[];
+    score: string;
+  }
+  interface ITextRiskIdentificationFailResult {
+    error: string;
+    errorMessage: string;
+  }
+  interface ITextRiskIdentificationOptions {
     content: string;
     type: TextRiskIdentificationType[];
-    success?(res: { type: TextRiskIdentificationType; hitKeywords?: string[]; score: string; }): void;
-    fail?(res: { error: string; errorMessage: string; }): void;
+    success?(res: ITextRiskIdentificationSuccessResult): void;
+    fail?(res: ITextRiskIdentificationFailResult): void;
     complete?(): void;
   }
-  function textRiskIdentification(): void;
+  function textRiskIdentification(options: ITextRiskIdentificationOptions): void;
 }

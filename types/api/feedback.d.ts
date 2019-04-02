@@ -113,6 +113,9 @@ declare namespace my {
    */
   function hideLoading(options?: IHideLoadingOptions): Promise<void>;
 
+  interface IShowActionSheetSuccessResult {
+    index: number;
+  }
   interface IShowActionSheetOptions {
     title?: string;
     items: string[];
@@ -123,10 +126,9 @@ declare namespace my {
       type: 'none' | 'point' | 'num' | 'text' | 'more';
       text?: string;
     }>;
-    success?(res: { index: number; }): void;
+    success?(res: IShowActionSheetSuccessResult): void;
     fail?(): void;
-    complete?(): void;
+    complete?(res?: IShowActionSheetSuccessResult): void;
   }
-
   function showActionSheet(options: IShowActionSheetOptions): void;
 }

@@ -2,8 +2,12 @@
  * @file 客户端获取会员信息
  */
 declare namespace my {
+  interface IGetAuthUserInfoSuccessResult {
+    nickName: string;
+    avatar: string;
+  }
   interface IGetAuthUserInfoOptions {
-    success?(result: { nickName: string; avatar: string; }): void;
+    success?(result: IGetAuthUserInfoSuccessResult): void;
     fail?(): void;
     complete?(): void;
   }

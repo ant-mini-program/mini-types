@@ -18,25 +18,29 @@ declare namespace my {
     extended_info?: string;
   }
 
+  interface IPreventCheatSuccessResult {
+    riskResult: {
+      riskinfo_anticheat_common: 'rank0' | 'rank1' | 'rank2' | 'rank3';
+      riskinfo_anticheat_common_infocode: 171;
+    };
+    riskResultDesc: string;
+    uniqueId: string;
+  }
+
+  interface IPreventCheatFailResult {
+    error: 'serviceNoAuth' | 'riskTypeNoAuth' | 'bizContentEmpty'
+      | 'paramMissingError' | 'param error' | 'SYSTEM_OUT_ERROR'
+      | 'INVALID_PARAMETER' | 'OVER_LIMIT';
+    errorMessage: string;
+  }
+
   interface IPreventCheatOptions {
     pid: string;
     appId: string;
     biz_context: IPreventCheatBizContext;
-    success?(res: {
-      riskResult: {
-        riskinfo_anticheat_common: 'rank0' | 'rank1' | 'rank2' | 'rank3';
-        riskinfo_anticheat_common_infocode: 171;
-      };
-      riskResultDesc: string;
-      uniqueId: string;
-    }): void;
-    fail?(res: {
-      error: 'serviceNoAuth' | 'riskTypeNoAuth' | 'bizContentEmpty'
-        | 'paramMissingError' | 'param error' | 'SYSTEM_OUT_ERROR'
-        | 'INVALID_PARAMETER' | 'OVER_LIMIT';
-      errorMessage: string;
-    }): void;
-    complete?(): void;
+    success?(res: IPreventCheatSuccessResult): void;
+    fail?(res: IPreventCheatFailResult): void;
+    complete?(res: IPreventCheatFailResult | IPreventCheatSuccessResult): void;
   }
 
   namespace ap {

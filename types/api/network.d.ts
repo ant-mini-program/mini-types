@@ -22,7 +22,7 @@ declare namespace my {
 
   function httpRequest(options: IHttpRequestOptions): void;
 
-  interface IUploadFileResult {
+  interface IUploadFileSuccessResult {
     /**
      * 开发者服务器返回的数据
      */
@@ -73,7 +73,7 @@ declare namespace my {
     /**
      * 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
      */
-    success?: (res?: IUploadFileResult) => void;
+    success?: (res?: IUploadFileSuccessResult) => void;
 
     fail?(res: { error: 11 | 12 | 13 }): void;
 
@@ -87,7 +87,7 @@ declare namespace my {
    */
   function uploadFile(options: IUploadFileOptions): void;
 
-  interface IDownloadFileResult {
+  interface IDownloadFileSuccessResult {
     /**
      * 文件的临时路径
      */
@@ -108,7 +108,7 @@ declare namespace my {
     /**
      * 下载成功后以 tempFilePath 的形式传给页面，res = {tempFilePath: '文件的临时路径'}
      */
-    success?: (res?: IDownloadFileResult) => void;
+    success?: (res?: IDownloadFileSuccessResult) => void;
 
     fail?(res: { error: 12 | 13 }): void;
 

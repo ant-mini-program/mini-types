@@ -8,5 +8,5 @@ declare namespace my {
   /**
    * 跳转到指定 tabBar 页面，并关闭其他所有非 tabBar 页面。
    */
-  function switchTab(): void;
+  function switchTab(options: ISwitchTabOptions): void;
 }

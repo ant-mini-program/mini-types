@@ -2,6 +2,7 @@
  * @file 添加手机联系人
  */
 declare namespace my {
+  type AddPhoneContactSuccessResult = { success: true } | { error: 11 | 3; errorMessage: string; };
   interface IAddPhoneContactOptions {
     photoFilePath?: string;
     nickName?: string;
@@ -35,9 +36,9 @@ declare namespace my {
     homeAddressCity?: string;
     homeAddressStreet?: string;
     homeAddressPostalCode?: string;
-    success?(res: { success: true } | { error: 11 | 3; errorMessage: string; }): void;
+    success?(res: AddPhoneContactSuccessResult): void;
     fail?(): void;
-    complete?(): void;
+    complete?(res?: AddPhoneContactSuccessResult): void;
   }
 
   /**

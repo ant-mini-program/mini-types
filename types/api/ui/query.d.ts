@@ -54,8 +54,11 @@ declare namespace my {
     exec(callback: (result: Array<BoundingClientRectResult | IScrollOffsetResult | null>) => {}): void;
   }
 
+  interface ICreateSelectorQueryOptions {
+    page: string;
+  }
   /**
    * 获取一个节点查询对象 SelectorQuery
    */
-  function createSelectorQuery(params?: { page: string; }): ISelectorQuerySelectMethod;
+  function createSelectorQuery(params?: ICreateSelectorQueryOptions): ISelectorQuerySelectMethod;
 }

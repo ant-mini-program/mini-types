@@ -2,11 +2,12 @@
  * @file 自定义通用菜单
  */
 declare namespace my {
-  function hideShareMenu(options?: {
+  interface IHideShareMenuOptions {
     success?(): void;
     fail?(): void;
     complete?(): void;
-  }): void;
+  }
+  function hideShareMenu(options?: IHideShareMenuOptions): void;
 
   function hideAddToDesktopMenu(): void;
 
