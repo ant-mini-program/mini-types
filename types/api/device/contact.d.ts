@@ -19,7 +19,6 @@ declare namespace my {
     errorMessage: string;
   };
   interface IAddPhoneContactOptions {
-
     /**
      * 头像本地文件路径
      */

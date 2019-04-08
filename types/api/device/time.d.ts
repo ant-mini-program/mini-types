@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IGetServerTimeSuccessResult {
-
     /**
      * 服务器时间的毫秒数
      */
@@ -11,7 +10,6 @@ declare namespace my {
   }
 
   interface IGetServerTimeOptions {
-
     /**
      * 调用成功的回调函数
      * @param res

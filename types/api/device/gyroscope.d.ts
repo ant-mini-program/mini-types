@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IOnGyroscopeChangeEvent {
-
     /**
      * x轴方向角速度
      */

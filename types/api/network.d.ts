@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IHttpRequestSuccessResult {
-
     /**
      * 响应数据，格式取决于请求时的 dataType 参数
      */
@@ -28,7 +27,6 @@ declare namespace my {
   }
 
   interface IHttpRequestOptions {
-
     /**
      * 目标服务器url
      */
@@ -168,7 +166,6 @@ declare namespace my {
   }
 
   interface IDownloadFileFailResult {
-
     /**
      * - 12：下载失败
      * - 13：没有权限
@@ -332,7 +329,6 @@ declare namespace my {
   ): void;
 
   interface ICloseSocketOptions {
-
     /**
      * 回调函数
      */

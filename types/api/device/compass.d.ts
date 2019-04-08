@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IOnCompassChangeEvent {
-
     /**
      * 面对的方向与正北方向的度数[0,360)
      */

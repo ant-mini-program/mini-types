@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IMakePhoneCallOptions {
-
     /**
      * 电话号码
      */

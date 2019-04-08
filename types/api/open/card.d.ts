@@ -8,7 +8,6 @@ declare namespace my {
   function openCardList(): void;
 
   interface IOpenMerchantCardListOptions {
-
     /**
      * 商户编号
      */
@@ -21,7 +20,6 @@ declare namespace my {
   function openMerchantCardList(params: IOpenMerchantCardListOptions): void;
 
   interface IOpenCardDetailOptions {
-
     /**
      * 卡实例Id
      *
@@ -46,7 +44,6 @@ declare namespace my {
   function openVoucherList(): void;
 
   interface IOpenMerchantVoucherListOptions {
-
     /**
      * 商户编号
      */
@@ -171,7 +168,6 @@ declare namespace my {
   };
 
   interface IAddCardAuthOptions {
-
     /**
      * 开卡授权的页面地址，从  alipay.marketing.card.activateurl.apply接口获取
      */

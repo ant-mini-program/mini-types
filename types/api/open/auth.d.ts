@@ -5,7 +5,6 @@ declare namespace my {
   type GetAuthCodeOptionsScope = 'auth_base' | 'auth_user' | 'auth_zhima';
 
   interface IGetAuthCodeSuccessResult {
-
     /**
      * 授权码
      */
@@ -23,7 +22,6 @@ declare namespace my {
   }
 
   interface IGetAuthCodeOptions {
-
     /**
      * 授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权） / auth_zhima（芝麻信用）
      */

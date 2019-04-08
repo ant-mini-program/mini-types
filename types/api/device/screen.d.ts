@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface ISetKeepScreenOnOptions {
-
     /**
      * 是否保持屏幕长亮状态
      */
@@ -31,7 +30,6 @@ declare namespace my {
   function setKeepScreenOn(options: ISetKeepScreenOnOptions): void;
 
   interface IGetScreenBrightnessOptions {
-
     /**
      * 接口调用成功的回调函数
      */
@@ -54,7 +52,6 @@ declare namespace my {
   function getScreenBrightness(options: IGetScreenBrightnessOptions): void;
 
   interface ISetScreenBrightnessOptions {
-
     /**
      * 需要设置的屏幕亮度，取值范围0-1
      */

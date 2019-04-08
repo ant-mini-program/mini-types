@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IStartBeaconDiscoveryOptions {
-
     /**
      * 目标 iBeacon 设备广播的 uuids
      */
@@ -36,7 +35,6 @@ declare namespace my {
   function startBeaconDiscovery(options: IStartBeaconDiscoveryOptions): void;
 
   interface IStopBeaconDiscoveryOptions {
-
     /**
      * 调用成功的回调函数
      */
@@ -59,7 +57,6 @@ declare namespace my {
   function stopBeaconDiscovery(options: IStopBeaconDiscoveryOptions): void;
 
   interface IIBeacon {
-
     /**
      * iBeacon 设备广播的 uuid
      */
@@ -92,7 +89,6 @@ declare namespace my {
   }
 
   interface IGetBeaconsSuccessResult {
-
     /**
      * iBeacon 设备列表
      */
@@ -110,7 +106,6 @@ declare namespace my {
   }
 
   interface IGetBeaconsOptions {
-
     /**
      * 调用成功的回调函数
      */
@@ -136,7 +131,6 @@ declare namespace my {
   function getBeacons(options: IGetBeaconsOptions): void;
 
   interface IOnBeaconUpdateSuccessResult {
-
     /**
      * 当前搜寻到的所有 iBeacon 设备列表
      */
@@ -152,7 +146,6 @@ declare namespace my {
   function onBeaconUpdate(options: IOnBeaconUpdateOptions): void;
 
   interface IOnBeaconServiceChangeSuccessResult {
-
     /**
      * 服务目前是否可用
      */

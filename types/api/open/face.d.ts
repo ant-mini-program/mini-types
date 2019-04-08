@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IFaceVerifySuccessResult {
-
     /**
      * 刷脸认证标识
      */
@@ -51,7 +50,6 @@ declare namespace my {
   }
 
   interface IFaceVerifyOptions {
-
     /**
      * 业务流水号，需要保证唯一性，不超过64位
      */

@@ -4,7 +4,6 @@
 
 declare namespace my {
   interface IImgRiskOptions {
-
     /**
      * 小程序的开放平台账号
      */
@@ -48,7 +47,6 @@ declare namespace my {
   }
 
   interface IImgRiskFailResult {
-
     /**
      * 识别错误码
      */
@@ -61,7 +59,6 @@ declare namespace my {
   }
 
   interface IImgRiskSuccessResult {
-
     /**
      * 图片风险识别的任务的任务ID。
      *
@@ -83,7 +80,6 @@ declare namespace my {
   }
 
   interface IImgRiskCallbackSuccessResult {
-
     /**
      * 图片风险识别的任务的任务ID
      *
@@ -111,7 +107,6 @@ declare namespace my {
   }
 
   interface IImgRiskCallbackFailResult {
-
     /**
      * 识别错误码
      */
@@ -133,7 +128,6 @@ declare namespace my {
   }
 
   interface IImgRiskCallbackOptions {
-
     /**
      * 小程序的开放平台账号
      */

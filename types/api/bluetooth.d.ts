@@ -361,7 +361,6 @@ declare namespace my {
   function disconnectBLEDevice(options: IDisconnectBLEDeviceOptions): void;
 
   interface IWriteBLECharacteristicValueOptions {
-
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -410,7 +409,6 @@ declare namespace my {
   function writeBLECharacteristicValue(options: IWriteBLECharacteristicValueOptions): void;
 
   interface IReadBLECharacteristicValueSuccessResult {
-
     /**
      * 设备特征值信息
      */
@@ -433,7 +431,6 @@ declare namespace my {
     };
   }
   interface IReadBLECharacteristicValueOptions {
-
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -478,7 +475,6 @@ declare namespace my {
   function readBLECharacteristicValue(options: IReadBLECharacteristicValueOptions): void;
 
   interface INotifyBLECharacteristicValueChangeOptions {
-
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -532,7 +528,6 @@ declare namespace my {
   function notifyBLECharacteristicValueChange(options: INotifyBLECharacteristicValueChangeOptions): void;
 
   interface IGetBLEDeviceServicesSuccessResult {
-
     /**
      * 设备service 对象列表，详见下表特征值信息
      */
@@ -551,7 +546,6 @@ declare namespace my {
   }
 
   interface IGetBLEDeviceServicesOptions {
-
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -584,7 +578,6 @@ declare namespace my {
   function getBLEDeviceServices(options: IGetBLEDeviceServicesOptions): void;
 
   interface IGetBLEDeviceCharacteristicsSuccessResult {
-
     /**
      * 设备特征值列
      */
@@ -634,7 +627,6 @@ declare namespace my {
   }
 
   interface IGetBLEDeviceCharacteristicsOptions {
-
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -672,7 +664,6 @@ declare namespace my {
   function getBLEDeviceCharacteristics(options: IGetBLEDeviceCharacteristicsOptions): void;
 
   interface IOnBluetoothDeviceFoundEvent {
-
     /**
      * 新搜索到的设备列表
      */
@@ -700,7 +691,6 @@ declare namespace my {
   function offBluetoothDeviceFound(): void;
 
   interface IOnBLECharacteristicValueChangeEvent {
-
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -735,7 +725,6 @@ declare namespace my {
   function offBLECharacteristicValueChange(): void;
 
   interface IOnBLEConnectionStateChangedEvent {
-
     /**
      * 蓝牙设备 id，参考 device 对象
      */
@@ -766,7 +755,6 @@ declare namespace my {
   function offBLEConnectionStateChanged(): void;
 
   interface IOnBluetoothAdapterStateChangeEvent {
-
     /**
      * 蓝牙模块是否可用
      */

@@ -147,7 +147,6 @@ declare namespace my {
   function getImageInfo(options: IGetImageInfoOptions): void;
 
   interface ISaveImageOptions {
-
     /**
      * 要保存的图片链接
      */
@@ -182,7 +181,6 @@ declare namespace my {
   function saveImage(options: ISaveImageOptions): void;
 
   interface ICompressImageOptions {
-
     /**
      * 要压缩的图片地址数组
      */

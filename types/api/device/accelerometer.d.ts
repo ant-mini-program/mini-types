@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IOnAccelerometerChangeEvent {
-
     /**
      * X 轴
      */

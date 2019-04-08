@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IGetSystemInfoSuccessResult {
-
     /**
      * 用户设置字体大小
      */
@@ -93,7 +92,6 @@ declare namespace my {
   }
 
   interface IGetSystemInfoOptions {
-
     /**
      * 接口调用成功的回调
      */

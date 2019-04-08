@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IHideShareMenuOptions {
-
     /**
      * 调用成功的回调函数
      */

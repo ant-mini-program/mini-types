@@ -10,7 +10,6 @@
 
 declare namespace my {
   interface ISetStorageOptions {
-
     /**
      * 缓存数据的key
      */
@@ -49,7 +48,6 @@ declare namespace my {
   function setStorage(options: ISetStorageOptions): void;
 
   interface ISetStorageSyncOptions {
-
     /**
      * 缓存数据的key
      */
@@ -69,7 +67,6 @@ declare namespace my {
   function setStorageSync(options: ISetStorageSyncOptions): void;
 
   interface IGetStorageSuccessResult {
-
     /**
      * key对应的内容
      */
@@ -77,7 +74,6 @@ declare namespace my {
   }
 
   interface IGetStorageOptions {
-
     /**
      * 缓存数据的key
      */
@@ -109,7 +105,6 @@ declare namespace my {
   function getStorage(option: IGetStorageOptions): void;
 
   interface IGetStorageSyncOptions {
-
     /**
      * 缓存数据的key
      */
@@ -124,7 +119,6 @@ declare namespace my {
   function getStorageSync(options: IGetStorageSyncOptions): IGetStorageSuccessResult;
 
   interface IRemoveStorageOptions {
-
     /**
      * 缓存数据的key
      */
@@ -156,7 +150,6 @@ declare namespace my {
   function removeStorage(options: IRemoveStorageOptions): void;
 
   interface IRemoveStorageSyncOptions {
-
     /**
      * 缓存数据的key
      */
@@ -183,7 +176,6 @@ declare namespace my {
   function clearStorageSync(): void;
 
   interface IStorageInfo {
-
     /**
      * 当前storage中所有的key
      */
@@ -200,7 +192,6 @@ declare namespace my {
     limitSize: string;
   }
   interface IGetStorageInfoOptions {
-
     /**
      * 调用成功的回调函数
      */

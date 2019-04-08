@@ -4,7 +4,6 @@
 
 declare namespace my {
   interface INsfSuccessResult {
-
     /**
      * 风险识别结果：
      * - riskinfo_nsf_common—风险评级结果 rank0 提供信息不足，提供参数信息有误，或提供的支付宝账号不存在
@@ -35,7 +34,6 @@ declare namespace my {
   }
 
   interface INsfFailResult {
-
     /**
      * 识别错误码
      */
@@ -57,7 +55,6 @@ declare namespace my {
   }
 
   interface INsfOptions {
-
     /**
      * 小程序的开放平台账号
      */

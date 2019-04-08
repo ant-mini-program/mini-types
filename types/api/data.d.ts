@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IRSASuccessResult {
-
     /**
      * 经过处理过后得到的文本，加密为Base64编码文本，解密为原始文本
      */
@@ -11,7 +10,6 @@ declare namespace my {
   }
 
   interface IRSAFailResult {
-
     /**
      * - 10：参数错误
      * - 11：key错误
@@ -20,7 +18,6 @@ declare namespace my {
   }
 
   interface IRSAOptions {
-
     /**
      * 使用rsa加密还是rsa解密，encrypt加密，decrypt解密
      */

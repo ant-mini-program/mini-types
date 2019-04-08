@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface ISaveFileSuccessResult {
-
     /**
      * 文件的保存路径
      */
@@ -11,7 +10,6 @@ declare namespace my {
   }
 
   interface ISaveFileOptions {
-
     /**
      * 需要保存的文件的临时路径
      */
@@ -56,7 +54,6 @@ declare namespace my {
   }
 
   interface IGetSavedFileListSuccessResult {
-
     /**
      * 接口调用结果
      */
@@ -69,7 +66,6 @@ declare namespace my {
   }
 
   interface IGetSavedFileListOptions {
-
     /**
      * 接口调用成功的回调函数
      */
@@ -92,7 +88,6 @@ declare namespace my {
   function getSavedFileList(options: IGetSavedFileListOptions): void;
 
   interface IGetSavedFileInfoSuccessResult {
-
     /**
      * 接口调用结果
      */

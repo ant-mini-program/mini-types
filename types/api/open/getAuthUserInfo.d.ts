@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IGetAuthUserInfoSuccessResult {
-
     /**
      * 用户昵称
      */
@@ -16,7 +15,6 @@ declare namespace my {
   }
 
   interface IGetAuthUserInfoOptions {
-
     /**
      * 调用成功的回调函数
      *

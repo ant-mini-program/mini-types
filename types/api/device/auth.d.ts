@@ -6,7 +6,6 @@ declare namespace my {
     | 'PHOTO' | 'NOTIFICATION' | 'SELFSTARTING' | 'LBSSERVICE' | 'LBS';
 
   interface IShowAuthGuideOptions {
-
     /**
      * 引导的权限标识，用于标识该权限类型(如 LBS)
      *

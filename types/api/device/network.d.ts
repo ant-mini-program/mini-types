@@ -5,7 +5,6 @@ declare namespace my {
   type INetworkType = 'UNKNOWN' | 'NOTREACHABLE' | 'WIFI' | '3G' | '2G' | '4G' | 'WWAN';
 
   interface IGetNetworkTypeSuccessResult {
-
     /**
      * 网络是否可用
      */
@@ -18,7 +17,6 @@ declare namespace my {
   }
 
   interface IGetNetworkTypeOptions {
-
     /**
      * 调用成功的回调函数
      */
@@ -43,7 +41,6 @@ declare namespace my {
   function getNetworkType(options: IGetNetworkTypeOptions): void;
 
   interface IOnNetworkStatusChangeEvent {
-
     /**
      * 网络是否可用
      */

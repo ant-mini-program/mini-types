@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IPreventCheatBizContext {
-
     /**
      * 合作伙伴匹配服务类型
      */
@@ -75,7 +74,6 @@ declare namespace my {
   }
 
   interface IPreventCheatSuccessResult {
-
     /**
      * 风险识别结果：
      *
@@ -110,7 +108,6 @@ declare namespace my {
   }
 
   interface IPreventCheatFailResult {
-
     /**
      * 识别错误码
      */
@@ -132,7 +129,6 @@ declare namespace my {
   }
 
   interface IPreventCheatOptions {
-
     /**
      * 小程序的开放平台账号
      */

@@ -15,7 +15,6 @@ declare namespace my {
   }
 
   interface IGetLocationSuccessResult {
-
     /**
      * 城市级别的地区代码(type>0生效)
      */
@@ -97,7 +96,6 @@ declare namespace my {
   }
 
   interface IGetLocationOptions {
-
     /**
      * 支付宝客户端经纬度定位缓存过期时间，单位秒。默认 30s。使用缓存会加快定位速度，缓存过期会重新定位
      */

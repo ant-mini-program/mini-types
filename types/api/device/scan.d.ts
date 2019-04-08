@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IScanSuccessResult {
-
     /**
      * 扫码所得数据
      */
@@ -21,7 +20,6 @@ declare namespace my {
   }
 
   interface IScanFailResult {
-
     /**
      * 1. 10，用户取消；
      * 2. 11，操作失败。
@@ -30,7 +28,6 @@ declare namespace my {
   }
 
   interface IScanOptions {
-
     /**
      * 扫码样式(默认 qr)：
      * 1. qr，扫码框样式为二维码扫码框；

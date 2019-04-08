@@ -5,7 +5,6 @@ declare namespace my {
   type SettingScopeList = 'scope.userInfo' | 'scope.location' | 'scope.album' | 'scope.camera' | 'scope.audioRecord';
 
   interface IOpenSettingSuccessOptions {
-
     /**
      * 用户授权结果，其中 key 为 scope 值，value 为 Bool 值，表示用户是否允许授权，详见[scope列表](https://docs.alipay.com/mini/api/xmk3ml#scope-%E5%88%97%E8%A1%A8)。
      */
@@ -13,7 +12,6 @@ declare namespace my {
   }
 
   interface IOpenSettingOptions {
-
     /**
      * 接口调用成功的回调函数
      */
@@ -36,7 +34,6 @@ declare namespace my {
   function openSetting(options: IOpenSettingOptions): void;
 
   interface IGetSettingSuccessResult {
-
     /**
      * 用户授权结果，其中 key 为 scope 值，value 为 Bool 值，表示用户是否允许授权，详见[scope列表](https://docs.alipay.com/mini/api/xmk3ml#scope-%E5%88%97%E8%A1%A8)
      */
@@ -44,7 +41,6 @@ declare namespace my {
   }
 
   interface IGetSettingOptions {
-
     /**
      * 接口调用成功的回调函数
      */
