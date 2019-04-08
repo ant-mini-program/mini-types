@@ -18,7 +18,6 @@ declare namespace my {
      * 需要识别的业务参数
      */
     biz_context: {
-
       /**
        * 风险类型，固定传img_risk
        */
@@ -142,7 +141,6 @@ declare namespace my {
      * 需要识别的业务参数
      */
     biz_context: {
-
       /**
        * 风险类型
        */

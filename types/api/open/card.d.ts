@@ -115,7 +115,6 @@ declare namespace my {
      * 结果内容
      */
     result: {
-
       /**
        * 应用id
        */

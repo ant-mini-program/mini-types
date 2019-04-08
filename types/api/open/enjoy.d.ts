@@ -69,7 +69,6 @@ declare namespace my {
      * 需要识别的业务参数
      */
     biz_context: {
-
       /**
        * 用于代表商户风险类型
        */

@@ -413,7 +413,6 @@ declare namespace my {
      * 设备特征值信息
      */
     characteristic: {
-
       /**
        * 蓝牙设备特征值的 uuid
        */
@@ -602,7 +601,6 @@ declare namespace my {
        * 该特征值支持的操作类型
        */
       properties: {
-
         /**
          * 该特征值是否支持 read 操作
          */
