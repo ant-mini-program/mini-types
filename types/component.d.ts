@@ -1,6 +1,5 @@
 declare namespace tinyapp {
   interface IComponentLifeCycleMethods<D, P> {
-
     /**
      * 组件生命周期函数，组件创建时触发
      */
@@ -20,9 +19,6 @@ declare namespace tinyapp {
 
     /**
      * 组件生命周期函数，组件更新完毕时触发
-     *
-     * @param prevProps
-     * @param prevData
      */
     didUpdate?(prevProps: Partial<P>, prevData: Partial<D>): void;
 
@@ -37,7 +33,6 @@ declare namespace tinyapp {
   }
 
   interface IComponentInstance<P, D> extends Record<string, any> {
-
     /**
      * 组件内部状态
      */
@@ -80,7 +75,6 @@ declare namespace tinyapp {
     M extends IComponentMethods = IComponentMethods,
   > = IComponentLifeCycleMethods<D, P>
     & {
-
       /**
        * 	组件间代码复用机制
        */

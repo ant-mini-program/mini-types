@@ -10,7 +10,6 @@ declare namespace my {
   }
 
   interface IDatePickerSuccessResult {
-
     /**
      * 选择的日期
      */
@@ -45,22 +44,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param result
      */
     success?(result: IDatePickerSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param result
      */
     fail?(result: IDatePickerFailResult): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param result
      */
     complete?(result: IDatePickerFailResult | IDatePickerSuccessResult): void;
   }

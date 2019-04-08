@@ -2,7 +2,6 @@ declare namespace tinyapp {
   type Query = Record<string, string | number>;
 
   interface IAppLaunchOptions {
-
     /**
      * 当前小程序的 query，从启动参数的 query 字段解析而来
      */
@@ -17,7 +16,6 @@ declare namespace tinyapp {
      * 来源信息。
      */
     referrerInfo: {
-
       /**
        * 来源小程序
        */
@@ -36,7 +34,6 @@ declare namespace tinyapp {
   }
 
   interface IAppOptionsMethods {
-
     /**
      * 生命周期函数。
      *
@@ -82,7 +79,6 @@ declare namespace tinyapp {
   }
 
   interface IAppInstance<G> {
-
     /**
      * 全局状态数据。
      */

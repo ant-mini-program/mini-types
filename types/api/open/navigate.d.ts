@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface INavigateToMiniProgram {
-
     /**
      * 要跳转的目标小程序appId
      */
@@ -26,15 +25,11 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
@@ -46,13 +41,10 @@ declare namespace my {
 
   /**
    * 跳转到其他小程序。
-   *
-   * @param options
    */
   function navigateToMiniProgram(options: INavigateToMiniProgram): void;
 
   interface INavigateBackMiniProgram {
-
     /**
      * 需要传递给目标小程序的数据，目标小程序可在 App.onLaunch()，App.onShow() 中获取到这份数据
      */
@@ -60,30 +52,22 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
 
   /**
    * 跳转回上一个小程序，只有当另一个小程序跳转到当前小程序时才会能调用成功
-   *
-   * @param options
    */
   function navigateBackMiniProgram(options: INavigateBackMiniProgram): void;
 }

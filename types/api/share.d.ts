@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IHideShareMenuOptions {
-
     /**
      * 调用成功的回调函数
      */
@@ -22,8 +21,6 @@ declare namespace my {
 
   /**
    * 隐藏分享按钮。
-   *
-   * @param options
    */
   function hideShareMenu(options?: IHideShareMenuOptions): void;
 }

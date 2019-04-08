@@ -182,8 +182,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: AddPhoneContactSuccessResult): void;
 
@@ -194,8 +192,6 @@ declare namespace my {
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res?: AddPhoneContactSuccessResult): void;
   }

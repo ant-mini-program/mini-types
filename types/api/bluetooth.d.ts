@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IOpenBluetoothAdapterSuccessResult {
-
     /**
      * 是否支持 BLE
      */
@@ -11,7 +10,6 @@ declare namespace my {
   }
 
   interface IOpenBluetoothAdapterFailResult {
-
     /**
      * - 12：蓝牙未打开
      * - 13：与系统服务的链接暂时丢失
@@ -22,7 +20,6 @@ declare namespace my {
   }
 
   interface IOpenBluetoothAdapterOptions {
-
     /**
      * 不传的话默认是true，表示是否在离开当前页面时自动断开蓝牙(仅对android有效)
      */
@@ -30,22 +27,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IOpenBluetoothAdapterSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: IOpenBluetoothAdapterFailResult): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: IOpenBluetoothAdapterSuccessResult | IOpenBluetoothAdapterFailResult): void;
   }
@@ -59,25 +50,18 @@ declare namespace my {
   function openBluetoothAdapter(options?: IOpenBluetoothAdapterOptions): void;
 
   interface ICloseBluetoothAdapterOptions {
-
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -95,7 +79,6 @@ declare namespace my {
   function closeBluetoothAdapter(options?: ICloseBluetoothAdapterOptions): void;
 
   interface IGetBluetoothAdapterStateSuccessResult {
-
     /**
      * 是否正在搜索设备
      */
@@ -108,25 +91,18 @@ declare namespace my {
   }
 
   interface IGetBluetoothAdapterStateOptions {
-
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IGetBluetoothAdapterStateSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -139,7 +115,6 @@ declare namespace my {
   function getBluetoothAdapterState(options: IGetBluetoothAdapterStateOptions): void;
 
   interface IStartBluetoothDevicesDiscoveryOptions {
-
     /**
      * 蓝牙设备主 service 的 uuid 列表
      */
@@ -157,22 +132,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -188,25 +157,18 @@ declare namespace my {
   function startBluetoothDevicesDiscovery(options?: IStartBluetoothDevicesDiscoveryOptions): void;
 
   interface IStopBluetoothDevicesDiscoveryOptions {
-
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -219,7 +181,6 @@ declare namespace my {
   function stopBluetoothDevicesDiscovery(options?: IStopBluetoothDevicesDiscoveryOptions): void;
 
   interface IBluetoothDevice {
-
     /**
      * 蓝牙设备名称，某些设备可能没有
      */
@@ -259,7 +220,6 @@ declare namespace my {
   }
 
   interface IGetBluetoothDevicesSuccessResult {
-
     /**
      * 已发现的设备列表
      */
@@ -267,25 +227,18 @@ declare namespace my {
   }
 
   interface IGetBluetoothDevicesOptions {
-
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IGetBluetoothDevicesSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -302,7 +255,6 @@ declare namespace my {
   function getBluetoothDevices(options: IGetBluetoothDevicesOptions): void;
 
   interface IGetConnectedBluetoothDevicesSuccessResult {
-
     /**
      * 已连接的设备列表
      */
@@ -317,22 +269,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IGetConnectedBluetoothDevicesSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -349,7 +295,6 @@ declare namespace my {
   function getConnectedBluetoothDevices(options: IGetConnectedBluetoothDevicesOptions): void;
 
   interface IConnectBLEDeviceOptions {
-
     /**
      * 蓝牙设备id
      */
@@ -357,22 +302,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -389,7 +328,6 @@ declare namespace my {
   function connectBLEDevice(options: IConnectBLEDeviceOptions): void;
 
   interface IDisconnectBLEDeviceOptions {
-
     /**
      * 蓝牙设备id
      */
@@ -397,22 +335,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -452,22 +384,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -525,22 +451,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IReadBLECharacteristicValueSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -586,22 +506,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -645,8 +559,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IGetBLEDeviceServicesSuccessResult): void;
 
@@ -735,22 +647,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IGetBLEDeviceCharacteristicsSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }

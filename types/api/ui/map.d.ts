@@ -9,7 +9,6 @@ declare namespace my {
   }
 
   interface IShowRouteOptions {
-
     /**
      * 搜索类型：10.1.50新增，有"walk", "bus", "drive", "ride", 默认值为walk
      */
@@ -112,7 +111,6 @@ declare namespace my {
     longitude?: number;
     latitude?: number;
     command?: {
-
       /**
        * marker动画
        */
@@ -122,7 +120,6 @@ declare namespace my {
       }>,
     };
     setting?: {
-
       /**
        * 手势
        */

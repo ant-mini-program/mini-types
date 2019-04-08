@@ -148,7 +148,6 @@ declare namespace my {
   }
 
   interface ICreateAnimationOptions {
-
     /**
      * 动画的持续时间，单位 ms，默认值 400
      */

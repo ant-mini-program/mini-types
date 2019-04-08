@@ -66,22 +66,16 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IHttpRequestSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res: any): void;
   }
@@ -200,8 +194,6 @@ declare namespace my {
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: IDownloadFileFailResult): void;
 

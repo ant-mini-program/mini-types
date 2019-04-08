@@ -10,7 +10,6 @@ declare namespace my {
   }
 
   /**
-   * @param options
    * @deprecated
    */
   function paySignCenter(options: IPaySignCenterOptions): void;

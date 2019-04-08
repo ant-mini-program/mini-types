@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface ITradePayOptions {
-
     /**
      * 接入小程序支付时传入此参数。此参数为支付宝交易号，注意参数有大小写区分
      */
@@ -19,8 +18,6 @@ declare namespace my {
      * - 6002：网络连接出错
      * - 6004：支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态
      * - 99：用户点击忘记密码导致快捷界面退出(only iOS)
-     *
-     * @param resultCode
      */
     success?(resultCode: '9000' | '8000' | '4000' | '6001' | '6002' | '6004' | '99'): void;
 
@@ -37,8 +34,6 @@ declare namespace my {
 
   /**
    * 发起支付
-   *
-   * @param options
    */
   function tradePay(options: ITradePayOptions): void;
 }

@@ -5,13 +5,11 @@ declare namespace my {
   type MultiLevelSelectOptionsList = Array<{ name: string; subList?: MultiLevelSelectOptionsList; }>;
 
   type MultiLevelSelectSuccessResult = {
-
     /**
      * 是否选择完成,取消返回false
      */
     success: false
   } | {
-
     /**
      * 是否选择完成,取消返回false
      */
@@ -24,7 +22,6 @@ declare namespace my {
   };
 
   interface IMultiLevelSelectOptions {
-
     /**
      * 标题
      */
@@ -47,8 +44,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param result
      */
     success?(result: MultiLevelSelectSuccessResult): void;
 
@@ -59,8 +54,6 @@ declare namespace my {
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param result
      */
     complete?(result?: MultiLevelSelectSuccessResult): void;
   }

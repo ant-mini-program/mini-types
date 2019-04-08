@@ -45,7 +45,6 @@ declare namespace my {
   function hideToast(): void;
 
   interface IAlertOptions {
-
     /**
      * alert框的标题
      */
@@ -79,13 +78,10 @@ declare namespace my {
 
   /**
    * alert 警告框
-   *
-   * @param options
    */
   function alert(options: IAlertOptions): void;
 
   interface IConfirmSuccessCallbackParam {
-
     /**
      * 点击 confirm 返回 true，点击 cancel 返回false
      */
@@ -98,7 +94,6 @@ declare namespace my {
   }
 
   interface IConfirmOptions {
-
     /**
      * confirm框的标题
      */
@@ -137,13 +132,10 @@ declare namespace my {
 
   /**
    * confirm 确认框。
-   *
-   * @param options
    */
   function confirm(options: IConfirmOptions): void;
 
   interface IPromptSuccessCallbackParam {
-
     /**
      * 点击 ok 返回 true，点击 cancel 返回false
      */
@@ -156,7 +148,6 @@ declare namespace my {
   }
 
   interface IPromptOptions {
-
     /**
      * prompt框标题
      */
@@ -238,7 +229,6 @@ declare namespace my {
   function showLoading(options?: string | IShowLoadingOptions): Promise<void>;
 
   interface IHideLoadingOptions {
-
     /**
      * 页面实例, 每个页面实例有一个loading, 如果不传入该参数可能会导致loading无法取消。
      * 无语的设计@小程序
@@ -255,8 +245,8 @@ declare namespace my {
   interface IShowActionSheetSuccessResult {
     index: number;
   }
-  interface IShowActionSheetOptions {
 
+  interface IShowActionSheetOptions {
     /**
      * 菜单标题
      */
@@ -281,7 +271,6 @@ declare namespace my {
      * 需飘红选项的数组，数组内部对象字段见下表
      */
     badges?: Array<{
-
       /**
        * 需要飘红的选项的索引，从0开始
        */
@@ -302,8 +291,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IShowActionSheetSuccessResult): void;
 
@@ -314,16 +301,12 @@ declare namespace my {
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res?: IShowActionSheetSuccessResult): void;
   }
 
   /**
    * 显示操作菜单。
-   *
-   * @param options
    */
   function showActionSheet(options: IShowActionSheetOptions): void;
 }

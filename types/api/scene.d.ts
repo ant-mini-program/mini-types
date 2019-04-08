@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IGetRunSceneSuccessResult {
-
     /**
      * 小程序当前运行的版本，枚举类型：develop（开发版）、trial（体验版）、release（发布版）
      */
@@ -16,8 +15,6 @@ declare namespace my {
 
   /**
    * 获取当前小程序的运行版本
-   *
-   * @param res
    */
   function getRunScene(res: IGetRunSceneOptions): void;
 }

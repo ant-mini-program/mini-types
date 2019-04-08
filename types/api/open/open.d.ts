@@ -7,7 +7,6 @@ declare namespace my {
   }
 
   interface INavigateToAlipayPageOptions {
-
     /**
      * 要跳转的支付宝业务、运营活动schema或url，如果url中带有参数，请务必先将整个url做encode处理
      *
@@ -17,8 +16,6 @@ declare namespace my {
 
     /**
      * 跳转成功
-     *
-     * @param res
      */
     success?(res: INavigateToAlipayPageSuccessResult): void;
 
@@ -26,18 +23,13 @@ declare namespace my {
      * 跳转失败
      *
      * - 2：参数错误，打开失败
-     *
-     * @param res
      */
     fail?(error: any): void;
   }
 
   namespace ap {
-
     /**
      * 小程序中跳转到支付宝官方业务或运营活动页面，例如共享单车、城市服务。
-     *
-     * @param options
      */
     function navigateToAlipayPage(options: INavigateToAlipayPageOptions): void;
   }

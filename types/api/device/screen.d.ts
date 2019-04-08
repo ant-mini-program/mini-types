@@ -11,15 +11,11 @@ declare namespace my {
 
     /**
      * 接口调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
@@ -38,15 +34,11 @@ declare namespace my {
 
     /**
      * 接口调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 
@@ -70,15 +62,11 @@ declare namespace my {
 
     /**
      * 接口调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: any): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: any): void;
 

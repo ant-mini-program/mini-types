@@ -126,18 +126,6 @@ declare namespace tinyapp {
 
     /**
      * 批量更新数据。
-     *
-     * @example
-     ```js
-      this.$page.$batchedUpdates(() => {
-        this.setData({
-          counter: this.data.counter + 1,
-        });
-        this.setData({
-          counter: this.data.counter + 1,
-        });
-      });
-     ```
      */
     $batchedUpdates: (fn: () => void) => void;
   }

@@ -45,15 +45,11 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IScanSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: IScanFailResult): void;
 

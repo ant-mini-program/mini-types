@@ -5,7 +5,6 @@ declare namespace my {
   type TextRiskIdentificationType = 'keyword' | '0' | '1' | '2' | '3';
 
   interface ITextRiskIdentificationSuccessResult {
-
     /**
      * 目标内容文本识别到的类型，keyword 表示关键词、0 表示广告、1表示涉政、2表示涉黄、3表示低俗辱骂
      */
@@ -21,8 +20,8 @@ declare namespace my {
      */
     score?: string;
   }
-  interface ITextRiskIdentificationFailResult {
 
+  interface ITextRiskIdentificationFailResult {
     /**
      * 识别错误码
      */
@@ -35,7 +34,6 @@ declare namespace my {
   }
 
   interface ITextRiskIdentificationOptions {
-
     /**
      * 需要进行风险识别的文本内容
      */
@@ -48,15 +46,11 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: ITextRiskIdentificationSuccessResult): void;
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     fail?(res: ITextRiskIdentificationFailResult): void;
 
@@ -68,8 +62,6 @@ declare namespace my {
 
   /**
    * 文本风险识别， 支付宝客户端10.1.10及以上版本支持。详细接入参考[指引](https://docs.alipay.com/mini/introduce/text-identification)。
-   *
-   * @param options
    */
   function textRiskIdentification(options: ITextRiskIdentificationOptions): void;
 }

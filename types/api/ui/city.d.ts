@@ -3,7 +3,6 @@
  */
 declare namespace my {
   interface IChooseCitySuccessResult {
-
     /**
      * 城市名
      */
@@ -16,7 +15,6 @@ declare namespace my {
   }
 
   interface ICity {
-
     /**
      * 城市名
      */
@@ -34,7 +32,6 @@ declare namespace my {
   }
 
   interface IChooseCityOptions {
-
     /**
      * 是否显示当前定位城市，默认 false
      */
@@ -57,8 +54,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param result
      */
     success?(result: IChooseCitySuccessResult): void;
 
@@ -69,8 +64,6 @@ declare namespace my {
 
     /**
      * 调用失败的回调函数
-     *
-     * @param res
      */
     complete?(res?: IChooseCitySuccessResult): void;
   }

@@ -85,8 +85,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IGetStorageSuccessResult): void;
 
@@ -205,8 +203,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IStorageInfo): void;
 

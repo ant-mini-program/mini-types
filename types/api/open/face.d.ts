@@ -69,8 +69,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数 (返回刷脸调用结果，包括刷脸认证成功和失败的结果)
-     *
-     * @param res
      */
     success?(res: IFaceVerifySuccessResult): void;
 

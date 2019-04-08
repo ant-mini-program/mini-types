@@ -173,14 +173,12 @@ declare namespace my {
   interface IAddCardAuthOptions {
 
     /**
-     * 开卡授权的页面地址，从  alipay.marketing.card.activateurl.apply接口获取
+     * 开卡授权的页面地址，从  alipay.marketing.card.activateurl.apply接口获取
      */
     url: string;
 
     /**
      * 调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: AddCardAuthSuccessResult): void;
 
@@ -191,8 +189,6 @@ declare namespace my {
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
-     *
-     * @param res
      */
     complete?(res?: AddCardAuthSuccessResult): void;
   }

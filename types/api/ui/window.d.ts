@@ -4,7 +4,6 @@
 
 declare namespace my {
   interface ISetBackgroundColorOptions {
-
     /**
      * 窗口的背景色
      */
@@ -38,13 +37,10 @@ declare namespace my {
 
   /**
    * 动态设置窗口的背景色
-   *
-   * @param options
    */
   function setBackgroundColor(options: ISetBackgroundColorOptions): void;
 
   interface ISetBackgroundTextStyleOptions {
-
     /**
      * 下拉背景字体、loading 图的样式，仅支持 'dark', 'light'
      */
@@ -68,8 +64,6 @@ declare namespace my {
 
   /**
    * 动态设置下拉背景字体、loading 图的样式
-   *
-   * @param options
    */
   function setBackgroundTextStyle(options: ISetBackgroundTextStyleOptions): void;
 }

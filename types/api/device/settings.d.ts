@@ -16,8 +16,6 @@ declare namespace my {
 
     /**
      * 接口调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IOpenSettingSuccessOptions): void;
 
@@ -49,8 +47,6 @@ declare namespace my {
 
     /**
      * 接口调用成功的回调函数
-     *
-     * @param res
      */
     success?(res: IGetSettingSuccessResult): void;
 
