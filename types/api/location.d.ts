@@ -15,28 +15,100 @@ declare namespace my {
   }
 
   interface IGetLocationSuccessResult {
+
+    /**
+     * 城市级别的地区代码(type>0生效)
+     */
     cityAdcode?: string;
+
+    /**
+     * 国家编号 (type>0生效)
+     */
     countryCode?: string;
+
+    /**
+     * 省份(type>0生效)
+     */
     province?: string;
+
+    /**
+     * 区县级别的地区代码(type>0生效)
+     */
     districtAdcode?: string;
+
+    /**
+     * 需要POI级别逆地理的才会有的字段,定位点附近的 POI 信息，结构是：{name, address}（type>2生效）
+     */
     pois?: Array<{ name: string; address: string; }>;
+
+    /**
+     * 城市(type>0生效)
+     */
     city?: string;
+
+    /**
+     * 区县(type>0生效)
+     */
     district?: string;
+
+    /**
+     * 需要街道级别逆地理的才会有的字段,街道门牌信息，结构是：{street, number} (type>1生效)
+     */
     streetNumber?: {
       street: string;
       number: string;
     };
+
+    /**
+     * 国家(type>0生效)
+     */
     country?: string;
     bearing: string;
+
+    /**
+     * 纬度
+     */
     latitude: string;
+
+    /**
+     * 精确度，单位m
+     */
     accuracy: string;
+
+    /**
+     * 经度
+     */
     longitude: string;
+
+    /**
+     * 水平精确度，单位m
+     */
     horizontalAccuracy: string;
   }
 
+  interface IGetLocationFailResult {
+    /**
+     * - 11：请确认定位相关权限已开启。提示用户打开定位权限
+     * - 12：网络异常，请稍后再试。提示用户检查当前网络
+     * - 13：定位失败，请稍后再试
+     * - 14：业务定位超时。提示用户再次尝试
+     */
+    error: 11 | 12 | 13 | 14;
+  }
+
   interface IGetLocationOptions {
+
+    /**
+     * 支付宝客户端经纬度定位缓存过期时间，单位秒。默认 30s。使用缓存会加快定位速度，缓存过期会重新定位
+     */
     cacheTimeout?: number;
 
+    /**
+     * - 0：默认，获取经纬度
+     * - 1：获取经纬度和详细到区县级别的逆地理编码数据
+     * - 2：获取经纬度和详细到街道级别的逆地理编码数据，不推荐使用
+     * - 3：获取经纬度和详细到POI级别的逆地理编码
+     */
     type?: 0 | 1 | 2 | 3;
 
     /**
@@ -44,13 +116,19 @@ declare namespace my {
      */
     success?: (res?: IGetLocationSuccessResult) => void;
 
-    fail?(): void;
+    /**
+     * 调用失败的回调函数
+     */
+    fail?(res: IGetLocationFailResult): void;
 
-    complete?(): void;
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(res: IGetLocationFailResult | IGetLocationSuccessResult): void;
   }
 
   /**
-   * 获取当前的地理位置、速度。
+   * 获取用户当前的地理位置信息
    */
   function getLocation(options: IGetLocationOptions): void;
 
@@ -70,15 +148,21 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?: (res?: IChooseLocationResult) => void;
+    success?: (res: IChooseLocationResult) => void;
 
+    /**
+     * 调用失败的回调函数
+     */
     fail?(): void;
 
-    complete?(): void;
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(res?: IChooseLocationResult): void;
   }
 
   /**
-   * 打开地图选择位置
+   * 使用支付宝内置地图选择地理位置。
    */
   function chooseLocation(options: IChooseLocationOptions): void;
 
@@ -98,10 +182,19 @@ declare namespace my {
      */
     address?: string;
 
+    /**
+     * 调用成功的回调函数
+     */
     success?(): void;
 
+    /**
+     * 调用失败的回调函数
+     */
     fail?(): void;
 
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
     complete?(): void;
   }
 

@@ -6,7 +6,6 @@
 /// <reference path="./location.d.ts" />
 /// <reference path="./network.d.ts" />
 /// <reference path="./device/index.d.ts" />
-/// <reference path="./scan.d.ts" />
 /// <reference path="./bluetooth.d.ts" />
 /// <reference path="./ibeacon.d.ts" />
 /// <reference path="./data.d.ts" />
@@ -14,7 +13,6 @@
 /// <reference path="./menu.d.ts" />
 /// <reference path="./scene.d.ts" />
 /// <reference path="./analytics.d.ts" />
-/// <reference path="./feedback.d.ts" />
 
 declare namespace my {
   /**

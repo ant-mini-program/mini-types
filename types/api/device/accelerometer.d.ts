@@ -3,10 +3,23 @@
  */
 declare namespace my {
   interface IOnAccelerometerChangeEvent {
+
+    /**
+     * X 轴
+     */
     x: number;
+
+    /**
+     * Y 轴
+     */
     y: number;
+
+    /**
+     * Z 轴
+     */
     z: number;
   }
+
   /**
    * 监听加速度数据，回调间隔为500ms，接口调用后会自动开始监听，可使用my.offAccelermeterChange()停止监听。
    */

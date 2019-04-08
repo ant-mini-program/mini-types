@@ -9,5 +9,9 @@ declare namespace my {
     complete?(): void;
   }
 
+  /**
+   * @param options
+   * @deprecated
+   */
   function paySignCenter(options: IPaySignCenterOptions): void;
 }

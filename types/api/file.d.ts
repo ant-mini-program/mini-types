@@ -3,6 +3,7 @@
  */
 declare namespace my {
   interface ISaveFileSuccessResult {
+
     /**
      * 文件的保存路径
      */
@@ -10,6 +11,7 @@ declare namespace my {
   }
 
   interface ISaveFileOptions {
+
     /**
      * 需要保存的文件的临时路径
      */
@@ -20,13 +22,19 @@ declare namespace my {
      */
     success?: (res?: ISaveFileSuccessResult) => void;
 
+    /**
+     * 调用失败的回调函数
+     */
     fail?(): void;
 
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
     complete?(): void;
   }
 
   /**
-   * 保存文件到本地。
+   * 保存文件到本地。（本地文件大小总容量限制：10M）
    */
   function saveFile(options: ISaveFileOptions): void;
 
@@ -48,6 +56,7 @@ declare namespace my {
   }
 
   interface IGetSavedFileListSuccessResult {
+
     /**
      * 接口调用结果
      */
@@ -60,13 +69,20 @@ declare namespace my {
   }
 
   interface IGetSavedFileListOptions {
+
     /**
      * 接口调用成功的回调函数
      */
     success?: (res?: IGetSavedFileListSuccessResult) => void;
 
+    /**
+     * 调用失败的回调函数
+     */
     fail?(): void;
 
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
     complete?(): void;
   }
 
@@ -76,6 +92,7 @@ declare namespace my {
   function getSavedFileList(options: IGetSavedFileListOptions): void;
 
   interface IGetSavedFileInfoSuccessResult {
+
     /**
      * 接口调用结果
      */

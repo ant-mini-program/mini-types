@@ -3,24 +3,103 @@
  */
 declare namespace my {
   interface IHttpRequestSuccessResult {
+
+    /**
+     * 响应数据，格式取决于请求时的 dataType 参数
+     */
     data?: any;
+
+    /**
+     * 响应码
+     *
+     * - 11：无权跨域
+     * - 12：网络出错
+     * - 13：超时
+     * - 14：解码失败
+     * - 15：HTTP错误
+     * - 16：请求已被停止/服务端限流
+     */
     status?: 11 | 12 | 13 | 14 | 19;
+
+    /**
+     * 响应头
+     */
     headers?: Record<string, string>;
   }
 
   interface IHttpRequestOptions {
+
+    /**
+     * 目标服务器url
+     */
     url: string;
+
+    /**
+     * 设置请求的 HTTP 头，默认 {'content-type': 'application/json'}
+     */
     headers?: Record<string, string>;
+
+    /**
+     * 默认GET，目前支持GET/POST
+     */
     method?: 'GET' | 'POST';
+
+    /**
+     * 请求参数。
+     *
+     * 传给服务器的数据最终会是 String 类型，如果 data 不是 String 类型，会被转换成 String 。转换规则如下：
+     * - 若方法为GET，会将数据转换成 query string： encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...
+     * - 若方法为 POST 且 headers['content-type'] 为 application/json ，会对数据进行 JSON 序列化
+     * - 若方法为 POST 且 headers['content-type'] 为 application/x-www-form-urlencoded ，会将数据转换成 query string： encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...
+     */
     data?: Record<string, any>;
+
+    /**
+     * 超时时间，单位ms，默认30000
+     */
     timeout?: number;
+
+    /**
+     * 期望返回的数据格式，默认json，支持json，text，base64
+     */
     dataType?: 'json' | 'text' | 'base64';
+
+    /**
+     * 调用成功的回调函数
+     *
+     * @param res
+     */
     success?(res: IHttpRequestSuccessResult): void;
+
+    /**
+     * 调用失败的回调函数
+     *
+     * @param res
+     */
     fail?(res: any): void;
+
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     *
+     * @param res
+     */
     complete?(res: any): void;
   }
 
+  /**
+   * 小程序网络请求
+   *
+   * @deprecated
+   * @param options
+   */
   function httpRequest(options: IHttpRequestOptions): void;
+
+  /**
+   * 小程序网络请求
+   *
+   * @param options
+   */
+  function request(options: IHttpRequestOptions): void;
 
   interface IUploadFileSuccessResult {
     /**
@@ -91,7 +170,16 @@ declare namespace my {
     /**
      * 文件的临时路径
      */
-    tempFilePath: string;
+    apFilePath: string;
+  }
+
+  interface IDownloadFileFailResult {
+
+    /**
+     * - 12：下载失败
+     * - 13：没有权限
+     */
+    error: 12 | 13;
   }
 
   interface IDownloadFileOptions {
@@ -106,13 +194,21 @@ declare namespace my {
     header?: Record<string, string>;
 
     /**
-     * 下载成功后以 tempFilePath 的形式传给页面，res = {tempFilePath: '文件的临时路径'}
+     * 下载成功后以 apFilePath 的形式传给页面，res = {apFilePath: '文件的临时路径'}
      */
     success?: (res?: IDownloadFileSuccessResult) => void;
 
-    fail?(res: { error: 12 | 13 }): void;
+    /**
+     * 调用失败的回调函数
+     *
+     * @param res
+     */
+    fail?(res: IDownloadFileFailResult): void;
 
-    complete?(): void;
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(res: IDownloadFileFailResult | IDownloadFileSuccessResult): void;
   }
 
   /**
@@ -120,6 +216,24 @@ declare namespace my {
    * 客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。
    */
   function downloadFile(options: IDownloadFileOptions): void;
+
+  interface IConnectFailResult {
+    /**
+     * - 1：未知错误
+     * - 2：网络连接已经存在
+     * - 3：URL参数为空
+     * - 4：无法识别的URL格式
+     * - 5：URL必须以ws或者wss开头
+     * - 6：连接服务器超时
+     * - 7：服务器返回的https证书无效
+     * - 8：服务端返回协议头无效
+     * - 9：WebSocket请求没有指定Sec-WebSocket-Protocol请求头
+     * - 10：网络连接没有打开，无法发送消息
+     * - 11：消息发送失败
+     * - 12：无法申请更多内存来读取网络数据
+     */
+    error: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  }
 
   interface IConnectSocketOptions {
     /**
@@ -142,11 +256,20 @@ declare namespace my {
      */
     method?: 'OPTIONS' | 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT';
 
+    /**
+     * 调用成功的回调函数
+     */
     success?(): void;
 
-    fail?(): void;
+    /**
+     * 调用失败的回调函数
+     */
+    fail?(res: IConnectFailResult): void;
 
-    complete?(): void;
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(res?: IConnectFailResult): void;
   }
 
   /**
@@ -167,14 +290,28 @@ declare namespace my {
 
   interface ISendSocketMessageOptions {
     /**
-     * 需要发送的内容
+     * 需要发送的内容：普通的文本内容 String 或者经 base64 编码后的 String
      */
-    data: string | any[];
+    data: string;
 
+    /**
+     * 如果需要发送二进制数据，需要将入参数据经 base64 编码成 String 后赋值 data，同时将此字段设置为true，否则如果是普通的文本内容 String，不需要设置此字段
+     */
+    isBuffer?: boolean;
+
+    /**
+     * 回调函数
+     */
     success?(): void;
 
+    /**
+     * 调用失败的回调函数
+     */
     fail?(): void;
 
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
     complete?(): void;
   }
 
@@ -187,7 +324,12 @@ declare namespace my {
     /**
      * 服务器返回的消息
      */
-    data: string | any[];
+    data: string;
+
+    /**
+     * 如果此字段值为true，data字段表示接收到的经过了 base64 编码后的 String，否则 data 字段表示接收到的普通 String 文本。
+     */
+    isBuffer: boolean;
   }
 
   /**
@@ -197,10 +339,28 @@ declare namespace my {
     callback: (res?: ISocketMessageResponse) => void
   ): void;
 
+  interface ICloseSocketOptions {
+
+    /**
+     * 回调函数
+     */
+    success?(): void;
+
+    /**
+     * 调用失败的回调函数
+     */
+    fail?(): void;
+
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(): void;
+  }
+
   /**
    * 关闭WebSocket连接。
    */
-  function closeSocket(): void;
+  function closeSocket(options: ICloseSocketOptions): void;
 
   /**
    * 监听WebSocket关闭。

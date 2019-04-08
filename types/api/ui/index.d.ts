@@ -11,3 +11,4 @@
 /// <reference path="./scroll.d.ts" />
 /// <reference path="./query.d.ts" />
 /// <reference path="./multiLevelSelect.d.ts" />
+/// <reference path="./feedback.d.ts" />

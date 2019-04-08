@@ -25,15 +25,40 @@ declare namespace tinyapp {
       scrollHeight: number;
     },
     null,
-    null,
+    null
   ] | {
     scrollTop: number;
     scrollHeight: number;
   };
 
-  interface IPageOptionsMethods {
+  interface IPageEvents {
+    onBack?(): void;
+    onKeyboardHeight?(): void;
+    onOptionMenuClick?(): void;
+    onPopMenuClick?(): void;
+    onPullIntercept?(): void;
+
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh?(params: { from: 'manual' | 'code'; }): void;
+    onTitleClick?(): void;
+    onTabItemTap?(): void;
+    beforeTabItemTap?(): void;
+  }
+
+  interface IPageOptionsMethods extends Pick<
+    IPageEvents,
+    'onPullDownRefresh'
+      | 'onTitleClick'
+      | 'onOptionMenuClick'
+      | 'onPopMenuClick'
+      | 'onPullIntercept'
+      | 'onTabItemTap'
+  > {
     /**
      * 生命周期函数--监听页面加载
+     *
      * @param query query 参数为 my.navigateTo 和 my.redirectTo 中传递的 query 对象。
      */
     onLoad?(query: Query): void;
@@ -59,16 +84,6 @@ declare namespace tinyapp {
     onUnload?(): void;
 
     /**
-     * 页面相关事件处理--监听用户点击标题栏
-     */
-    onTitleClick?(): void;
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh?(): void;
-
-    /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom?(): void;
@@ -77,17 +92,22 @@ declare namespace tinyapp {
      * 返回自定义分享信息
      */
     onShareAppMessage?(options: OnShareAppMessageOptions): IOnShareAppMessageResult;
-    onOptionMenuClick?(): void;
+
+    /**
+     * 页面滚动时触发
+     *
+     * @param event 滚动事件参数
+     */
     onPageScroll?(event: IPageScrollEvent): void;
   }
 
   type SetDataMethod<D> = (data: Partial<D>, callback?: () => void) => void;
 
-  interface IPageInstance<D> {
+  interface IPageInstance<D> extends Record<string, any> {
     /**
-     * [read-only]页面的初始数据
+     * 页面数据。
      */
-    data: D;
+    readonly data: D;
 
     /**
      * 将数据从逻辑层发送到视图层，同时改变对应的 this.data 的值
@@ -99,7 +119,27 @@ declare namespace tinyapp {
      */
     $spliceData: (operations: { [k: string]: [number, number, ...any[]] }) => void;
 
+    /**
+     * Page 路径，对应 app.json 中配置的路径值。
+     */
     route: string;
+
+    /**
+     * 批量更新数据。
+     *
+     * @example
+     ```js
+      this.$page.$batchedUpdates(() => {
+        this.setData({
+          counter: this.data.counter + 1,
+        });
+        this.setData({
+          counter: this.data.counter + 1,
+        });
+      });
+     ```
+     */
+    $batchedUpdates: (fn: () => void) => void;
   }
 
   /**
@@ -108,9 +148,15 @@ declare namespace tinyapp {
   type PageOptions<D = Record<string, any>> = IPageOptionsMethods
     & {
         /**
-         * [read-only]页面的初始数据
+         * 初始数据或返回初始化数据的函数, 为对象时所有页面共享。
          */
         data?: D;
+
+        /**
+         * 事件处理函数集合。
+         */
+        events?: IPageEvents;
+
         [name: string]: any;
       }
     & ThisType<IPageInstance<D>>;

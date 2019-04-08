@@ -3,8 +3,22 @@
  */
 declare namespace my {
   interface IClipboardOptions {
-    success?(test: string): void;
+
+    /**
+     * 调用成功的回调函数
+     *
+     * @param text
+     */
+    success?(text: string): void;
+
+    /**
+     * 调用失败的回调函数
+     */
     fail?(): void;
+
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
     complete?(): void;
   }
 
@@ -16,5 +30,11 @@ declare namespace my {
   /**
    * 设置剪贴板数据。
    */
-  function setClipboard(options: IClipboardOptions & { text: string; }): void;
+  function setClipboard(options: IClipboardOptions & {
+
+    /**
+     * 剪贴板数据
+     */
+    text: string;
+  }): void;
 }

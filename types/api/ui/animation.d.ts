@@ -148,23 +148,28 @@ declare namespace my {
   }
 
   interface ICreateAnimationOptions {
+
     /**
      * 动画的持续时间，单位 ms，默认值 400
      */
     duration?: number;
+
     /**
      * 定义动画的效果，默认值"linear"，有效值："linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
      */
     timeFunction?: 'linear' | 'ease' | 'ease-in' | 'ease-in-out' | 'ease-out' | 'step-start' | 'step-end';
+
     /**
      * 动画延迟时间，单位 ms，默认值 0
      */
     delay?: number;
+
     /**
      * 设置transform-origin，默认值 "50% 50% 0"
      */
     transformOrigin?: string;
   }
+
   /**
    * 创建动画实例 animation。调用实例的方法来描述动画，最后通过动画实例的export方法将动画数据导出并传递给组件的animation属性。
    * 注意: export 方法调用后会清掉之前的动画操作

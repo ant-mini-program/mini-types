@@ -3,8 +3,13 @@
  */
 declare namespace my {
   interface IOnCompassChangeEvent {
+
+    /**
+     * 面对的方向与正北方向的度数[0,360)
+     */
     direction: number;
   }
+
   /**
    * 监听罗盘数据，接口调用后会自动开始监听，回调间隔为500ms，可使用my.offCompassChange停止监听。
    */

@@ -15,3 +15,4 @@
 /// <reference path="./settings.d.ts" />
 /// <reference path="./contact.d.ts" />
 /// <reference path="./auth.d.ts" />
+/// <reference path="./scan.d.ts" />
