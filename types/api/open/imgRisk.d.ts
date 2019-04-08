@@ -169,11 +169,8 @@ declare namespace my {
   }
 
   namespace ap {
-
     /**
      * 图片风险咨询任务提交接口，用于提交
-     *
-     * @param options
      */
     function imgRisk(options: IImgRiskOptions): void;
 

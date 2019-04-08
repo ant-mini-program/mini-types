@@ -12,7 +12,6 @@ declare namespace my {
   interface IGetServerTimeOptions {
     /**
      * 调用成功的回调函数
-     * @param res
      */
     success?(res: IGetServerTimeSuccessResult): void;
 

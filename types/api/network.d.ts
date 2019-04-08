@@ -82,7 +82,6 @@ declare namespace my {
    * 小程序网络请求
    *
    * @deprecated
-   * @param options
    */
   function httpRequest(options: IHttpRequestOptions): void;
 

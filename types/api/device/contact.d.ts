@@ -5,7 +5,6 @@ declare namespace my {
   type AddPhoneContactSuccessResult = {
     success: true
   } | {
-
     /**
      * - 11：用户取消操作
      * - 3：调用失败，detail 加上详细信息

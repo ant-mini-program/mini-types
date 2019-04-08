@@ -507,7 +507,6 @@ declare namespace my {
      * 设备service 对象列表，详见下表特征值信息
      */
     services: Array<{
-
       /**
        * 蓝牙设备服务的 uuid
        */
@@ -555,7 +554,6 @@ declare namespace my {
      * 设备特征值列
      */
     characteristics: Array<{
-
       /**
        * 蓝牙设备特征值的 uuid
        */
@@ -647,8 +645,6 @@ declare namespace my {
    * - tip: 模拟器可能无法获取 advertisData 及 RSSI ，请使用真机调试。
    * - tip: 开发者工具和 Android 上获取到的deviceId为设备 MAC 地址，iOS 上则为设备 uuid。因此deviceId不能硬编码到代码中，需要分平台处理，iOS可根据设备属性（localName/advertisData/manufacturerData等）进行动态匹配。
    * - tip: 若在 my.onBluetoothDeviceFound 回调中包含了某个蓝牙设备，则此设备会添加到 my.getBluetoothDevices 接口获取到的数组中。
-   *
-   * @param callback
    */
   function onBluetoothDeviceFound(callback: (res: IOnBluetoothDeviceFoundEvent) => void): void;
 
@@ -684,8 +680,6 @@ declare namespace my {
 
   /**
    * 监听低功耗蓝牙设备的特征值变化的事件。
-   *
-   * @param callback
    */
   function onBLECharacteristicValueChange(callback: (res: IOnBLECharacteristicValueChangeEvent) => void): void;
 
@@ -711,8 +705,6 @@ declare namespace my {
    *
    * Bug & Tip
    * - tip: 为防止多次注册事件监听导致一次事件多次回调，建议每次调用on方法监听事件之前，先调用off方法，关闭之前的事件监听。
-   *
-   * @param callback
    */
   function onBLEConnectionStateChanged(callback: (res: IOnBLEConnectionStateChangedEvent) => void): void;
 
@@ -738,8 +730,6 @@ declare namespace my {
 
   /**
    * 监听本机蓝牙状态变化的事件。
-   *
-   * @param callback
    */
   function onBluetoothAdapterStateChange(callback: (res: IOnBluetoothAdapterStateChangeEvent) => void): void;
 

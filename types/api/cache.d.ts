@@ -95,8 +95,6 @@ declare namespace my {
    * 获取缓存数据。
    *
    * > 支持内嵌webview内缓与小程序缓存隔离，获取内嵌webview指定key的缓存不会同时返回小程序相同key下的缓存数据
-   *
-   * @param option
    */
   function getStorage(option: IGetStorageOptions): void;
 

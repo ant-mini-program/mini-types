@@ -77,11 +77,8 @@ declare namespace my {
   }
 
   namespace ap {
-
     /**
      * 该接口通过活体检测和人脸比对技术，认证当前用户是否为登陆支付宝用户的本人和真人。
-     *
-     * @param options
      */
     function faceVerify(options: IFaceVerifyOptions): void;
   }

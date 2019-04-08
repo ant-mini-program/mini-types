@@ -17,8 +17,6 @@ declare namespace my {
   interface IGetAuthUserInfoOptions {
     /**
      * 调用成功的回调函数
-     *
-     * @param result
      */
     success?(result: IGetAuthUserInfoSuccessResult): void;
 

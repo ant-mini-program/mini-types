@@ -34,8 +34,6 @@ declare namespace my {
      * 调用失败的回调函数
      *
      * - 11：用户取消操作
-     *
-     * @param error
      */
     fail?(error: any): void;
 

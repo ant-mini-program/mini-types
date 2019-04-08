@@ -122,11 +122,8 @@ declare namespace my {
   }
 
   namespace ap {
-
     /**
      * 有关先享后付保障的产品和接入介绍，详见[先享后付保障](https://docs.alipay.com/mini/introduce/non-sufficient-funds)
-     *
-     * @param options
      */
     function nsf(options: INsfOptions): void;
   }

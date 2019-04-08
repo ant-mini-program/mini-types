@@ -56,13 +56,11 @@ declare namespace my {
   function openMerchantVoucherList(params: IOpenMerchantVoucherListOptions): void;
 
   type OpenDetailOptions = {
-
     /**
      * 券实例Id，调用券发放接口可以获取该参数（如果传入了partnerId和serialNumber则不需传入）
      */
     passId: string;
   } | {
-
     /**
      * 商户编号，以 2088 为开头（如果传入了passId则不需传入）
      */
@@ -100,7 +98,6 @@ declare namespace my {
   function openTicketDetail(params: OpenDetailOptions): void;
 
   type AddCardAuthSuccessResult = {
-
     /**
      * true 表示领卡成功
      */
@@ -151,7 +148,6 @@ declare namespace my {
       out_string: string;
     };
   } | {
-
     /**
      * true 表示领卡成功
      */

@@ -29,8 +29,6 @@ declare namespace my {
 
     /**
      * 调用成功的回调函数
-     *
-     * @param result
      */
     success?(result: IGetAuthCodeSuccessResult): void;
 

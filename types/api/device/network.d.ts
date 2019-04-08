@@ -52,8 +52,6 @@ declare namespace my {
 
   /**
    * 开始网络状态变化的监听
-   *
-   * @param callback
    */
   function onNetworkStatusChange(callback: (res: IOnNetworkStatusChangeEvent) => void): void;
 

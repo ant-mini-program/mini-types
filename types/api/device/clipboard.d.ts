@@ -5,8 +5,6 @@ declare namespace my {
   interface IClipboardOptions {
     /**
      * 调用成功的回调函数
-     *
-     * @param text
      */
     success?(text: string): void;
 
@@ -30,7 +28,6 @@ declare namespace my {
    * 设置剪贴板数据。
    */
   function setClipboard(options: IClipboardOptions & {
-
     /**
      * 剪贴板数据
      */
