@@ -21,8 +21,6 @@ declare namespace my {
 
   /**
    * 隐藏当前页面通用菜单（右上角）中的分享功能。
-   *
-   * @param options
    */
   function hideShareMenu(options?: IHideShareMenuOptions): void;
 

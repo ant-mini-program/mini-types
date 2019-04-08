@@ -53,8 +53,6 @@ declare namespace my {
    * 非对称加密。
    *
    * 注：加密与解密过程分别放置在客户端与服务端，且私钥放在服务端，私钥放在客户端易泄露将导致安全问题。
-   *
-   * @param options
    */
   function rsa(options: IRSAOptions): void;
 }

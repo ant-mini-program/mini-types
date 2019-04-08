@@ -47,8 +47,6 @@ declare namespace my {
 
   /**
    * 获取授权码。
-   *
-   * @param options
    */
   function getAuthCode(options: IGetAuthCodeOptions): void;
 }

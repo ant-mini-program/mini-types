@@ -175,8 +175,6 @@ declare namespace my {
 
   /**
    * 保存在线图片到手机相册。
-   *
-   * @param options
    */
   function saveImage(options: ISaveImageOptions): void;
 
@@ -215,8 +213,6 @@ declare namespace my {
 
   /**
    * 压缩图片。
-   *
-   * @param options
    */
   function compressImage(options: ICompressImageOptions): void;
 }

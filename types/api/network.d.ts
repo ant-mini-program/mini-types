@@ -88,8 +88,6 @@ declare namespace my {
 
   /**
    * 小程序网络请求
-   *
-   * @param options
    */
   function request(options: IHttpRequestOptions): void;
 

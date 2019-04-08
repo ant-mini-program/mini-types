@@ -44,8 +44,6 @@ declare namespace my {
   /**
    * 初始化小程序蓝牙模块，生效周期为调用 [my.openBluetoothAdapter](#my.openBluetoothAdapter) 至调用 [my.closeBluetoothAdapter](#my.closeBluetoothAdapter) 或小程序被销毁为止。
    * 在小程序蓝牙适配器模块生效期间，开发者可以正常调用下面的小程序API，并会收到蓝牙模块相关的 on 事件回调。
-   *
-   * @param options
    */
   function openBluetoothAdapter(options?: IOpenBluetoothAdapterOptions): void;
 
@@ -73,8 +71,6 @@ declare namespace my {
    * 1. tip: 调用该方法将断开所有已建立的蓝牙连接并释放系统资源。
    * 2. tip: 建议在结束小程序蓝牙流程时调用，与 my.openBluetoothAdapter 成对调用。
    * 3. tip: 调用 my.closeBluetoothAdapter 释放资源为异步操作，不建议使用 my.closeBluetoothAdapter 和 my.openBluetoothAdapter 作为异常处理流程（相当于先关闭再开启，重新初始化，效率低，易发生线程同步问题）
-   *
-   * @param options
    */
   function closeBluetoothAdapter(options?: ICloseBluetoothAdapterOptions): void;
 
@@ -109,8 +105,6 @@ declare namespace my {
 
   /**
    * 获取本机蓝牙模块状态。
-   *
-   * @param options
    */
   function getBluetoothAdapterState(options: IGetBluetoothAdapterStateOptions): void;
 
@@ -151,8 +145,6 @@ declare namespace my {
    *
    * Bug & Tip
    * - tip: 该操作比较耗费系统资源，请在搜索并连接到设备后调用 stop 方法停止搜索。
-   *
-   * @param options
    */
   function startBluetoothDevicesDiscovery(options?: IStartBluetoothDevicesDiscoveryOptions): void;
 
@@ -175,8 +167,6 @@ declare namespace my {
 
   /**
    * 停止搜寻附近的蓝牙外围设备。
-   *
-   * @param options
    */
   function stopBluetoothDevicesDiscovery(options?: IStopBluetoothDevicesDiscoveryOptions): void;
 
@@ -249,8 +239,6 @@ declare namespace my {
    * Bug & Tip
    * - tip: 模拟器可能无法获取 advertisData 及 RSSI，请使用真机调试
    * - tip: 开发者工具和 Android 上获取到的deviceId为设备 MAC 地址，iOS 上则为设备 uuid; 因此 deviceId 不能硬编码到代码中，需要分平台处理，iOS可根据设备属性（localName/advertisData/manufacturerData 等属性）进行动态匹配。
-   *
-   * @param options
    */
   function getBluetoothDevices(options: IGetBluetoothDevicesOptions): void;
 
@@ -289,8 +277,6 @@ declare namespace my {
    * Bug & Tip
    * - tip: 如果传递的 services 为空，则返回所有的已经连接的设备。
    * - tip: Android 上获取到的deviceId为设备 MAC 地址，iOS 上则为设备 uuid。因此deviceId不能硬编码到代码中，需要区分处理。
-   *
-   * @param options
    */
   function getConnectedBluetoothDevices(options: IGetConnectedBluetoothDevicesOptions): void;
 
@@ -322,8 +308,6 @@ declare namespace my {
    * Bug & Tip
    * - tip: 若小程序在之前已有搜索过某个蓝牙设备，可直接传入之前搜索获取的 deviceId 直接尝试连接该设备，无需进行搜索操作。
    * - tip: 若指定的蓝牙设备已经连接，重复连接直接返回成功。
-   *
-   * @param options
    */
   function connectBLEDevice(options: IConnectBLEDeviceOptions): void;
 
@@ -355,8 +339,6 @@ declare namespace my {
    * Bug & Tip
    * - tip: 蓝牙连接随时可能断开，建议监听 [my.onBLEConnectionStateChanged](#my.onBLEConnectionStateChanged) 回调事件，当蓝牙设备断开时按需执行重连操作
    * - tip: 若对未连接的设备或已断开连接的设备调用数据读写操作的接口，会返回10006错误，详见错误码，建议进行重连操作
-   *
-   * @param options
    */
   function disconnectBLEDevice(options: IDisconnectBLEDeviceOptions): void;
 
@@ -403,8 +385,6 @@ declare namespace my {
    * Bug & Tip
    * - tip: 设备的特征值必须支持 write 才可以成功调用，具体参照 characteristic 的 properties 属性。
    * - tip: 写入的二进制数据需要进行 hex 编码。
-   *
-   * @param options
    */
   function writeBLECharacteristicValue(options: IWriteBLECharacteristicValueOptions): void;
 
@@ -468,8 +448,6 @@ declare namespace my {
    * - tip: 设备的特征值必须支持read才可以成功调用，具体参照 characteristic 的 properties 属性
    * - tip: 并行多次调用读写接口存在读写失败的可能性。
    * - tip: 如果读取超时，错误码 10015，[my.onBLECharacteristicValueChange](#my.onBLECharacteristicValueChange) 接口之后可能返回数据，需要接入方酌情处理。
-   *
-   * @param options
    */
   function readBLECharacteristicValue(options: IReadBLECharacteristicValueOptions): void;
 
@@ -521,8 +499,6 @@ declare namespace my {
    * Bug & Tip
    * - tip: 订阅操作成功后需要设备主动更新特征值的 value，才会触发 my.onBLECharacteristicValueChange 。
    * - tip: 订阅方式效率比较高，推荐使用订阅代替 read 方式。
-   *
-   * @param options
    */
   function notifyBLECharacteristicValueChange(options: INotifyBLECharacteristicValueChangeOptions): void;
 
@@ -571,8 +547,6 @@ declare namespace my {
    *
    * Bug & Tip
    * - tip: 建立连接后先执行 my.getBLEDeviceServices 与 my.getBLEDeviceCharacteristics 后再进行与蓝牙设备的数据交互。
-   *
-   * @param options
    */
   function getBLEDeviceServices(options: IGetBLEDeviceServicesOptions): void;
 
@@ -656,8 +630,6 @@ declare namespace my {
    *
    * Bug & Tip
    * - tip: 建立连接后先执行 my.getBLEDeviceServices 与 my.getBLEDeviceCharacteristics 后再进行与蓝牙设备的数据交互。
-   *
-   * @param options
    */
   function getBLEDeviceCharacteristics(options: IGetBLEDeviceCharacteristicsOptions): void;
 

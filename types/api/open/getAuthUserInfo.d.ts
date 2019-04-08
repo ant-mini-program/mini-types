@@ -35,8 +35,6 @@ declare namespace my {
 
   /**
    * 客户端获取会员信息。
-   *
-   * @param options
    */
   function getAuthUserInfo(options: IGetAuthUserInfoOptions): void;
 }

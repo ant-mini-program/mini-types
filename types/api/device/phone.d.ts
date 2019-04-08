@@ -11,8 +11,6 @@ declare namespace my {
 
   /**
    * 拨打电话。
-   *
-   * @param options
    */
   function makePhoneCall(options: IMakePhoneCallOptions): void;
 }

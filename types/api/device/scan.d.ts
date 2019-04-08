@@ -58,8 +58,6 @@ declare namespace my {
 
   /**
    * 调用扫一扫功能。
-   *
-   * @param options
    */
   function scan(options: IScanOptions): void;
 }

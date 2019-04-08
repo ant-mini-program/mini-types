@@ -190,8 +190,6 @@ declare namespace my {
 
   /**
    * 小程序唤起会员开卡授权页面
-   *
-   * @param options
    */
   function addCardAuth(options: IAddCardAuthOptions): void;
 }

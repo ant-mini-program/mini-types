@@ -16,8 +16,6 @@ declare namespace my {
 
   /**
    * 获取支付宝用户绑定的手机号
-   *
-   * @param options
    */
   function getPhoneNumber(options: IGetPhoneNumberOptions): void;
 }

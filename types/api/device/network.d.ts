@@ -35,8 +35,6 @@ declare namespace my {
 
   /**
    * 获取当前网络状态。
-   *
-   * @param options
    */
   function getNetworkType(options: IGetNetworkTypeOptions): void;
 

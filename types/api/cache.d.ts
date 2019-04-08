@@ -42,8 +42,6 @@ declare namespace my {
    * > 支持内嵌webview的存储与小程序存储隔离，内嵌webview中指定key存储数据不会覆盖小程序自身相同key对应的数据
    *
    * > 注意：单条数据转换成字符串后，字符串长度最大200*1024。同一个支付宝用户，同一个小程序缓存总上限为10MB
-   *
-   * @param options
    */
   function setStorage(options: ISetStorageOptions): void;
 
@@ -61,8 +59,6 @@ declare namespace my {
 
   /**
    * 同步将数据存储在本地缓存中指定的 key 中。
-   *
-   * @param options
    */
   function setStorageSync(options: ISetStorageSyncOptions): void;
 
@@ -113,8 +109,6 @@ declare namespace my {
 
   /**
    * 同步获取缓存数据。
-   *
-   * @param options
    */
   function getStorageSync(options: IGetStorageSyncOptions): IGetStorageSuccessResult;
 
@@ -144,8 +138,6 @@ declare namespace my {
    * 删除缓存数据。
    *
    * > 移除内嵌webview的存储数据时不会移除当前小程序的存储数据
-   *
-   * @param options
    */
   function removeStorage(options: IRemoveStorageOptions): void;
 
@@ -158,8 +150,6 @@ declare namespace my {
 
   /**
    * 同步删除缓存数据。
-   *
-   * @param options
    */
   function removeStorageSync(options: IRemoveStorageSyncOptions): void;
 
@@ -212,8 +202,6 @@ declare namespace my {
    * 异步获取当前storage的相关信息。
    *
    * > 在内嵌webview内获取当前storage的相关信息不会获取到当前小程序storage的相关信息
-   *
-   * @param options
    */
   function getStorageInfo(options: IGetStorageInfoOptions): void;
 
