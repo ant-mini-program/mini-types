@@ -6,17 +6,17 @@ declare namespace my {
     /**
      * 认证标识
      */
-    token: string;
+    readonly token: string;
 
     /**
      * 认证是否通过
      */
-    passed: string;
+    readonly passed: string;
 
     /**
      * 认证不通过原因
      */
-    reason?: string;
+    readonly reason?: string;
   }
 
   interface IStartZMVerifyOptions {

@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 经过处理过后得到的文本，加密为Base64编码文本，解密为原始文本
      */
-    text: string;
+    readonly text: string;
   }
 
   interface IRSAFailResult {
@@ -14,7 +14,7 @@ declare namespace my {
      * - 10：参数错误
      * - 11：key错误
      */
-    error: 10 | 11;
+    readonly error: 10 | 11;
   }
 
   interface IRSAOptions {

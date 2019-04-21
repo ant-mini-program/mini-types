@@ -6,23 +6,26 @@ declare namespace my {
     /**
      * 选中的联系人姓名
      */
-    name: string;
+    readonly name: string;
     /**
      * 选中的联系人手机号
      */
-    mobile: string;
+    readonly mobile: string;
   }
+
   interface IChoosePhoneContactFailResult {
     /**
      * 10 -> 没有权限；11 -> 用户取消操作(或设备未授权使用通讯录)
      */
-    error: 10 | 11;
+    readonly error: 10 | 11;
   }
+
   interface IChoosePhoneContactOptions {
     success?(result: IChoosePhoneContactSuccessResult): void;
     fail?(result: IChoosePhoneContactFailResult): void;
     complete?(result: IChoosePhoneContactSuccessResult | IChoosePhoneContactFailResult): void;
   }
+
   /**
    * 选择本地系统通信录中某个联系人的电话。
    */
@@ -55,12 +58,14 @@ declare namespace my {
       userId: string;
     }>;
   }
+
   interface IChooseAlipayContactFailResult {
     /**
      * 10 -> 没有权限；11 -> 用户取消操作(或设备未授权使用通讯录)
      */
     error: 10 | 11;
   }
+
   interface IChooseAlipayContactOptions {
     /**
      * 单次最多选择联系人个数，默认 1，最大 10
@@ -70,32 +75,34 @@ declare namespace my {
     fail?(result: IChooseAlipayContactFailResult): void;
     complete?(result: IChooseAlipayContactSuccessResult | IChooseAlipayContactFailResult): void;
   }
+
   function chooseAlipayContact(options: IChooseAlipayContactOptions): void;
 
   interface IChooseContactSuccessResult {
-    contactsDicArray: Array<{
+    readonly contactsDicArray: ReadonlyArray<{
       /**
        * 支付宝账号唯一 userId
        */
-      userId: string;
+      readonly userId: string;
       /**
        * 账号的头像链接
        */
-      avatar: string;
+      readonly avatar: string;
       /**
        * 账号对应的手机号码
        */
-      mobile: string;
+      readonly mobile: string;
       /**
        * 账号的真实姓名
        */
-      realName: string;
+      readonly realName: string;
       /**
        * 账号的显示名称：也即支付宝设置的备注名称，默认为朋友圈里面的昵称
        */
-      displayName: string;
+      readonly displayName: string;
     }>;
   }
+
   interface IChooseContactOptions {
     /**
      * 选择类型，值为single（单选）或者 multi（多选）

@@ -6,12 +6,12 @@ declare namespace my {
     /**
      * 用户昵称
      */
-    nickName: string;
+    readonly nickName: string;
 
     /**
      * 用户头像链接
      */
-    avatar: string;
+    readonly avatar: string;
   }
 
   interface IGetAuthUserInfoOptions {

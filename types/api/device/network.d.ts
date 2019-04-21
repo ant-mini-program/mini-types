@@ -8,12 +8,12 @@ declare namespace my {
     /**
      * 网络是否可用
      */
-    networkAvailable: boolean;
+    readonly networkAvailable: boolean;
 
     /**
      * 网络类型值 UNKNOWN / NOTREACHABLE / WIFI / 3G / 2G / 4G / WWAN
      */
-    networkType: INetworkType;
+    readonly networkType: INetworkType;
   }
 
   interface IGetNetworkTypeOptions {
@@ -42,12 +42,12 @@ declare namespace my {
     /**
      * 网络是否可用
      */
-    isConnected: boolean;
+    readonly isConnected: boolean;
 
     /**
      * 网络类型值 UNKNOWN / NOTREACHABLE / WIFI / 3G / 2G / 4G / WWAN
      */
-    networkType: INetworkType;
+    readonly networkType: INetworkType;
   }
 
   /**

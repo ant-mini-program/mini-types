@@ -3,20 +3,21 @@
  */
 declare namespace my {
   type AddPhoneContactSuccessResult = {
-    success: true
+    readonly success: true
   } | {
     /**
      * - 11：用户取消操作
      * - 3：调用失败，detail 加上详细信息
      */
-    error: 11 | 3;
+    readonly error: 11 | 3;
 
     /**
      * - fail cancel：用户取消操作
      * - fail ${detail}：调用失败，detail 加上详细信息
      */
-    errorMessage: string;
+    readonly errorMessage: string;
   };
+
   interface IAddPhoneContactOptions {
     /**
      * 头像本地文件路径

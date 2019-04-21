@@ -88,14 +88,14 @@ declare namespace my {
      *
      * @example {\"riskinfo_anticheat_common\":\"rank3\",\"riskinfo_anticheat_common_infocode\":\"171\"}
      */
-    riskResult: string;
+    readonly riskResult: string;
 
     /**
      * 风险信息描述
      *
      * @example {\"rank0\":\"等级0\"}
      */
-    riskResultDesc: string;
+    readonly riskResultDesc: string;
 
     /**
      * 业务唯一识别码
@@ -104,14 +104,14 @@ declare namespace my {
      *
      * @example 0b92uueie87636222
      */
-    uniqueId: string;
+    readonly uniqueId: string;
   }
 
   interface IPreventCheatFailResult {
     /**
      * 识别错误码
      */
-    error: string;
+    readonly error: string;
 
     /**
      * - serviceNoAuth：服务未授权。请检查配置的账户是否有当前接口权限以及service参数是否正确
@@ -123,7 +123,7 @@ declare namespace my {
      * - INVALID_PARAMETER：缺少必选参数或参数有误。检查参数是否正确或者缺失
      * - OVER_LIMIT：超过调用量限制。如需增加额度，请发邮件至RiskGoCSC@service.alipay.com进行申请
      */
-    errorMessage: 'serviceNoAuth' | 'riskTypeNoAuth' | 'bizContentEmpty'
+    readonly errorMessage: 'serviceNoAuth' | 'riskTypeNoAuth' | 'bizContentEmpty'
       | 'paramMissingError' | 'param error' | 'SYSTEM_OUT_ERROR'
       | 'INVALID_PARAMETER' | 'OVER_LIMIT';
   }

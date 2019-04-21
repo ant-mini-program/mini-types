@@ -8,17 +8,17 @@ declare namespace my {
     /**
      * 是否选择完成,取消返回false
      */
-    success: false
+    readonly success: false
   } | {
     /**
      * 是否选择完成,取消返回false
      */
-    success: true;
+    readonly success: true;
 
     /**
      * 选择的结果，如[{“name”:”杭州市”},{“name”:”上城区”},{“name”:”古翠街道”}]
      */
-    result: MultiLevelSelectOptionsList
+    readonly result: MultiLevelSelectOptionsList;
   };
 
   interface IMultiLevelSelectOptions {

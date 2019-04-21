@@ -6,12 +6,12 @@ declare namespace my {
     /**
      * 城市名
      */
-    city: string;
+    readonly city: string;
 
     /**
      * 行政区划代码
      */
-    adCode: string;
+    readonly adCode: string;
   }
 
   interface ICity {

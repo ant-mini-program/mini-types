@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 本地文件路径列表
      */
-    apFilePaths?: string[];
+    readonly apFilePaths?: ReadonlyArray<string>;
   }
 
   interface IChooseImageOptions {
@@ -84,17 +84,17 @@ declare namespace my {
     /**
      * 图片宽度，单位px
      */
-    width: number;
+    readonly width: number;
 
     /**
      * 图片高度 单位px
      */
-    height: number;
+    readonly height: number;
 
     /**
      * 图片本地路径
      */
-    path: string;
+    readonly path: string;
 
     /**
      * 返回图片的方向
@@ -108,13 +108,13 @@ declare namespace my {
      * - left-mirrored：同left，但垂直翻转
      * - right-mirrored：同right，但垂直翻转
      */
-    orientation: 'up' | 'down' | 'left' | 'right'
+    readonly orientation: 'up' | 'down' | 'left' | 'right'
       | 'up-mirrored' | 'down-mirrored' | 'left-mirrored' | 'right-mirrored';
 
     /**
      * 返回图片的格式
      */
-    type: string;
+    readonly type: string;
   }
 
   interface IGetImageInfoOptions {

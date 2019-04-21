@@ -21,14 +21,14 @@ declare namespace tinyapp {
 
   type IPageScrollEvent = [
     {
-      scrollTop: number;
-      scrollHeight: number;
+      readonly scrollTop: number;
+      readonly scrollHeight: number;
     },
     null,
     null
   ] | {
-    scrollTop: number;
-    scrollHeight: number;
+    readonly scrollTop: number;
+    readonly scrollHeight: number;
   };
 
   interface IPageEvents {
@@ -122,7 +122,7 @@ declare namespace tinyapp {
     /**
      * Page 路径，对应 app.json 中配置的路径值。
      */
-    route: string;
+    readonly route: string;
 
     /**
      * 批量更新数据。

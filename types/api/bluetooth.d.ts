@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 是否支持 BLE
      */
-    isSupportBLE: boolean;
+    readonly isSupportBLE: boolean;
   }
 
   interface IOpenBluetoothAdapterFailResult {
@@ -16,7 +16,7 @@ declare namespace my {
      * - 14：未授权支付宝使用蓝牙功能
      * - 15：未知错误
      */
-    error: 12 | 13 | 14 | 15;
+    readonly error: 12 | 13 | 14 | 15;
   }
 
   interface IOpenBluetoothAdapterOptions {
@@ -78,12 +78,12 @@ declare namespace my {
     /**
      * 是否正在搜索设备
      */
-    discovering: boolean;
+    readonly discovering: boolean;
 
     /**
      * 蓝牙模块是否可用(需支持 BLE 并且蓝牙是打开状态)
      */
-    available: boolean;
+    readonly available: boolean;
   }
 
   interface IGetBluetoothAdapterStateOptions {
@@ -213,7 +213,7 @@ declare namespace my {
     /**
      * 已发现的设备列表
      */
-    devices: IBluetoothDevice[];
+    readonly devices: ReadonlyArray<Readonly<IBluetoothDevice>>;
   }
 
   interface IGetBluetoothDevicesOptions {
@@ -246,7 +246,7 @@ declare namespace my {
     /**
      * 已连接的设备列表
      */
-    devices: IBluetoothDevice[];
+    readonly devices: ReadonlyArray<Readonly<IBluetoothDevice>>;
   }
 
   interface IGetConnectedBluetoothDevicesOptions {
@@ -392,21 +392,21 @@ declare namespace my {
     /**
      * 设备特征值信息
      */
-    characteristic: {
+    readonly characteristic: {
       /**
        * 蓝牙设备特征值的 uuid
        */
-      characteristicId: string;
+      readonly characteristicId: string;
 
       /**
        * 蓝牙设备特征值对应服务的 uuid
        */
-      serviceId: string;
+      readonly serviceId: string;
 
       /**
        * 蓝牙设备特征值的value
        */
-      value: string;
+      readonly value: string;
     };
   }
   interface IReadBLECharacteristicValueOptions {
@@ -506,16 +506,16 @@ declare namespace my {
     /**
      * 设备service 对象列表，详见下表特征值信息
      */
-    services: Array<{
+    readonly services: ReadonlyArray<{
       /**
        * 蓝牙设备服务的 uuid
        */
-      serviceId: string;
+      readonly serviceId: string;
 
       /**
        * 该服务是否为主服务
        */
-      isPrimary: boolean;
+      readonly isPrimary: boolean;
     }>;
   }
 
@@ -553,45 +553,45 @@ declare namespace my {
     /**
      * 设备特征值列
      */
-    characteristics: Array<{
+    readonly characteristics: ReadonlyArray<{
       /**
        * 蓝牙设备特征值的 uuid
        */
-      characteristicId: string;
+      readonly characteristicId: string;
 
       /**
        * 蓝牙设备特征值对应服务的 uuid
        */
-      serviceId: string;
+      readonly serviceId: string;
 
       /**
        * 蓝牙设备特征值对应的16进制值
        */
-      value: string;
+      readonly value: string;
 
       /**
        * 该特征值支持的操作类型
        */
-      properties: {
+      readonly properties: {
         /**
          * 该特征值是否支持 read 操作
          */
-        read: boolean;
+        readonly read: boolean;
 
         /**
          * 该特征值是否支持 write 操作
          */
-        write: boolean;
+        readonly write: boolean;
 
         /**
          * 该特征值是否支持 notify 操作
          */
-        notify: boolean;
+        readonly notify: boolean;
 
         /**
          * 该特征值是否支持 indicate 操作
          */
-        indicate: boolean;
+        readonly indicate: boolean;
       };
     }>;
   }
@@ -635,7 +635,7 @@ declare namespace my {
     /**
      * 新搜索到的设备列表
      */
-    devices: IBluetoothDevice[];
+    readonly devices: ReadonlyArray<Readonly<IBluetoothDevice>>;
   }
 
   /**
@@ -660,22 +660,22 @@ declare namespace my {
     /**
      * 蓝牙设备 id，参考 device 对象
      */
-    deviceId: string;
+    readonly deviceId: string;
 
     /**
      * 蓝牙特征值对应 service 的 uuid
      */
-    serviceId: string;
+    readonly serviceId: string;
 
     /**
      * 蓝牙特征值的 uuid
      */
-    characteristicId: string;
+    readonly characteristicId: string;
 
     /**
      * 特征值最新的16进制值
      */
-    value: string;
+    readonly value: string;
   }
 
   /**
@@ -692,12 +692,12 @@ declare namespace my {
     /**
      * 蓝牙设备 id，参考 device 对象
      */
-    deviceId: string;
+    readonly deviceId: string;
 
     /**
      * 连接目前的状态
      */
-    connected: string;
+    readonly connected: string;
   }
 
   /**
@@ -720,12 +720,12 @@ declare namespace my {
     /**
      * 蓝牙模块是否可用
      */
-    available: boolean;
+    readonly available: boolean;
 
     /**
      * 蓝牙模块是否处于搜索状态
      */
-    discovering: boolean;
+    readonly discovering: boolean;
   }
 
   /**

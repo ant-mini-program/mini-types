@@ -8,17 +8,17 @@ declare namespace my {
     /**
      * 授权码
      */
-    authCode: string;
+    readonly authCode: string;
 
     /**
      * 失败的授权类型，key是授权失败的 scope，value 是对应的错误码
      */
-    authErrorScope: Record<GetAuthCodeOptionsScope, any>;
+    readonly authErrorScope: Readonly<Record<GetAuthCodeOptionsScope, any>>;
 
     /**
      * 成功的授权 scope
      */
-    authSuccessScope: Record<GetAuthCodeOptionsScope, any>;
+    readonly authSuccessScope: Readonly<Record<GetAuthCodeOptionsScope, any>>;
   }
 
   interface IGetAuthCodeOptions {

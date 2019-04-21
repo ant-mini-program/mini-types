@@ -81,16 +81,16 @@ declare namespace my {
    */
   function alert(options: IAlertOptions): void;
 
-  interface IConfirmSuccessCallbackParam {
+  interface IConfirmSuccessResult {
     /**
      * 点击 confirm 返回 true，点击 cancel 返回false
      */
-    confirm: boolean;
+    readonly confirm: boolean;
 
     /**
      * 是否点击了确认
      */
-    ok?: boolean;
+    readonly ok?: boolean;
   }
 
   interface IConfirmOptions {
@@ -117,17 +117,17 @@ declare namespace my {
     /**
      * 调用成功的回调函数
      */
-    success?: (result: IConfirmSuccessCallbackParam) => void;
+    success?: (result: IConfirmSuccessResult) => void;
 
     /**
      * 调用失败的回调函数
      */
-    fail?: (result: IConfirmSuccessCallbackParam) => void;
+    fail?: (result: IConfirmSuccessResult) => void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?: (result: IConfirmSuccessCallbackParam) => void;
+    complete?: (result: IConfirmSuccessResult) => void;
   }
 
   /**
@@ -135,16 +135,16 @@ declare namespace my {
    */
   function confirm(options: IConfirmOptions): void;
 
-  interface IPromptSuccessCallbackParam {
+  interface IPromptSuccessResult {
     /**
      * 点击 ok 返回 true，点击 cancel 返回false
      */
-    ok: boolean;
+    readonly ok: boolean;
 
     /**
      * 当ok为true时，返回用户输入的内容
      */
-    inputValue?: string;
+    readonly inputValue?: string;
   }
 
   interface IPromptOptions {
@@ -181,7 +181,7 @@ declare namespace my {
     /**
      * 调用成功的回调函数
      */
-    success?: (result: IPromptSuccessCallbackParam) => void;
+    success?: (result: IPromptSuccessResult) => void;
 
     /**
      * 调用失败的回调函数
@@ -243,7 +243,7 @@ declare namespace my {
   function hideLoading(options?: IHideLoadingOptions): Promise<void>;
 
   interface IShowActionSheetSuccessResult {
-    index: number;
+    readonly index: number;
   }
 
   interface IShowActionSheetOptions {

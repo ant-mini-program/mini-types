@@ -6,17 +6,17 @@ declare namespace my {
     /**
      * 扫码所得数据
      */
-    code: string;
+    readonly code: string;
 
     /**
      * 扫描二维码时返回二维码数据
      */
-    qrCode: string;
+    readonly qrCode: string;
 
     /**
      * 扫描条形码时返回条形码数据
      */
-    barCode: string;
+    readonly barCode: string;
   }
 
   interface IScanFailResult {
@@ -24,7 +24,7 @@ declare namespace my {
      * 1. 10，用户取消；
      * 2. 11，操作失败。
      */
-    error: 10 | 11;
+    readonly error: 10 | 11;
   }
 
   interface IScanOptions {

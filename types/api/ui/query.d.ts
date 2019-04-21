@@ -46,12 +46,18 @@ declare namespace my {
     scrollOffset(): ISelectorQuerySelectMethod & ISelectorQueryStopMethod;
   }
 
+  type SelectorQueryStopMethodExecResult = ReadonlyArray<Readonly<
+    BoundingClientRectResult>
+    | Readonly<IScrollOffsetResult>
+    | null
+  >;
+
   interface ISelectorQueryStopMethod {
     /**
      * 将查询结果放入 callback 回调中。查询结果为数组，每项为一次查询的结果，如果当前是节点列表，则单次查询结果也为数组。
      * 注意 exec 必须放到 Page onReady 后调用。
      */
-    exec(callback: (result: Array<BoundingClientRectResult | IScrollOffsetResult | null>) => {}): void;
+    exec(callback: (result: SelectorQueryStopMethodExecResult) => {}): void;
   }
 
   interface ICreateSelectorQueryOptions {

@@ -101,57 +101,57 @@ declare namespace my {
     /**
      * true 表示领卡成功
      */
-    success: true;
+    readonly success: true;
 
     /**
      * 9000 表示成功
      */
-    resultStatus: string;
+    readonly resultStatus: string;
 
     /**
      * 结果内容
      */
-    result: {
+    readonly result: {
       /**
        * 应用id
        */
-      app_id: string;
+      readonly app_id: string;
 
       /**
        * 授权码，用于换取authtoken
        */
-      auth_code: string;
+      readonly auth_code: string;
 
       /**
        * 授权的state
        */
-      state: string;
+      readonly state: string;
 
       /**
        * 授权scope
        */
-      scope: string;
+      readonly scope: string;
 
       /**
        * 会员卡模板Id
        */
-      template_id: string;
+      readonly template_id: string;
 
       /**
        * 会员卡表单信息请求Id
        */
-      request_id: string;
+      readonly request_id: string;
 
       /**
        * 会员卡领卡链接透传参数
        */
-      out_string: string;
+      readonly out_string: string;
     };
   } | {
     /**
      * true 表示领卡成功
      */
-    success: false;
+    readonly success: false;
 
     /**
      * 失败的错误码
@@ -159,7 +159,7 @@ declare namespace my {
      * - JSAPI_PARAM_INVALID：url 为空或非法参数
      * - JSAPI_SYSTEM_ERROR：系统错误
      */
-    code: 'JSAPI_SERVICE_TERMINATED' | 'JSAPI_PARAM_INVALID' | 'JSAPI_SYSTEM_ERROR';
+    readonly code: 'JSAPI_SERVICE_TERMINATED' | 'JSAPI_PARAM_INVALID' | 'JSAPI_SYSTEM_ERROR';
   };
 
   interface IAddCardAuthOptions {

@@ -8,7 +8,7 @@ declare namespace my {
     /**
      * 用户授权结果，其中 key 为 scope 值，value 为 Bool 值，表示用户是否允许授权，详见[scope列表](https://docs.alipay.com/mini/api/xmk3ml#scope-%E5%88%97%E8%A1%A8)。
      */
-    authSetting: Record<SettingScopeList, boolean>;
+    readonly authSetting: Readonly<Record<SettingScopeList, boolean>>;
   }
 
   interface IOpenSettingOptions {
@@ -37,7 +37,7 @@ declare namespace my {
     /**
      * 用户授权结果，其中 key 为 scope 值，value 为 Bool 值，表示用户是否允许授权，详见[scope列表](https://docs.alipay.com/mini/api/xmk3ml#scope-%E5%88%97%E8%A1%A8)
      */
-    authSetting: Record<SettingScopeList, boolean>;
+    readonly authSetting: Readonly<Record<SettingScopeList, boolean>>;
   }
 
   interface IGetSettingOptions {

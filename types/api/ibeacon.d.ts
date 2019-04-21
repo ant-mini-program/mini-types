@@ -92,17 +92,17 @@ declare namespace my {
     /**
      * iBeacon 设备列表
      */
-    beacons: IIBeacon[];
+    readonly beacons: ReadonlyArray<Readonly<IIBeacon>>;
 
     /**
      * errorCode=0 ,接口调用成功
      */
-    errCode: string;
+    readonly errCode: string;
 
     /**
      * ok
      */
-    errorMsg: string;
+    readonly errorMsg: string;
   }
 
   interface IGetBeaconsOptions {
@@ -134,7 +134,7 @@ declare namespace my {
     /**
      * 当前搜寻到的所有 iBeacon 设备列表
      */
-    beacons: IIBeacon[];
+    readonly beacons: ReadonlyArray<Readonly<IIBeacon>>;
   }
 
   interface IOnBeaconUpdateOptions {
@@ -149,12 +149,12 @@ declare namespace my {
     /**
      * 服务目前是否可用
      */
-    available: boolean;
+    readonly available: boolean;
 
     /**
      * 目前是否处于搜索状态
      */
-    discovering: boolean;
+    readonly discovering: boolean;
   }
 
   interface IOnBeaconServiceChangeOptions {

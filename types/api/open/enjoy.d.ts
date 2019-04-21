@@ -14,14 +14,14 @@ declare namespace my {
      *
      * @example {\"riskinfo_nsf_common_infocode\":\"172\",\"riskinfo_nsf_common\":\"rank1\"}
      */
-    riskResult: string;
+    readonly riskResult: string;
 
     /**
      * 风险信息描述
      *
      * @example {"rank0":"等级0"}
      */
-    riskResultDesc: string;
+    readonly riskResultDesc: string;
 
     /**
      * 业务唯一识别码
@@ -30,14 +30,14 @@ declare namespace my {
      *
      * @example 0b92uueie87636222
      */
-    uniqueId: string;
+    readonly uniqueId: string;
   }
 
   interface INsfFailResult {
     /**
      * 识别错误码
      */
-    errorCode: string;
+    readonly errorCode: string;
 
     /**
      * 识别错误信息
@@ -51,7 +51,7 @@ declare namespace my {
      * - INVALID_PARAMETER：缺少必选参数或参数有误。检查参数是否正确或者缺失
      * - OVER_LIMIT：超过调用量限制。如需增加额度，请发邮件至RiskGoCSC@service.alipay.com进行申请
      */
-    errorMessage: string;
+    readonly errorMessage: string;
   }
 
   interface INsfOptions {

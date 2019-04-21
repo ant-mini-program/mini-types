@@ -3,7 +3,7 @@
  */
 declare namespace my {
   interface INavigateToAlipayPageSuccessResult {
-    success: boolean;
+    readonly success: boolean;
   }
 
   interface INavigateToAlipayPageOptions {

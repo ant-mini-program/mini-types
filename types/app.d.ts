@@ -15,7 +15,7 @@ declare namespace tinyapp {
     /**
      * 来源信息。
      */
-    referrerInfo: {
+    referrerInfo?: {
       /**
        * 来源小程序
        */

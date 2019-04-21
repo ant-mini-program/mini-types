@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理
      */
-    response: string;
+    readonly response: string;
   }
 
   interface IGetPhoneNumberOptions {

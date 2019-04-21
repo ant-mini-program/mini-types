@@ -6,17 +6,17 @@ declare namespace my {
     /**
      * X 轴
      */
-    x: number;
+    readonly x: number;
 
     /**
      * Y 轴
      */
-    y: number;
+    readonly y: number;
 
     /**
      * Z 轴
      */
-    z: number;
+    readonly z: number;
   }
 
   /**

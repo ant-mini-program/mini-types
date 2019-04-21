@@ -18,12 +18,17 @@ declare namespace my {
   interface ICircularGradient extends ILinearGradient {}
   /* tslint:enable:no-empty-interface */
 
+  interface IGetImageDataSuccessResult {
+    readonly width: number;
+    readonly height: number;
+  }
+
   interface IGetImageDataOptions {
     x: number;
     y: number;
     width: number;
     height: number;
-    success?: (result: { width: number; height: number; }) => void;
+    success?: (result: IGetImageDataSuccessResult) => void;
     fail?: () => void;
     complete?: () => void;
   }

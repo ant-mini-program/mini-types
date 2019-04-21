@@ -18,71 +18,71 @@ declare namespace my {
     /**
      * 城市级别的地区代码(type>0生效)
      */
-    cityAdcode?: string;
+    readonly cityAdcode?: string;
 
     /**
      * 国家编号 (type>0生效)
      */
-    countryCode?: string;
+    readonly countryCode?: string;
 
     /**
      * 省份(type>0生效)
      */
-    province?: string;
+    readonly province?: string;
 
     /**
      * 区县级别的地区代码(type>0生效)
      */
-    districtAdcode?: string;
+    readonly districtAdcode?: string;
 
     /**
      * 需要POI级别逆地理的才会有的字段,定位点附近的 POI 信息，结构是：{name, address}（type>2生效）
      */
-    pois?: Array<{ name: string; address: string; }>;
+    readonly pois?: ReadonlyArray<{ readonly name: string; readonly address: string; }>;
 
     /**
      * 城市(type>0生效)
      */
-    city?: string;
+    readonly city?: string;
 
     /**
      * 区县(type>0生效)
      */
-    district?: string;
+    readonly district?: string;
 
     /**
      * 需要街道级别逆地理的才会有的字段,街道门牌信息，结构是：{street, number} (type>1生效)
      */
-    streetNumber?: {
-      street: string;
-      number: string;
+    readonly streetNumber?: {
+      readonly street: string;
+      readonly number: string;
     };
 
     /**
      * 国家(type>0生效)
      */
-    country?: string;
-    bearing: string;
+    readonly country?: string;
+    readonly bearing: string;
 
     /**
      * 纬度
      */
-    latitude: string;
+    readonly latitude: string;
 
     /**
      * 精确度，单位m
      */
-    accuracy: string;
+    readonly accuracy: string;
 
     /**
      * 经度
      */
-    longitude: string;
+    readonly longitude: string;
 
     /**
      * 水平精确度，单位m
      */
-    horizontalAccuracy: string;
+    readonly horizontalAccuracy: string;
   }
 
   interface IGetLocationFailResult {
@@ -92,7 +92,7 @@ declare namespace my {
      * - 13：定位失败，请稍后再试
      * - 14：业务定位超时。提示用户再次尝试
      */
-    error: 11 | 12 | 13 | 14;
+    readonly error: 11 | 12 | 13 | 14;
   }
 
   interface IGetLocationOptions {
@@ -130,16 +130,16 @@ declare namespace my {
    */
   function getLocation(options: IGetLocationOptions): void;
 
-  interface IChooseLocationResult extends ILocation {
+  interface IChooseLocationResult extends Readonly<ILocation> {
     /**
      * 位置名称
      */
-    name: string;
+    readonly name: string;
 
     /**
      * 详细地址
      */
-    address: string;
+    readonly address: string;
   }
 
   interface IChooseLocationOptions {

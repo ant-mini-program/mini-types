@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 面对的方向与正北方向的度数[0,360)
      */
-    direction: number;
+    readonly direction: number;
   }
 
   /**

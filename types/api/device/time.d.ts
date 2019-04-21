@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 服务器时间的毫秒数
      */
-    time: number;
+    readonly time: number;
   }
 
   interface IGetServerTimeOptions {

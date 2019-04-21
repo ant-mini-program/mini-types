@@ -86,7 +86,7 @@ declare namespace my {
      *  \"action\":\"REJECTED\"
      *  \"action\":\"PASSED\"
      */
-    risk_result: string;
+    readonly risk_result: string;
 
     /**
      * 风险识别结果描述
@@ -95,21 +95,21 @@ declare namespace my {
      *   \"REJECTED\":\"拦截\"
      *   \"PASSED\":\"放过\
      */
-    risk_result_desc: string;
+    readonly risk_result_desc: string;
 
     /**
      * 业务唯一识别码
      *
      * @example 0b92uueie87636222
      */
-    uniqueId: string;
+    readonly uniqueId: string;
   }
 
   interface IImgRiskCallbackFailResult {
     /**
      * 识别错误码
      */
-    errorCode: string;
+    readonly errorCode: string;
 
     /**
      * 识别错误信息
@@ -123,7 +123,7 @@ declare namespace my {
      * - INVALID_PARAMETER：缺少必选参数或参数有误。检查参数是否正确或者缺失
      * - OVER_LIMIT：超过调用量限制。如需增加额度，请发邮件至RiskGoCSC@service.alipay.com进行申请
      */
-    errorMessage: string;
+    readonly errorMessage: string;
   }
 
   interface IImgRiskCallbackOptions {

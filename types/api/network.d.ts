@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 响应数据，格式取决于请求时的 dataType 参数
      */
-    data?: any;
+    readonly data?: any;
 
     /**
      * 响应码
@@ -18,12 +18,12 @@ declare namespace my {
      * - 15：HTTP错误
      * - 16：请求已被停止/服务端限流
      */
-    status?: 11 | 12 | 13 | 14 | 19;
+    readonly status?: 11 | 12 | 13 | 14 | 19;
 
     /**
      * 响应头
      */
-    headers?: Record<string, string>;
+    readonly headers?: Readonly<Record<string, string>>;
   }
 
   interface IHttpRequestOptions {
@@ -94,17 +94,17 @@ declare namespace my {
     /**
      * 开发者服务器返回的数据
      */
-    data: string;
+    readonly data: string;
 
     /**
      * HTTP状态码
      */
-    statusCode: number;
+    readonly statusCode: number;
 
     /**
      * 服务器返回的 header
      */
-    header: Record<string, string>;
+    readonly header: Readonly<Record<string, string>>;
   }
 
   interface IUploadFileOptions {
@@ -159,7 +159,7 @@ declare namespace my {
     /**
      * 文件的临时路径
      */
-    apFilePath: string;
+    readonly apFilePath: string;
   }
 
   interface IDownloadFileFailResult {
@@ -218,7 +218,7 @@ declare namespace my {
      * - 11：消息发送失败
      * - 12：无法申请更多内存来读取网络数据
      */
-    error: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    readonly error: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
   }
 
   interface IConnectSocketOptions {
@@ -310,12 +310,12 @@ declare namespace my {
     /**
      * 服务器返回的消息
      */
-    data: string;
+    readonly data: string;
 
     /**
      * 如果此字段值为true，data字段表示接收到的经过了 base64 编码后的 String，否则 data 字段表示接收到的普通 String 文本。
      */
-    isBuffer: boolean;
+    readonly isBuffer: boolean;
   }
 
   /**

@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 小程序当前运行的版本，枚举类型：develop（开发版）、trial（体验版）、release（发布版）
      */
-    envVersion: 'develop' | 'trial' | 'release';
+    readonly envVersion: 'develop' | 'trial' | 'release';
   }
 
   interface IGetRunSceneOptions {

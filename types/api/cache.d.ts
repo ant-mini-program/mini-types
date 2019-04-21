@@ -66,7 +66,7 @@ declare namespace my {
     /**
      * key对应的内容
      */
-    data: string | Record<string, any>;
+    readonly data: string | Readonly<Record<string, any>>;
   }
 
   interface IGetStorageOptions {
@@ -167,18 +167,19 @@ declare namespace my {
     /**
      * 当前storage中所有的key
      */
-    keys: string[];
+    readonly keys: ReadonlyArray<string>;
 
     /**
      * 当前占用的空间大小, 单位KB
      */
-    currentSize: string;
+    readonly currentSize: string;
 
     /**
      * 限制的空间大小，单位KB
      */
-    limitSize: string;
+    readonly limitSize: string;
   }
+
   interface IGetStorageInfoOptions {
     /**
      * 调用成功的回调函数

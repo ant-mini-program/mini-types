@@ -3,7 +3,7 @@
  */
 declare namespace my {
   interface IUpdateAlipayClientSuccessResult {
-    success: boolean;
+    readonly success: boolean;
   }
 
   interface IUpdateAlipayClientOptions {

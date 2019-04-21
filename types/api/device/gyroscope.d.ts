@@ -6,17 +6,17 @@ declare namespace my {
     /**
      * x轴方向角速度
      */
-    x: number;
+    readonly x: number;
 
     /**
      * y轴方向角速度
      */
-    y: number;
+    readonly y: number;
 
     /**
      * z轴方向角速度
      */
-    z: number;
+    readonly z: number;
   }
 
   /**

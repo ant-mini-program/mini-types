@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 文件的保存路径
      */
-    savedFilePath: string;
+    readonly savedFilePath: string;
   }
 
   interface ISaveFileOptions {
@@ -57,12 +57,12 @@ declare namespace my {
     /**
      * 接口调用结果
      */
-    errMsg: string;
+    readonly errMsg: string;
 
     /**
      * 文件列表
      */
-    fileList: IFileListItem[];
+    fileList: ReadonlyArray<Readonly<IFileListItem>>;
   }
 
   interface IGetSavedFileListOptions {
@@ -91,17 +91,17 @@ declare namespace my {
     /**
      * 接口调用结果
      */
-    errMsg: string;
+    readonly errMsg: string;
 
     /**
      * 文件的保存时的时间戳，从1970/01/01 08:00:00 到当前时间的秒数
      */
-    createTime: number;
+    readonly createTime: number;
 
     /**
      * 文件大小，单位B
      */
-    size: number;
+    readonly size: number;
   }
 
   interface IGetSavedFileInfoOptions {
@@ -143,10 +143,15 @@ declare namespace my {
    */
   function removeSavedFile(options: IRemoveSavedFileOptions): void;
 
+  interface IGetFileInfoSuccessResult {
+    readonly size: number;
+    readonly digest: string;
+  }
+
   interface IGetFileInfoOptions {
     apFilePath: string;
     digestAlgorithm?: 'md5' | 'md5';
-    success?(res: { size: number; digest: string; }): void;
+    success?(res: IGetFileInfoSuccessResult): void;
     fail?(): void;
     complete?(): void;
   }

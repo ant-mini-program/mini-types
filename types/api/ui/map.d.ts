@@ -3,9 +3,9 @@
  */
 declare namespace my {
   interface IGetCenterLocationResult {
-    longitude: number;
-    latitude: number;
-    scale: number;
+    readonly longitude: number;
+    readonly latitude: number;
+    readonly scale: number;
   }
 
   interface IShowRouteOptions {

@@ -6,14 +6,14 @@ declare namespace my {
     /**
      * - 11：用户取消操作
      */
-    error: 11;
+    readonly error: 11;
   }
 
   interface IDatePickerSuccessResult {
     /**
      * 选择的日期
      */
-    date: string;
+    readonly date: string;
   }
 
   interface IDatePickerOptions {

@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 刷脸认证标识
      */
-    zimId: string;
+    readonly zimId: string;
 
     /**
      * 刷脸认证结果返回码
@@ -17,7 +17,7 @@ declare namespace my {
      * - 2002：网络错误
      * - 2006：刷脸失败
      */
-    faceRetCode?: '1000' | '1001' | '1003' | '2002' | '2006';
+    readonly faceRetCode?: '1000' | '1001' | '1003' | '2002' | '2006';
 
     /**
      * 认证可用性返回码
@@ -34,19 +34,19 @@ declare namespace my {
      * - ALG_NOT_SUPPORT：算法不支持
      * - NOT_REAL_NAME：非实名认证用户
      */
-    retCode: 'OK_SUCCESS' | 'SYSTEM_ERROR' | 'ACCOUNT_SERVICE_SUSPEND' | 'HIGH_RISK' | 'DEVICE_NOT_SUPPORT'
+    readonly retCode: 'OK_SUCCESS' | 'SYSTEM_ERROR' | 'ACCOUNT_SERVICE_SUSPEND' | 'HIGH_RISK' | 'DEVICE_NOT_SUPPORT'
       | 'OS_NOT_SUPPORT' | 'SDKVERSION_NOT_SUPPORT' | 'ASSET_NOT_AVAILABLE' | 'UNABLE_GET_IMAGE'
       | 'ALG_NOT_SUPPORT' | 'NOT_REAL_NAME';
 
     /**
      * 认证可用性返回码明细
      */
-    retCodeSub: string;
+    readonly retCodeSub: string;
 
     /**
      * 认证可用性结果描述
      */
-    retMessageSub?: string;
+    readonly retMessageSub?: string;
   }
 
   interface IFaceVerifyOptions {

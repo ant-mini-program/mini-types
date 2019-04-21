@@ -71,12 +71,12 @@ declare namespace tinyapp {
 
   type ComponentOptions<
     P extends Record<string, any> = Record<string, any>,
-    D extends any = any,
+    D = any,
     M extends IComponentMethods = IComponentMethods,
   > = IComponentLifeCycleMethods<D, P>
     & {
       /**
-       * 	组件间代码复用机制
+       * 组件间代码复用机制
        */
       mixins?: Array<ComponentOptions<any, any, any>>;
 

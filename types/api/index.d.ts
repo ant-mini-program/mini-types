@@ -29,10 +29,10 @@ declare namespace my {
 
   type ScrollOffset = Record<"scrollTop" | "scrollLeft", number>;
 
-  type SelectorResult = Array<
+  type SelectorResult = ReadonlyArray<
     null
-    | IBoundingClientRect
-    | ScrollOffset
+    | Readonly<IBoundingClientRect>
+    | Readonly<ScrollOffset>
   >;
 
   type ISelectorExecCallback = (ret: SelectorResult) => void;
