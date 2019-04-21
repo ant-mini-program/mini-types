@@ -40,7 +40,7 @@ declare namespace my {
 
     /**
      * 系统名：Android，iOS
-     readonly * 注意: 小程序文档中写的Android/iOS, 实际调用返回值为 android/ios/iphone(低版本)
+     * * 注意: 小程序文档中写的Android/iOS, 实际调用返回值为 android/ios/iphone(低版本)
      *      未避免小程序框架后续改造造成不兼容，建议转换成小写之后再进行比较
      */
     readonly platform: 'android' | 'ios' | 'iphone';
