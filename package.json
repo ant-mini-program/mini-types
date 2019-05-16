@@ -1,11 +1,11 @@
 {
   "name": "mini-types",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "TypeScript declarations for Alipay's mini program.",
   "scripts": {
     "lint": "dtslint types",
     "ci": "npm run lint",
-    "release": "npm run ci && npm publish"
+    "prepublish": "npm run ci"
   },
   "repository": {
     "type": "git",
