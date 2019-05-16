@@ -1,27 +1,23 @@
 {
-  "name": "@alipay/tinyapp-types",
+  "name": "mini-types",
   "version": "0.1.0",
-  "description": "支付宝小程序类型声明（WIP）",
+  "description": "TypeScript declarations for Alipay's mini program.",
   "scripts": {
     "lint": "dtslint types",
-    "ci": "tnpm run lint",
-    "release": "tnpm run ci && tnpm publish"
+    "ci": "npm run lint",
+    "release": "npm run ci && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.alipay-inc.com:intl-cd/tinyapp-types.git"
+    "url": "git@github.com:ant-mini-program/mini-types.git"
   },
   "keywords": [
     "tinyapp",
     "types"
   ],
-  "author": "kevinliu.lj@antfin.com,diandao.zl@antfin.com,yanyan.kyy@antfin.com",
   "license": "ISC",
   "devDependencies": {
-    "dtslint": "github:Microsoft/dtslint#production"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npm.alibaba-inc.com"
+    "dtslint": "^0.7.2"
   },
   "types": "./types/index.d.ts"
 }
