@@ -15,7 +15,7 @@
     "tinyapp",
     "types"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "dtslint": "^0.7.2"
   },
