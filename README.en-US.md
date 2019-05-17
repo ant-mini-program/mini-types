@@ -1,6 +1,6 @@
 # mini-types
 
-> [English Version](./README.en-US.md)
+> [中文版本](./README.md)
 
 [![npm package](https://img.shields.io/npm/v/mini-types.svg?style=flat-square)](https://www.npmjs.com/package/mini-types)
 [![GitHub stars](https://img.shields.io/github/stars/ant-mini-program/mini-types.svg)](https://github.com/ant-mini-program/mini-types/stargazers)
@@ -8,16 +8,16 @@
 [![NPM downloads](https://img.shields.io/npm/dm/mini-types.svg?style=flat-square)](https://www.npmjs.com/package/mini-types)
 [![GitHub issues](https://img.shields.io/github/issues/ant-mini-program/mini-types.svg)](https://github.com/ant-mini-program/mini-types/issues)
 
-支付宝小程序 TypeScript 声明文件。
+TypeScript declarations for Alipay's mini program.
 
-## 安装
+## Install
 
 > `npm install mini-types --save`
 
 
-## 使用
+## Usage
 
-在 `tsconfig.json` 文件中指定 `types` 配置。
+Specify `types` option in the `tsconfig.json` file.
 
 ```json
 {
@@ -27,6 +27,6 @@
 }
 ```
 
-## 贡献
+## Contributing
 
-如果你有好的意见或建议，欢迎给我们提 [issue](https://github.com/ant-mini-program/mini-types/issues)。
+We welcome all contributions. You can submit any ideas as [pull requests](https://github.com/ant-mini-program/mini-types/pulls) or as a [GitHub issue](https://github.com/ant-mini-program/mini-types/issues).
