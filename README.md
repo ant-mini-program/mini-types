@@ -12,8 +12,9 @@
 
 ## 安装
 
-> `npm install mini-types --save`
-
+```
+npm install mini-types --save
+```
 
 ## 使用
 
