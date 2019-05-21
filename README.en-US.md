@@ -12,8 +12,9 @@ TypeScript declarations for Alipay's mini program.
 
 ## Install
 
-> `npm install mini-types --save`
-
+```
+npm install mini-types --save
+```
 
 ## Usage
 
