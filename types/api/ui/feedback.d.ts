@@ -265,7 +265,7 @@ declare namespace my {
     /**
      * （iOS特殊处理）指定按钮的索引号，从0开始，使用场景：需要删除或清除数据等类似场景，默认红色
      */
-    destructiveBtnIndex: number;
+    destructiveBtnIndex?: number;
 
     /**
      * 需飘红选项的数组，数组内部对象字段见下表
