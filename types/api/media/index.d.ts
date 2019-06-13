@@ -52,7 +52,7 @@ declare namespace my {
     /**
      * 当前显示图片索引，默认 0
      */
-    current?: 0;
+    current?: number;
 
     /**
      * 需要预览的图片链接列表
