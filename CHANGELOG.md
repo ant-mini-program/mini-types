@@ -1,3 +1,9 @@
+# next
+
+* **Bug Fix**
+
+  - 修复 `IPreviewImageOptions` 的 `current` 属性为 `number` 类型。
+
 # 0.0.2
 
 `2019-06-10`
