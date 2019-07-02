@@ -32,7 +32,7 @@ declare namespace my {
   type SelectorResult = ReadonlyArray<
     null
     | Readonly<IBoundingClientRect>
-    | Readonly<ScrollOffset>
+    & Readonly<ScrollOffset>
   >;
 
   type ISelectorExecCallback = (ret: SelectorResult) => void;
