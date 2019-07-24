@@ -88,7 +88,11 @@ declare namespace my {
      */
     reset?: boolean;
   }
-  function setNavigationBar(): void;
+
+  /**
+   * 设置导航栏文字及样式。
+   */
+  function setNavigationBar(options: ISetNavigationBar): void;
 
   /**
    * 显示导航栏 loading。
