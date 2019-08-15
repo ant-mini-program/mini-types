@@ -12,3 +12,4 @@
 /// <reference path="./query.d.ts" />
 /// <reference path="./multiLevelSelect.d.ts" />
 /// <reference path="./feedback.d.ts" />
+/// <reference path="./optionsSelect.d.ts" />
