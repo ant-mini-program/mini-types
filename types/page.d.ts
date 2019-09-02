@@ -45,6 +45,12 @@ declare namespace tinyapp {
     onTitleClick?(): void;
     onTabItemTap?(): void;
     beforeTabItemTap?(): void;
+
+    /**
+     * 版本要求：基础库 1.11.0 或更高版本，若版本较低，建议做 兼容处理。
+     * 点击标签（tab）时触发。
+     */
+    onTabItemTap?(item: { index: number; pagePath: string; text: string }): void;
   }
 
   interface IPageOptionsMethods extends Pick<
