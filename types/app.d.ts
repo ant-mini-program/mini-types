@@ -100,7 +100,7 @@ declare namespace tinyapp {
 /**
  * `App()` 接受一个 object 作为参数，用来配置小程序的生命周期等。
  */
-declare function App(options: tinyapp.AppOptions): void;
+declare function App<G>(options: tinyapp.AppOptions<G>): void;
 
 /**
  * 获取小程序实例，一般用在各个子页面之中获取顶层应用。

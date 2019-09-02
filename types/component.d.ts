@@ -98,10 +98,10 @@ declare namespace tinyapp {
     & ThisType<IComponentInstance<P, D> & M>;
 }
 
-declare function Component(
+declare function Component<P, D, M extends tinyapp.IComponentMethods>(
   options: tinyapp.ComponentOptions<
-    Record<string, any>,
-    any,
-    tinyapp.IComponentMethods
+    P,
+    D,
+    M
   >
 ): void;

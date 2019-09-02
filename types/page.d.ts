@@ -160,7 +160,7 @@ declare namespace tinyapp {
  * Page() 函数用来注册一个页面。
  * 接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
  */
-declare function Page(options: tinyapp.PageOptions<any>): void;
+declare function Page<D>(options: tinyapp.PageOptions<D>): void;
 
 /**
  * getCurrentPages() 函数用于获取当前页面栈的实例，
