@@ -22,9 +22,14 @@ declare namespace my {
 
   interface ITradePayOptions {
     /**
-     * 接入小程序支付时传入此参数。此参数为支付宝交易号，注意参数有大小写区分
+     * 接入小程序支付时传入此参数。此参数为支付宝交易号，注意参数有大小写区分。
      */
-    tradeNO: string;
+    tradeNO?: string;
+
+    /**
+     * 完整的支付参数拼接成的字符串，从服务端获取。
+     */
+    orderStr?: string;
 
     /**
      * 调用成功的回调函数
