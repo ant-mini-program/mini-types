@@ -43,14 +43,14 @@ declare namespace tinyapp {
      */
     onPullDownRefresh?(params: { from: 'manual' | 'code'; }): void;
     onTitleClick?(): void;
-    onTabItemTap?(): void;
-    beforeTabItemTap?(): void;
 
     /**
      * 版本要求：基础库 1.11.0 或更高版本，若版本较低，建议做 兼容处理。
      * 点击标签（tab）时触发。
      */
-    onTabItemTap?(item: { index: number; pagePath: string; text: string }): void;
+    onTabItemTap?(item: { index: number; pagePath: string; text: string; }): void;
+
+    beforeTabItemTap?(): void;
   }
 
   interface IPageOptionsMethods extends Pick<
@@ -160,7 +160,9 @@ declare namespace tinyapp {
  * Page() 函数用来注册一个页面。
  * 接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
  */
+/* tslint:disable:no-unnecessary-generics */
 declare function Page<D>(options: tinyapp.PageOptions<D>): void;
+/* tslint:enable:no-unnecessary-generics */
 
 /**
  * getCurrentPages() 函数用于获取当前页面栈的实例，
