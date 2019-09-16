@@ -39,11 +39,9 @@ declare namespace my {
     readonly pixelRatio: number;
 
     /**
-     * 系统名：Android，iOS
-     * * 注意: 小程序文档中写的Android/iOS, 低版本的返回值为 android/ios/iphone
-     *        实际使用中建议转换成小写之后再进行比较
+     * 系统名
      */
-    readonly platform: 'Android' | 'iOS' | 'iphone' | 'iPhone OS';
+    readonly platform: 'Android' | 'iOS' | 'iPhone OS';
 
     /**
      * 屏幕高度
