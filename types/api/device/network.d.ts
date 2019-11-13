@@ -58,5 +58,5 @@ declare namespace my {
   /**
    * 取消网络状态变化的监听
    */
-  function offNetworkStatusChange(): void;
+  function offNetworkStatusChange(callback?: (res: IOnNetworkStatusChangeEvent) => void): void;
 }
