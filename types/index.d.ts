@@ -14,14 +14,14 @@ declare namespace tinyapp {
     readonly timeStamp: number;
     readonly target: {
       readonly tagName: string;
-      readonly dataset: Readonly<Record<string, string | number>>;
-      readonly targetDataset: Readonly<Record<string, string | number>>;
+      readonly dataset: Readonly<Record<string, any>>;
+      readonly targetDataset: Readonly<Record<string, any>>;
       readonly offsetLeft: number;
       readonly offsetTop: number;
     };
     readonly currentTarget: {
       readonly tagName: string;
-      readonly dataset: Readonly<Record<string, string | number>>;
+      readonly dataset: Readonly<Record<string, any>>;
       readonly offsetLeft: number;
       readonly offsetTop: number;
     };
