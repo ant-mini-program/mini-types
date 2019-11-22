@@ -213,4 +213,45 @@ declare namespace my {
    * 压缩图片。
    */
   function compressImage(options: ICompressImageOptions): void;
+
+  interface IVideoContext {
+    /**
+     * 播放
+     */
+    play(): void;
+    /**
+     * 暂停
+     */
+    pause(): void;
+    /**
+     * 停止
+     */
+    stop(): void;
+    /**
+     * 跳转到指定位置，单位秒（s）
+     * @param position
+     */
+    seek(position: number): void;
+    /**
+     *  进入全屏，0为正常竖屏，90为横屏，-90反向横屏。
+     * @param direction
+     */
+    requestFullScreen(direction: 0 | 90 | -90): void;
+    /**
+     * 退出全屏
+     */
+    exitFullScreen(): void;
+    /**
+     * 显示状态栏，仅在 iOS 全屏下有效
+     */
+    showStatusBar(): void;
+    /**
+     * 隐藏状态栏，仅在 iOS 全屏下有效
+     */
+    hideStatusBar(): void;
+  }
+  /**
+   * 获取视频上下文
+   */
+  function createVideoContext(id: string): IVideoContext;
 }
