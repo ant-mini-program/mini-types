@@ -229,12 +229,10 @@ declare namespace my {
     stop(): void;
     /**
      * 跳转到指定位置，单位秒（s）
-     * @param position
      */
     seek(position: number): void;
     /**
      *  进入全屏，0为正常竖屏，90为横屏，-90反向横屏。
-     * @param direction
      */
     requestFullScreen(direction: 0 | 90 | -90): void;
     /**
