@@ -1,5 +1,5 @@
 declare namespace tinyapp {
-  type Query = Record<string, string | number>;
+  type Query = Record<string, string | number | undefined>;
 
   interface IAppLaunchOptions {
     /**
