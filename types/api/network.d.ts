@@ -27,9 +27,9 @@ declare namespace my {
   }
 
   /**
-   * my.request promise with abort function to cancel the request.
+   * 返回 RequestTask，可以调用 abort 方法取消请求
    */
-  interface IRequestPromise extends Promise<IHttpRequestSuccessResult> {
+  interface IRequestTask extends Promise<IHttpRequestSuccessResult> {
     abort: () => void;
   }
 
@@ -95,7 +95,7 @@ declare namespace my {
   /**
    * 小程序网络请求
    */
-  function request(options: IHttpRequestOptions): IRequestPromise;
+  function request(options: IHttpRequestOptions): IRequestTask;
 
   interface IUploadFileSuccessResult {
     /**
