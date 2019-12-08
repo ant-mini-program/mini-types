@@ -149,7 +149,7 @@ declare namespace tinyapp {
         /**
          * 事件处理函数集合。
          */
-        events?: IPageEvents;
+        events?: IPageEvents & ThisType<IPageInstance<D>>;
 
         [name: string]: any;
       }

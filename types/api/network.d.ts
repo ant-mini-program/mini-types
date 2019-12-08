@@ -26,6 +26,13 @@ declare namespace my {
     readonly headers?: Readonly<Record<string, string>>;
   }
 
+  /**
+   * 返回 RequestTask，可以调用 abort 方法取消请求
+   */
+  interface IRequestTask extends Promise<IHttpRequestSuccessResult> {
+    abort: () => void;
+  }
+
   interface IHttpRequestOptions {
     /**
      * 目标服务器url
@@ -88,7 +95,7 @@ declare namespace my {
   /**
    * 小程序网络请求
    */
-  function request(options: IHttpRequestOptions): void;
+  function request(options: IHttpRequestOptions): IRequestTask;
 
   interface IUploadFileSuccessResult {
     /**
