@@ -11,14 +11,8 @@ declare namespace my {
     /**
      * 响应码
      *
-     * - 11：无权跨域
-     * - 12：网络出错
-     * - 13：超时
-     * - 14：解码失败
-     * - 15：HTTP错误
-     * - 16：请求已被停止/服务端限流
      */
-    readonly status?: 11 | 12 | 13 | 14 | 19;
+    readonly status?: 200 | Number;
 
     /**
      * 响应头
