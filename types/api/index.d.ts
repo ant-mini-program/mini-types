@@ -52,6 +52,8 @@ declare namespace my {
 
   function reportCustomError(error: Error): void;
 
+  function reportBizReady(): void;
+
   function call(apiName: string, params?: Record<string, any> | ((...args: any[]) => void)): void;
   function call(apiName: string, params?: Record<string, any>, callback?: (...args: any[]) => void): void;
 }

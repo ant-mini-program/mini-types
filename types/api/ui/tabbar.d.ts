@@ -100,17 +100,17 @@ declare namespace my {
     /**
      * 标签页按钮上的文字。
      */
-    text: number;
+    text: string;
 
     /**
      * 图片路径，建议尺寸为 81px * 81px，支持网络图片。
      */
-    iconPath: number;
+    iconPath: string;
 
     /**
      * 选中时的图片路径，建议尺寸为 81px * 81px，支持网络图片。
      */
-    selectedIconPath: number;
+    selectedIconPath: string;
 
     success?: () => void;
 
