@@ -1,4 +1,4 @@
-# mini-types
+# mini-types!
 
 > [English Version](./README.en-US.md)
 
