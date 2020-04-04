@@ -13,6 +13,7 @@
 /// <reference path="./menu.d.ts" />
 /// <reference path="./scene.d.ts" />
 /// <reference path="./analytics.d.ts" />
+/// <reference path="./voice.d.ts" />
 
 declare namespace my {
   /**
