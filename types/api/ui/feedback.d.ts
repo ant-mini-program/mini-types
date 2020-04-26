@@ -39,10 +39,26 @@ declare namespace my {
    */
   function showToast(options: IShowToastOptions): void;
 
+  interface IHideToastOptions {
+    /**
+     * 调用成功的回调函数
+     */
+    success?(): void;
+
+    /**
+     * 调用失败的回调函数
+     */
+    fail?(): void;
+
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(): void;
+  }
   /**
    * 隐藏消息提示框
    */
-  function hideToast(): void;
+  function hideToast(options?: IHideToastOptions): void;
 
   interface IAlertOptions {
     /**
@@ -235,6 +251,18 @@ declare namespace my {
      * 参考: https://docs.alipay.com/mini/api/ui-feedback#a-name7bgvmdamyhideloading
      */
     page?: tinyapp.IPageInstance<any>;
+    /**
+     * 调用成功的回调函数
+     */
+    success?: () => void;
+    /**
+     * 调用失败的回调函数
+     */
+    fail?: () => void;
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?: () => void;
   }
 
   /**

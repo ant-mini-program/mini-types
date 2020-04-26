@@ -52,7 +52,7 @@ declare namespace my {
    */
   function navigateBack(options?: INavigateBackOptions): void;
 
-  interface IRelaunchOptions extends INavigateBaseCallbackOptions {
+  interface IReLaunchOptions extends INavigateBaseCallbackOptions {
     /**
      * 页面路径。如果页面不为 tabbar 页面则路径后可以带参数。
      * 参数规则如下：路径与参数之间使用?分隔，参数键与参数值用=相连，不同参数必须用&分隔；
@@ -64,9 +64,9 @@ declare namespace my {
    * 关闭当前所有页面，跳转到应用内的某个指定页面。
    * 基础库 1.4.0+ & 支付宝客户端 10.1.8+ 支持
    */
-  function reLaunch(options: IRelaunchOptions): void;
+  function reLaunch(options: IReLaunchOptions): void;
 
-  interface ISetNavigationBar extends INavigateBaseCallbackOptions {
+  interface ISetNavigationBarOptions extends INavigateBaseCallbackOptions {
     /**
      * 导航栏标题
      */
@@ -92,7 +92,7 @@ declare namespace my {
   /**
    * 设置导航栏文字及样式。
    */
-  function setNavigationBar(options: ISetNavigationBar): void;
+  function setNavigationBar(options: ISetNavigationBarOptions): void;
 
   /**
    * 显示导航栏 loading。
@@ -105,8 +105,27 @@ declare namespace my {
   function hideNavigationBarLoading(): void;
 
   /**
+   * 隐藏TitleBar上的返回首页图标 参数
+   */
+  interface IHideBackHomeOptions {
+    /**
+     * 调用成功的回调函数
+     */
+    success?(): void;
+
+    /**
+     * 调用失败的回调函数
+     */
+    fail?(): void;
+
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(): void;
+  }
+  /**
    * 隐藏TitleBar上的返回首页图标，和通用菜单中的“返回首页”功能。
    * 返回首页功能出现时机：当用户启动小程序，若直接进入的页面不是小程序的首页，则会在左上角出现返回首页icon，若用户继续在页面中进入下一级页面，则在右上角更多菜单中，会出现“返回首页”功能。
    */
-  function hideBackHome(): void;
+  function hideBackHome(options?: IHideBackHomeOptions): void;
 }

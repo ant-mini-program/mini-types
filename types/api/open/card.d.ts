@@ -3,9 +3,26 @@
  */
 declare namespace my {
   /**
+   * 打开支付宝卡列表 参数
+   */
+  interface IOpenCardListOptions {
+    /**
+     * 调用成功的回调函数
+     */
+    success?: () => void;
+    /**
+     * 调用失败的回调函数
+     */
+    fail?: () => void;
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?: () => void;
+  }
+  /**
    * 打开支付宝卡列表。
    */
-  function openCardList(): void;
+  function openCardList(options?: IOpenCardListOptions): void;
 
   interface IOpenMerchantCardListOptions {
     /**

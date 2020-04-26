@@ -176,6 +176,12 @@ declare namespace my {
    */
   function saveImage(options: ISaveImageOptions): void;
 
+  /**
+   * 压缩图片的返回值
+   */
+  interface ICompressImageSuccessResult {
+    apFilePaths: string[];
+  }
   interface ICompressImageOptions {
     /**
      * 要压缩的图片地址数组
@@ -196,7 +202,7 @@ declare namespace my {
     /**
      * 调用成功的回调函数
      */
-    success?(): void;
+    success?(res: ICompressImageSuccessResult): void;
 
     /**
      * 调用失败的回调函数
