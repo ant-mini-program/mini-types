@@ -6,7 +6,7 @@ declare namespace my {
     /**
      * 调用成功的回调函数
      */
-    success?(text: string): void;
+    success?(res: { success: string }): void;
 
     /**
      * 调用失败的回调函数
@@ -16,7 +16,7 @@ declare namespace my {
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?(): void;
+    complete?(res: { success: string }): void;
   }
 
   interface ISetClipboardOptions {
@@ -29,8 +29,11 @@ declare namespace my {
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
      */
-    complete?(): void;
-    success?: (res: boolean) => void;
+    complete?(res: { success: boolean }): void;
+    /**
+     * 调用成功的回调函数
+     */
+    success?: (res: { success: boolean }) => void;
   }
 
   /**
