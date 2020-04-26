@@ -152,11 +152,28 @@ declare namespace my {
   function removeStorageSync(options: IRemoveStorageSyncOptions): void;
 
   /**
+   * 清除本地数据缓存异步方法 参数
+   */
+  interface IClearStorageOptions {
+    /**
+     * 调用成功的回调函数
+     */
+    success?: () => void;
+    /**
+     * 调用失败的回调函数
+     */
+    fail?: () => void;
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?: () => void;
+  }
+  /**
    * 清除本地数据缓存。
    *
    * > 清空内嵌内嵌webview的存储时不会同时清空当前小程序本身的存储数据
    */
-  function clearStorage(): void;
+  function clearStorage(options?: IClearStorageOptions): void;
 
   /**
    * 同步清除本地数据缓存。

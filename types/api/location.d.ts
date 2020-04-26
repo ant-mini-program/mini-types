@@ -62,7 +62,6 @@ declare namespace my {
      * 国家(type>0生效)
      */
     readonly country?: string;
-    readonly bearing?: string;
 
     /**
      * 纬度

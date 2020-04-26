@@ -66,7 +66,7 @@ declare namespace my {
    */
   function reLaunch(options: IRelaunchOptions): void;
 
-  interface ISetNavigationBar extends INavigateBaseCallbackOptions {
+  interface ISetNavigationBarOptions extends INavigateBaseCallbackOptions {
     /**
      * 导航栏标题
      */
@@ -92,7 +92,7 @@ declare namespace my {
   /**
    * 设置导航栏文字及样式。
    */
-  function setNavigationBar(options: ISetNavigationBar): void;
+  function setNavigationBar(options: ISetNavigationBarOptions): void;
 
   /**
    * 显示导航栏 loading。
