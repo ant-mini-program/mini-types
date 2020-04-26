@@ -105,8 +105,16 @@ declare namespace my {
   function hideNavigationBarLoading(): void;
 
   /**
+   * 隐藏TitleBar上的返回首页图标 参数
+   */
+  interface IHideBackHomeOptions {
+    success?: () => void;
+    fail?: () => void;
+    complete?: () => void;
+  }
+  /**
    * 隐藏TitleBar上的返回首页图标，和通用菜单中的“返回首页”功能。
    * 返回首页功能出现时机：当用户启动小程序，若直接进入的页面不是小程序的首页，则会在左上角出现返回首页icon，若用户继续在页面中进入下一级页面，则在右上角更多菜单中，会出现“返回首页”功能。
    */
-  function hideBackHome(): void;
+  function hideBackHome(options?: IHideBackHomeOptions): void;
 }

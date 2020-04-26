@@ -39,10 +39,15 @@ declare namespace my {
    */
   function showToast(options: IShowToastOptions): void;
 
+  interface IHideToastOptions {
+    success?: () => void;
+    fail?: () => void;
+    complete?: () => void;
+  }
   /**
    * 隐藏消息提示框
    */
-  function hideToast(): void;
+  function hideToast(options?: IHideToastOptions): void;
 
   interface IAlertOptions {
     /**

@@ -19,6 +19,20 @@ declare namespace my {
     complete?(): void;
   }
 
+  interface ISetClipboardOptions {
+    text: string;
+    /**
+     * 调用失败的回调函数
+     */
+    fail?(): void;
+
+    /**
+     * 调用结束的回调函数（调用成功、失败都会执行）
+     */
+    complete?(): void;
+    success?: (res: boolean) => void;
+  }
+
   /**
    * 获取剪贴板数据。
    */
@@ -27,10 +41,5 @@ declare namespace my {
   /**
    * 设置剪贴板数据。
    */
-  function setClipboard(options: IClipboardOptions & {
-    /**
-     * 剪贴板数据
-     */
-    text: string;
-  }): void;
+  function setClipboard(options: ISetClipboardOptions): void;
 }
