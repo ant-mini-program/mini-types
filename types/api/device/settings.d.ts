@@ -2,7 +2,7 @@
  * @file 设置
  */
 declare namespace my {
-  type SettingScopeList = 'scope.userInfo' | 'scope.location' | 'scope.album' | 'scope.camera' | 'scope.audioRecord';
+  type SettingScopeList = 'userInfo' | 'location' | 'album' | 'camera' | 'audioRecord';
 
   interface IOpenSettingSuccessOptions {
     /**

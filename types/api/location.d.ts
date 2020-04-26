@@ -62,7 +62,7 @@ declare namespace my {
      * 国家(type>0生效)
      */
     readonly country?: string;
-    readonly bearing: string;
+    readonly bearing?: string;
 
     /**
      * 纬度
@@ -112,7 +112,7 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?: (res?: IGetLocationSuccessResult) => void;
+    success?: (res: IGetLocationSuccessResult) => void;
 
     /**
      * 调用失败的回调函数
