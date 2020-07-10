@@ -64,9 +64,9 @@ declare namespace tinyapp {
     readonly is: string;
 
     /**
-     * 设置data触发视图渲染
+     * 同 setData，但是相比于 setData，在处理长列表的时候，其具有更高的性能
      */
-    $spliceData: (operations: { [k: string]: [number, number, ...any[]] }) => void;
+    $spliceData: SpliceDataMethod;
   }
 
   type ComponentOptions<

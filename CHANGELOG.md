@@ -1,8 +1,8 @@
-# next
+# 0.1.3
 
 * **Bug Fix**
-
-  - 修复 `IPreviewImageOptions` 的 `current` 属性为 `number` 类型。
+  - 修复 `IPreviewImageOptions` 的 `current` 属性为 `number` 类型；
+  - 修复 `pageInstance.$spliceData` 和 `componentInstance.$spliceData` 没有回调函数的问题。
 
 # 0.0.2
 

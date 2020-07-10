@@ -109,6 +109,12 @@ declare namespace tinyapp {
 
   type SetDataMethod<D> = (data: Partial<D>, callback?: () => void) => void;
 
+  interface ISpliceDataOperations {
+    [k: string]: [number, number, ...any[]]
+  }
+
+  type SpliceDataMethod = (operations: ISpliceDataOperations, callback?: () => void) => void;
+
   interface IPageInstance<D> extends Record<string, any> {
     /**
      * 页面数据。
@@ -121,9 +127,9 @@ declare namespace tinyapp {
     setData: SetDataMethod<D>;
 
     /**
-     * 同setData，但是相比于setData，在处理长列表的时候，其具有更高的性能
+     * 同 setData，但是相比于 setData，在处理长列表的时候，其具有更高的性能
      */
-    $spliceData: (operations: { [k: string]: [number, number, ...any[]] }) => void;
+    $spliceData: SpliceDataMethod;
 
     /**
      * Page 路径，对应 app.json 中配置的路径值。
