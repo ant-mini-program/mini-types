@@ -1,6 +1,6 @@
 # 0.1.4
 * **Refactor**
-  - 将 `getApp` 返回的 `{ globalData: any; }` 重构成`tinyapp.IGetAppResult`;
+  - 将 `getApp` 返回的 `{ globalData: any; }` 重构成 `tinyapp.IGetAppResult`。
 
 # 0.1.3
 
