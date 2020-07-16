@@ -1,6 +1,6 @@
 {
   "name": "mini-types",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "TypeScript declarations for Alipay's mini program.",
   "scripts": {
     "lint": "dtslint types",
