@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "dtslint types",
     "ci": "npm run lint",
-    "prepublish": "npm run ci"
+    "prepublishOnly": "npm run ci"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "dtslint": "^0.7.2"
+    "dtslint": "3.6.4"
   },
   "types": "./types/index.d.ts"
 }
