@@ -8,6 +8,10 @@
 
   - 将 `getApp` 返回的 `{ globalData: any; }` 重构成 `tinyapp.IGetAppResult`。
 
+* **Bug Fix**
+
+  - 修复 animation 类型。
+
 # 0.1.3
 
 * **Bug Fix**
