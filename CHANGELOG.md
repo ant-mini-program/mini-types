@@ -1,4 +1,4 @@
-# 0.1.4[WIP]
+# 0.1.4
 
 * **主要变更**
 
@@ -7,6 +7,10 @@
 * **Refactor**
 
   - 将 `getApp` 返回的 `{ globalData: any; }` 重构成 `tinyapp.IGetAppResult`。
+
+* **Bug Fix**
+
+  - 修复 animation 类型。
 
 # 0.1.3
 
