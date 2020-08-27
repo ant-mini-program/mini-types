@@ -110,7 +110,7 @@ declare namespace tinyapp {
   type SetDataMethod<D> = (data: Partial<D>, callback?: () => void) => void;
 
   interface ISpliceDataOperations {
-    [k: string]: [number, number, ...any[]]
+    [k: string]: [number, number, ...any[]];
   }
 
   type SpliceDataMethod = (operations: ISpliceDataOperations, callback?: () => void) => void;

@@ -1,3 +1,17 @@
+# 0.1.4
+
+* **主要变更**
+
+  - [+] 增加 `my.getExtConfigSync()`、`my.getAppIdSync()`、`my.getUpdateManager()`、`my.showSharePanel()` 类型声明。
+
+* **Refactor**
+
+  - 将 `getApp` 返回的 `{ globalData: any; }` 重构成 `tinyapp.IGetAppResult`。
+
+* **Bug Fix**
+
+  - 修复 animation 类型。
+
 # 0.1.3
 
 * **Bug Fix**

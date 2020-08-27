@@ -56,4 +56,46 @@ declare namespace my {
 
   function call(apiName: string, params?: Record<string, any> | ((...args: any[]) => void)): void;
   function call(apiName: string, params?: Record<string, any>, callback?: (...args: any[]) => void): void;
+
+  /**
+   * 获取自定义配置数据：https://opendocs.alipay.com/mini/isv/creatminiapp
+   */
+  function getExtConfigSync(): Record<string, any>;
+
+  /**
+   * 同步获取小程序 APPID。
+   */
+  function getAppIdSync(): string;
+
+  interface IUpdateManager {
+    /**
+     * 当小程序新版本下载完成后（即收到 onUpdateReady 回调），强制小程序重启并使用新版本。
+     */
+    applyUpdate(): void;
+
+    /**
+     * 监听向支付宝后台请求检查更新结果事件。
+     */
+    onCheckForUpdate(cb: (res: { hasUpdate: boolean }) => void): void;
+
+    /**
+     * 监听小程序有版本更新事件。
+     */
+    onUpdateReady(cb: () => void): void;
+
+    /**
+     * 监听小程序更新失败事件。
+     */
+    onUpdateFailed(cb: () => void): void;
+  }
+
+  /**
+   * 创建一个 UpdateManager 对象，获取全局唯一的版本更新管理器，用于管理小程序更新。
+   */
+  function getUpdateManager(): IUpdateManager;
+
+  /**
+   * 唤起分享面板。当通过 my.showSharePanel 唤起分享功能时，page.onShareAppMessage 入参中 from 的值为 code。
+   */
+  function showSharePanel(): void;
 }

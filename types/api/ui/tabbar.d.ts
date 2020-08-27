@@ -163,7 +163,7 @@ declare namespace my {
     /**
      * 是否需要动画效果，默认无。
      */
-    animation?: string;
+    animation?: boolean;
 
     success?: () => void;
 

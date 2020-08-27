@@ -86,6 +86,16 @@ declare namespace tinyapp {
   }
 
   /**
+   * getApp()返回的小程序实例
+   */
+  interface IGetAppResult {
+    /**
+     * 全局状态数据
+     */
+    globalData: any;
+  }
+
+  /**
    * App 实现的接口对象
    * 参考: https://docs.alipay.com/mini/framework/app
    */
