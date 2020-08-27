@@ -69,7 +69,7 @@ declare namespace tinyapp {
     $spliceData: SpliceDataMethod;
   }
 
-  interface InternalComponentOptions<P, D, M> {
+  interface IInternalComponentOptions<P, D, M> {
     /**
      * 组件间代码复用机制
      */
@@ -91,10 +91,16 @@ declare namespace tinyapp {
     methods?: M & ThisType<IComponentInstance<P, D> & M>;
   }
 
-  interface ComponentOptions<
+  interface IComponentOptions<
     P extends Record<string, any> = Record<string, any>,
     D = any,
     M extends IComponentMethods = IComponentMethods,
-  > extends IComponentLifeCycleMethods<D, P>, InternalComponentOptions<P, D, M>, ThisType<IComponentInstance<P, D> & M> {
+  > extends IComponentLifeCycleMethods<D, P>, IInternalComponentOptions<P, D, M>, ThisType<IComponentInstance<P, D> & M> {
   }
+
+  type ComponentOptions<
+    P extends Record<string, any> = Record<string, any>,
+    D = any,
+    M extends IComponentMethods = IComponentMethods,
+  > = IComponentOptions<P, D, M>
 }
