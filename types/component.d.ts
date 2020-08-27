@@ -98,6 +98,11 @@ declare namespace tinyapp {
   > extends IComponentLifeCycleMethods<D, P>, IInternalComponentOptions<P, D, M>, ThisType<IComponentInstance<P, D> & M> {
   }
 
+  /**
+   * 为了兼容旧版用法，下一个大版本可能删掉，请使用 `IComponentOptions`
+   *
+   * @deprecated
+   */
   type ComponentOptions<
     P extends Record<string, any> = Record<string, any>,
     D = any,
