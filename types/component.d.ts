@@ -69,31 +69,32 @@ declare namespace tinyapp {
     $spliceData: SpliceDataMethod;
   }
 
-  type ComponentOptions<
+  interface InternalComponentOptions<P, D, M> {
+    /**
+     * 组件间代码复用机制
+     */
+    mixins?: Array<ComponentOptions<any, any, any>>;
+
+    /**
+     * 组件内部状态
+     */
+    data?: D;
+
+    /**
+     * 为外部传入的数据设置默认值
+     */
+    props?: P;
+
+    /**
+     * 组件的方法，可以是事件响应函数或任意的自定义方法
+     */
+    methods?: M & ThisType<IComponentInstance<P, D> & M>;
+  }
+
+  interface ComponentOptions<
     P extends Record<string, any> = Record<string, any>,
     D = any,
     M extends IComponentMethods = IComponentMethods,
-  > = IComponentLifeCycleMethods<D, P>
-    & {
-      /**
-       * 组件间代码复用机制
-       */
-      mixins?: Array<ComponentOptions<any, any, any>>;
-
-      /**
-       * 组件内部状态
-       */
-      data?: D;
-
-      /**
-       * 为外部传入的数据设置默认值
-       */
-      props?: P;
-
-      /**
-       * 组件的方法，可以是事件响应函数或任意的自定义方法
-       */
-      methods?: M & ThisType<IComponentInstance<P, D> & M>;
-    }
-    & ThisType<IComponentInstance<P, D> & M>;
+  > extends IComponentLifeCycleMethods<D, P>, InternalComponentOptions<P, D, M>, ThisType<IComponentInstance<P, D> & M> {
+  }
 }
