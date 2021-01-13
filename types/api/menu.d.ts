@@ -43,4 +43,33 @@ declare namespace my {
    * 隐藏所有页面的通用菜单中的收藏功能
    */
   function hideAllFavoriteMenu(): void;
+
+  interface ICustomMenuItem {
+    /**
+     * 自定义菜单名称
+     */
+    name: string;
+    /**
+     * 自定义菜单的 icon URL，大小64x64
+     */
+    menuIconUrl: string;
+  }
+
+  interface ICustomPopMenuOptions {
+    /**
+     * 自定义菜单列表
+     */
+    menus: ICustomMenuItem[];
+
+    /**
+     * 调用成功的回调函数
+     */
+    success?: (res: { success: boolean }) => void;
+  }
+
+  /**
+   * 右上角更多中，支持插入自定义菜单。
+   * 自定义菜单点击事件通过页面 onPopMenuClick(Object)  事件回调。
+   */
+  function setCustomPopMenu(options: ICustomPopMenuOptions): void;
 }
