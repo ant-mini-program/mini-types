@@ -83,107 +83,107 @@ declare namespace my {
     /**
      * 销毁当前实例。
      */
-    destroy: (callback: (res?: any) => void) => void;
+    destroy: () => void;
 
     /**
      * 监听前景音频进入可以播放状态，但不保证后面可以流畅播放。
      */
-    onCanplay: (callback: (res?: any) => void) => void;
+    onCanplay: (callback: () => void) => void;
 
     /**
      * 监听前景音频进入可以播放状态，但不保证后面可以流畅播放。
      */
-    onPlay: (callback: (res?: any) => void) => void;
+    onPlay: (callback: () => void) => void;
 
     /**
      * 监听前景音频暂停事件。
      */
-    onPause: (callback: (res?: any) => void) => void;
+    onPause: (callback: () => void) => void;
 
     /**
      * 监听前景音频停止事件。
      */
-    onStop: (callback: (res?: any) => void) => void;
+    onStop: (callback: () => void) => void;
 
     /**
      * 监听前景音频自然播放结束事件。
      */
-    onEnded: (callback: (res?: any) => void) => void;
+    onEnded: (callback: () => void) => void;
 
     /**
      * 监听前景音频播放进度更新事件。
      */
-    onTimeUpdate: (callback: (res?: any) => void) => void;
+    onTimeUpdate: (callback: () => void) => void;
 
     /**
      * 监听前景音频播放错误事件。
      */
-    onError: (callback: (res?: any) => void) => void;
+    onError: (callback: () => void) => void;
 
     /**
      * 监听前景音频加载中事件，当音频因为数据不足，需要停下来加载时会触发。
      */
-    onWaiting: (callback: (res?: any) => void) => void;
+    onWaiting: (callback: () => void) => void;
 
     /**
      * 监听前景音频开始播放进度跳转的操作事件。
      */
-    onSeeking: (callback: (res?: any) => void) => void;
+    onSeeking: (callback: () => void) => void;
 
     /**
      * 监听前景音频完成播放进度跳转的操作事件。
      */
-    onSeeked: (callback: (res?: any) => void) => void;
+    onSeeked: (callback: () => void) => void;
 
     /**
      * 取消监听 onCanplay 事件。
      */
-    offCanplay: (callback: (res?: any) => void) => void;
+    offCanplay: (callback: () => void) => void;
 
     /**
      * 取消监听 onPlay 事件。
      */
-    offPlay: (callback: (res?: any) => void) => void;
+    offPlay: (callback: () => void) => void;
 
     /**
      * 取消监听 onPause 事件。
      */
-    offPause: (callback: (res?: any) => void) => void;
+    offPause: (callback: () => void) => void;
 
     /**
      * 取消监听 onStop 事件。
      */
-    offStop: (callback: (res?: any) => void) => void;
+    offStop: (callback: () => void) => void;
 
     /**
      * 取消监听 onEnded 事件。
      */
-    offEnded: (callback: (res?: any) => void) => void;
+    offEnded: (callback: () => void) => void;
 
     /**
      * 取消监听 onTimeUpdate 事件。
      */
-    offTimeUpdate: (callback: (res?: any) => void) => void;
+    offTimeUpdate: (callback: () => void) => void;
 
     /**
      * 取消监听 onError 事件。
      */
-    offError: (callback: (res?: any) => void) => void;
+    offError: (callback: () => void) => void;
 
     /**
      * 取消监听 onWaiting 事件。
      */
-    offWaiting: (callback: (res?: any) => void) => void;
+    offWaiting: (callback: () => void) => void;
 
     /**
      * 取消监听 onSeeking 事件。
      */
-    offSeeking: (callback: (res?: any) => void) => void;
+    offSeeking: (callback: () => void) => void;
 
     /**
      * 取消监听 onSeeked 事件。
      */
-    offSeeked: (callback: (res?: any) => void) => void;
+    offSeeked: (callback: () => void) => void;
   }
 
   /**
