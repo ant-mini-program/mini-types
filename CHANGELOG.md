@@ -1,3 +1,9 @@
+# 0.1.5
+
+* **主要变更**
+
+  - [+] 增加 `my.createInnerAudioContext()`、`my.getLaunchOptionsSync()`、`my.createLottieContext()` 类型声明。
+
 # 0.1.4
 
 * **主要变更**
