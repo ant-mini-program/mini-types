@@ -1,3 +1,13 @@
+# 0.1.5
+
+* **主要变更**
+
+  - [+] 增加 `my.createIntersectionObserver` 及相关类型的声明。
+
+* **Refactor**
+
+  - 将 `ComponentOptions` 重构为 interface 以便业务自行扩展。
+
 # 0.1.4
 
 * **主要变更**

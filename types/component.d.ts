@@ -69,31 +69,43 @@ declare namespace tinyapp {
     $spliceData: SpliceDataMethod;
   }
 
+  interface IInternalComponentOptions<P, D, M> {
+    /**
+     * 组件间代码复用机制
+     */
+    mixins?: Array<ComponentOptions<any, any, any>>;
+
+    /**
+     * 组件内部状态
+     */
+    data?: D;
+
+    /**
+     * 为外部传入的数据设置默认值
+     */
+    props?: P;
+
+    /**
+     * 组件的方法，可以是事件响应函数或任意的自定义方法
+     */
+    methods?: M & ThisType<IComponentInstance<P, D> & M>;
+  }
+
+  interface IComponentOptions<
+    P extends Record<string, any> = Record<string, any>,
+    D = any,
+    M extends IComponentMethods = IComponentMethods,
+  > extends IComponentLifeCycleMethods<D, P>, IInternalComponentOptions<P, D, M>, ThisType<IComponentInstance<P, D> & M> {
+  }
+
+  /**
+   * 为了兼容旧版用法，下一个大版本可能删掉，请使用 `IComponentOptions`
+   *
+   * @deprecated
+   */
   type ComponentOptions<
     P extends Record<string, any> = Record<string, any>,
     D = any,
     M extends IComponentMethods = IComponentMethods,
-  > = IComponentLifeCycleMethods<D, P>
-    & {
-      /**
-       * 组件间代码复用机制
-       */
-      mixins?: Array<ComponentOptions<any, any, any>>;
-
-      /**
-       * 组件内部状态
-       */
-      data?: D;
-
-      /**
-       * 为外部传入的数据设置默认值
-       */
-      props?: P;
-
-      /**
-       * 组件的方法，可以是事件响应函数或任意的自定义方法
-       */
-      methods?: M & ThisType<IComponentInstance<P, D> & M>;
-    }
-    & ThisType<IComponentInstance<P, D> & M>;
+  > = IComponentOptions<P, D, M>
 }
