@@ -66,7 +66,7 @@ declare namespace my {
     /**
      * 当前运行的客户端，当前是支付宝则有效值是"alipay"
      */
-    readonly app: string;
+    readonly app: 'alipay' | 'UC' | 'QUARK' | 'AK' | 'amap' | 'YK';
 
     /**
      * 标题栏高度

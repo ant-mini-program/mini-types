@@ -3,12 +3,12 @@
  */
 declare namespace my {
   interface IVibrateOptions {
-    success(): void;
+    success?(): void;
   }
   /**
    * 调用振动功能。
    */
-  function vibrate(options: IVibrateOptions): void;
+  function vibrate(options?: IVibrateOptions): void;
 
   interface IVibrateLongOptions {
     success(): void;
@@ -16,7 +16,7 @@ declare namespace my {
   /**
    * 较长时间的振动 (400ms)。
    */
-  function vibrateLong(options: IVibrateLongOptions): void;
+  function vibrateLong(options?: IVibrateLongOptions): void;
 
   interface IVibrateShortOptions {
     success(): void;
@@ -24,5 +24,5 @@ declare namespace my {
   /**
    * 较短时间的振动 (40ms)。
    */
-  function vibrateShort(options: IVibrateShortOptions): void;
+  function vibrateShort(options?: IVibrateShortOptions): void;
 }

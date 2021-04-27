@@ -27,5 +27,6 @@ declare namespace my {
   /**
    * 停止监听陀螺仪数据。
    */
-  function offGyroscopeChange(): void;
+  function offGyroscopeChange(callback?: (res: IOnGyroscopeChangeEvent) => void): void;
+
 }

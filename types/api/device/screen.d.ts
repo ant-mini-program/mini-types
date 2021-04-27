@@ -1,7 +1,22 @@
 /**
  * @file 屏幕亮度
  */
+import {IFailResult} from "../../common/fail";
+
 declare namespace my {
+  interface IGetKeepScreenOnSuccessResult {
+    brightness: number
+    success: boolean
+  }
+
+  interface ISetKeepScreenOnSuccessResult{
+    success:boolean
+  }
+
+  interface ISetKeepScreenSuccessResult{
+    success:boolean
+  }
+
   interface ISetKeepScreenOnOptions {
     /**
      * 是否保持屏幕长亮状态
@@ -11,12 +26,12 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?(res: any): void;
+    success?(res: ISetKeepScreenOnSuccessResult): void;
 
     /**
      * 调用失败的回调函数
      */
-    fail?(res: any): void;
+    fail?(res: IFailResult): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
@@ -33,12 +48,12 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?(res: any): void;
+    success?(res: IGetKeepScreenOnSuccessResult): void;
 
     /**
      * 调用失败的回调函数
      */
-    fail?(res: any): void;
+    fail?(res: IFailResult): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）
@@ -60,12 +75,12 @@ declare namespace my {
     /**
      * 接口调用成功的回调函数
      */
-    success?(res: any): void;
+    success?(res: ISetKeepScreenSuccessResult): void;
 
     /**
      * 调用失败的回调函数
      */
-    fail?(res: any): void;
+    fail?(res: IFailResult): void;
 
     /**
      * 调用结束的回调函数（调用成功、失败都会执行）

@@ -27,5 +27,6 @@ declare namespace my {
   /**
    * 停止监听加速度数据。
    */
-  function offAccelerometerChange(): void;
+  function offAccelerometerChange(callback?: (res: IOnAccelerometerChangeEvent) => void): void;
+
 }
