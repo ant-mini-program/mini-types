@@ -76,6 +76,12 @@ declare namespace tinyapp {
      * 当页面未设置 `page.onShareAppMessage` 时调用分享会执行全局的分享设置。
      */
     onShareAppMessage?(options: OnShareAppMessageOptions): IOnShareAppMessageResult;
+
+    /**
+     * 当Promise 被 reject 且没有 reject 处理器时触发。也可使用 my.onUnhandledRejection 绑定监听。
+     * 参数和注意事项与 my.onUnhandledRejection 一致。
+     */
+    onUnhandledRejection?(options?: my.IOnUnhandledRejectionCallbackOptions): void;
   }
 
   interface IAppInstance<G> {

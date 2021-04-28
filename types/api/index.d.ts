@@ -98,4 +98,22 @@ declare namespace my {
    * 唤起分享面板。当通过 my.showSharePanel 唤起分享功能时，page.onShareAppMessage 入参中 from 的值为 code。
    */
   function showSharePanel(): void;
+
+  interface IOnUnhandledRejectionCallbackOptions {
+    /**
+     * 拒绝原因，一般是 error 对象。
+     */
+     reason: string;
+
+     /**
+      * 被拒绝的 Promise 对象。
+      */
+     promise: Promise<any>;
+  }
+
+  interface IOnUnhandledRejectionCallback {
+    (res: IOnUnhandledRejectionCallbackOptions): void;
+  }
+
+  function onUnhandledRejection(cb: IOnUnhandledRejectionCallback): void;
 }
