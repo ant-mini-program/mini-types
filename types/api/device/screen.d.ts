@@ -1,7 +1,7 @@
 /**
  * @file 屏幕亮度
  */
-import {IFailResult} from "../../common/fail";
+import { IFailResult } from "../../common/IFailResult";
 
 declare namespace my {
   interface IGetKeepScreenOnSuccessResult {
@@ -9,12 +9,12 @@ declare namespace my {
     success: boolean
   }
 
-  interface ISetKeepScreenOnSuccessResult{
-    success:boolean
+  interface ISetKeepScreenOnSuccessResult {
+    success: boolean
   }
 
-  interface ISetKeepScreenSuccessResult{
-    success:boolean
+  interface ISetKeepScreenSuccessResult {
+    success: boolean
   }
 
   interface ISetKeepScreenOnOptions {
