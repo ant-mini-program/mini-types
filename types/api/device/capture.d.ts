@@ -13,5 +13,4 @@ declare namespace my {
    * 取消监听截屏事件。一般需要与 my.onUserCaptureScreen 成对出现。
    */
   function offUserCaptureScreen(callback?: (res: () => void) => void): void;
-
 }
