@@ -2,6 +2,12 @@
  * @file 扫码
  */
 declare namespace my {
+  /**
+   * 扫码识别类型，默认值为 ['qrCode','barCode']
+   * 二维码 | 条码 | DM码 | PDF417码 | 窄条二维码 | 异构码
+   */
+  type IScanType = 'qrCode' | 'barCode' | 'dmCode' | 'pdf417Code' | 'narrowCode' | 'hmCode';
+
   interface IScanSuccessResult {
     /**
      * 扫码所得数据
@@ -17,6 +23,26 @@ declare namespace my {
      * 扫描条形码时返回条形码数据
      */
     readonly barCode: string;
+
+    /**
+     * 码类型。
+     */
+    readonly scanType: string;
+
+    /**
+     * 码内容。
+     */
+    readonly result: string;
+
+    /**
+     * 来源。
+     */
+    readonly imageChannel: string;
+
+    /**
+     * Base64 字节流。
+     */
+    readonly rawData: string;
   }
 
   interface IScanFailResult {
@@ -33,7 +59,7 @@ declare namespace my {
      * 1. qr，扫码框样式为二维码扫码框；
      * 2. bar，扫码样式为条形码扫码框。
      */
-    type?: 'qr' | 'bar';
+    type?: IScanType[];
 
     /**
      * 是否隐藏相册（不允许从相册选择图片），只能从相机扫码
