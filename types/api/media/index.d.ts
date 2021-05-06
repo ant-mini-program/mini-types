@@ -1,3 +1,5 @@
+/// <reference path="./audio.d.ts" />
+
 /**
  * @file 多媒体
  */
@@ -108,8 +110,15 @@ declare namespace my {
      * - left-mirrored：同left，但垂直翻转
      * - right-mirrored：同right，但垂直翻转
      */
-    readonly orientation: 'up' | 'down' | 'left' | 'right'
-      | 'up-mirrored' | 'down-mirrored' | 'left-mirrored' | 'right-mirrored';
+    readonly orientation:
+      | "up"
+      | "down"
+      | "left"
+      | "right"
+      | "up-mirrored"
+      | "down-mirrored"
+      | "left-mirrored"
+      | "right-mirrored";
 
     /**
      * 返回图片的格式
