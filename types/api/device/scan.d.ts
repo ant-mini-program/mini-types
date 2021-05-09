@@ -55,11 +55,24 @@ declare namespace my {
 
   interface IScanOptions {
     /**
+     * @deprecated
      * 扫码样式(默认 qr)：
      * 1. qr，扫码框样式为二维码扫码框；
      * 2. bar，扫码样式为条形码扫码框。
      */
-    type?: IScanType[];
+    type?: 'qr' | 'bar';
+
+    /**
+     * 扫码识别类型，默认值为 ['qrCode','barCode']。
+     * 可选值：
+     * 二维码：'qrCode'。
+     * 条码：'barCode'。
+     * DM码：'dmCode'。
+     * PDF417码：'pdf417Code'。
+     * 窄条二维码：'narrowCode'。
+     * 异构码：'hmCode'。
+     */
+    scanType?: IScanType[];
 
     /**
      * 是否隐藏相册（不允许从相册选择图片），只能从相机扫码
