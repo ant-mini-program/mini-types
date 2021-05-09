@@ -150,7 +150,7 @@ declare namespace my {
 
   interface IGetFileInfoOptions {
     apFilePath: string;
-    digestAlgorithm?: 'md5' | 'md5';
+    digestAlgorithm?: 'md5' | 'sha1';
     success?(res: IGetFileInfoSuccessResult): void;
     fail?(): void;
     complete?(): void;

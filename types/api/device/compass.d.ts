@@ -17,5 +17,5 @@ declare namespace my {
   /**
    * 停止监听罗盘数据。
    */
-  function offCompassChange(): void;
+  function offCompassChange(callback?: (res: IOnCompassChangeEvent) => void): void;
 }
