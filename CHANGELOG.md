@@ -1,3 +1,12 @@
+# 0.1.6
+
+* **主要变更**
+
+  - [+] `IGetFileInfoOptions` 的 `digestAlgorithm` 参数类型新增 `sha1`。
+  - [+] 优化 `offAccelerometerChange`、`offUserCaptureScreen`、`offUserCaptureScreen`、`offCompassChange`、`offGyroscopeChange` 的返回类型。
+  - [+] 完善 `my.scan` 参数。
+  - [+] 引入 `audio` 文件。
+
 # 0.1.5
 
 * **主要变更**
