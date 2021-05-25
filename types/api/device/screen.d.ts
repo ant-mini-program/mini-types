@@ -1,20 +1,20 @@
 /**
  * @file 屏幕亮度
  */
-import { IFailResult } from "../../common/IFailResult";
+import IFailResult from "../../common/IFailResult";
 
 declare namespace my {
   interface IGetKeepScreenOnSuccessResult {
-    brightness: number
-    success: boolean
+    brightness: number;
+    success: boolean;
   }
 
   interface ISetKeepScreenOnSuccessResult {
-    success: boolean
+    success: boolean;
   }
 
   interface ISetKeepScreenSuccessResult {
-    success: boolean
+    success: boolean;
   }
 
   interface ISetKeepScreenOnOptions {

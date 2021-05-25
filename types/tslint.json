@@ -1,6 +1,8 @@
 {
   "extends": "dtslint/dtslint.json",
   "rules": {
-    "interface-name" : [true, "never"]
+    "interface-name" : [true, "always-prefix"],
+    "strict-export-declare-modifiers": false,
+    "no-redundant-jsdoc": false
   }
 }
