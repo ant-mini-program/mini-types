@@ -115,7 +115,7 @@ declare namespace tinyapp {
 
   type SpliceDataMethod = (operations: ISpliceDataOperations, callback?: () => void) => void;
 
-  interface IPageInstance<D> extends Record<string, any> {
+  type IPageInstance<D, M> = M & {
     /**
      * 页面数据。
      */
@@ -145,7 +145,7 @@ declare namespace tinyapp {
   /**
    * Page 实现的接口对象
    */
-  type PageOptions<D = Record<string, any>> = IPageOptionsMethods
+  type PageOptions<D = Record<string, any>, M = Record<string, any>> = IPageOptionsMethods
     & {
         /**
          * 初始数据或返回初始化数据的函数, 为对象时所有页面共享。
@@ -155,9 +155,10 @@ declare namespace tinyapp {
         /**
          * 事件处理函数集合。
          */
-        events?: IPageEvents & ThisType<IPageInstance<D>>;
+        events?: IPageEvents & ThisType<IPageInstance<D, M>>;
 
         [name: string]: any;
       }
-    & ThisType<IPageInstance<D>>;
+    & M
+    & ThisType<IPageInstance<D, M>>;
 }
