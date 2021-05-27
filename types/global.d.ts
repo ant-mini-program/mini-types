@@ -15,7 +15,7 @@ declare function getApp(): tinyapp.IGetAppResult;
  * 接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
  */
 /* tslint:disable:no-unnecessary-generics */
-declare function Page<D>(options: tinyapp.PageOptions<D>): void;
+declare function Page<D, M>(options: tinyapp.PageOptions<D, M>): void;
 /* tslint:enable:no-unnecessary-generics */
 
 /**
