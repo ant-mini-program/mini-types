@@ -1,7 +1,8 @@
 /**
  * @file 屏幕亮度
  */
-import IFailResult from "../../common/IFailResult";
+// tslint:disable-next-line:no-bad-reference
+/// <reference path="../../common/IFailResult.d.ts" />
 
 declare namespace my {
   interface IGetKeepScreenOnSuccessResult {
