@@ -33,6 +33,7 @@ declare namespace my {
 
   /**
    * 客户端获取会员信息。
+   * @deprecated 对于 2019 年 5 月 25 日及以后创建的小程序，已不再支持使用此接口。建议查看升级后的 my.getOpenUserInfo 接口文档。
    */
   function getAuthUserInfo(options: IGetAuthUserInfoOptions): void;
 }

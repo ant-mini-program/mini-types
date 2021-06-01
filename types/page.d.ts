@@ -1,6 +1,12 @@
 declare namespace tinyapp {
   type OnShareAppMessageOptions = {
-    from: 'button';
+    /**
+     * 触发来源：
+     * + button：页面分享按钮触发；
+     * + menu：右上角分享按钮触发
+     * + code：执行my.showSharePanel 触发。
+     */
+    from: 'button'|'menu'|'code';
     target: Record<string, any>;
     webViewUrl?: string;
   } | {
