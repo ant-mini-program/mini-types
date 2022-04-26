@@ -1,5 +1,11 @@
 # mini-types
 
+We have published a new version of type declarations: <https://github.com/ant-mini-program/api-typings>.
+
+it is more complete and accurate.
+
+---
+
 > [中文版本](./README.md)
 
 [![npm package](https://img.shields.io/npm/v/mini-types.svg?style=flat-square)](https://www.npmjs.com/package/mini-types)
