@@ -1,5 +1,11 @@
 # mini-types
 
+我们发布了新版的小程序类型文件：<https://github.com/ant-mini-program/api-typings>。
+
+有更完整、更准确的小程序 API 定义，更实时的更新。
+
+---
+
 > [English Version](./README.en-US.md)
 
 [![npm package](https://img.shields.io/npm/v/mini-types.svg?style=flat-square)](https://www.npmjs.com/package/mini-types)
