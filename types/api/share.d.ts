@@ -23,4 +23,9 @@ declare namespace my {
    * 隐藏分享按钮。
    */
   function hideShareMenu(options?: IHideShareMenuOptions): void;
+
+  /**
+   * 唤起分享面板。当通过 `my.showSharePanel` 唤起分享功能时，`page.onShareAppMessage` 入参中 `from` 的值为 `code`。
+   */
+  function showSharePanel(): void;
 }
